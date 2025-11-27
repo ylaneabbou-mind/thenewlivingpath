@@ -4,50 +4,29 @@ import { useState } from "react";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter signup
-    console.log("Newsletter signup:", email);
-  };
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); console.log("Newsletter signup:", email); };
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Cosmic background effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cosmic/20 via-background to-mystic/20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] animate-glow-pulse" />
-      
+      <div className="absolute inset-0 bg-gradient-stellar" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-bleu-atmosphere/20 rounded-full blur-[150px]" />
       <div className="container mx-auto max-w-3xl relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-serif font-bold">
-            Join the
-            <span className="block mt-2 bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
-              Circle
-            </span>
+          <p className="text-sm font-cormorant text-ocre-clair tracking-[0.25em] uppercase">Stay Connected</p>
+          <h2 className="text-4xl md:text-5xl font-serif font-semibold text-ivoire-cosmique leading-tight">
+            Join the<span className="block mt-2 text-ocre-clair">Inner Circle</span>
           </h2>
-          
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Receive monthly transmissions, sacred offerings, and invitations to 
-            journey deeper into consciousness
+          <p className="text-xl text-ivoire-cosmique/80 max-w-xl mx-auto leading-relaxed font-light">
+            Receive monthly reflections, practices, and invitations to deepen your journey of transformation
           </p>
-
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 flex flex-col sm:flex-row gap-4">
-            <Input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 bg-secondary/50 border-primary/30 focus:border-primary"
-              required
-            />
-            <Button type="submit" size="lg" className="shadow-glow hover:shadow-cosmic transition-all duration-500">
-              Enter the Circle
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-10 flex flex-col sm:flex-row gap-4">
+            <Input type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 bg-ivoire-cosmique/10 border-ivoire-cosmique/30 text-ivoire-cosmique placeholder:text-ivoire-cosmique/50 focus:border-ocre-clair rounded-lg" required />
+            <Button type="submit" size="lg" className="bg-gradient-solar text-white shadow-glow-gold hover:shadow-lg transition-all duration-500 rounded-lg px-8">
+              Join the Circle
             </Button>
           </form>
-
-          <p className="text-sm text-muted-foreground/70">
-            Your energy is sacred. We honor your privacy with reverence.
-          </p>
+          <p className="text-sm text-ivoire-cosmique/60 font-light">Your journey is sacred. We honor your inbox with care.</p>
         </div>
       </div>
     </section>

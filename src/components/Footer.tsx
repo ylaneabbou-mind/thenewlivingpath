@@ -1,76 +1,68 @@
-import { Instagram, Youtube, Mail } from "lucide-react";
+import { Instagram, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
+  const navigation = [
+    { name: "About", href: "#about" },
+    { name: "Offerings", href: "#offerings" },
+    { name: "Writings", href: "#blog" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const socialLinks = [
+    { name: "Instagram", icon: Instagram, href: "#" },
+    { name: "Email", icon: Mail, href: "mailto:hello@ylane.com" },
+  ];
+
   return (
-    <footer className="relative border-t border-border/50 py-16 px-6">
+    <footer className="relative py-20 px-6 bg-brun-racine/5 border-t border-gris-lune">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 items-start">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif font-bold bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
-              Your Name
+            <h3 className="text-2xl font-serif font-semibold text-foreground">
+              Ylane
             </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Guiding souls through transformation, alignment, and the remembrance of their infinite nature.
+            <p className="text-muted-foreground font-light leading-relaxed">
+              Transformational guidance for those ready to remember their true nature.
             </p>
           </div>
 
-          {/* Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Explore</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  About
+          {/* Navigation */}
+          <div className="flex justify-center">
+            <nav className="flex flex-wrap gap-x-8 gap-y-3">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-brun-racine transition-colors font-light"
+                >
+                  {item.name}
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Offerings
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Testimonials
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Blog
-                </a>
-              </li>
-            </ul>
+              ))}
+            </nav>
           </div>
 
-          {/* Connect */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Connect</h4>
-            <div className="flex gap-4">
+          {/* Social */}
+          <div className="flex md:justify-end gap-4">
+            {socialLinks.map((item) => (
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-secondary/50 border border-primary/30 flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all duration-300"
+                key={item.name}
+                href={item.href}
+                className="w-10 h-10 rounded-full bg-brun-racine/10 flex items-center justify-center text-brun-racine hover:bg-brun-racine hover:text-ivoire-cosmique transition-all duration-300"
+                aria-label={item.name}
               >
-                <Instagram className="w-5 h-5 text-primary" />
+                <item.icon className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-secondary/50 border border-primary/30 flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all duration-300"
-              >
-                <Youtube className="w-5 h-5 text-primary" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-secondary/50 border border-primary/30 flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all duration-300"
-              >
-                <Mail className="w-5 h-5 text-primary" />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
-          <p>© 2024 All Rights Reserved. Created with love and cosmic intention.</p>
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 border-t border-gris-lune flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Ylane. All rights reserved.</p>
+          <p className="flex items-center gap-1">
+            Made with <Heart className="w-4 h-4 text-ocre-solaire" /> and intention
+          </p>
         </div>
       </div>
     </footer>
