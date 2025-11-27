@@ -1,46 +1,64 @@
 const About = () => {
   return (
-    <section className="relative py-32 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section className="relative py-32 px-6 overflow-hidden">
+      {/* Cosmic section background */}
+      <div className="absolute inset-0 bg-gradient-stellar" />
+      
+      {/* Soft glow overlay */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bleu-atmosphere/20 rounded-full blur-[200px]" />
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Photo placeholder */}
-          <div className="relative group animate-fade-in">
-            <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/20 to-mystic/20 border border-primary/30 overflow-hidden shadow-cosmic">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground/50">
-                Your Photo
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-ivoire-cosmique/10 to-bleu-atmosphere/10 border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/40 font-cormorant text-lg">
+                Your Image
               </div>
             </div>
-            {/* Decorative glow effect */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-cosmic/20 rounded-2xl blur-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            {/* Decorative accent */}
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-ocre-solaire/30 blur-2xl" />
           </div>
 
-          {/* Story */}
-          <div className="space-y-6 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold">
-              A Bridge Between
-              <span className="block mt-2 bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
-                Realms
-              </span>
+          {/* Content */}
+          <div className="space-y-8 text-ivoire-cosmique">
+            <p className="text-sm font-cormorant tracking-[0.25em] uppercase text-ocre-clair">
+              About Ylane
+            </p>
+            
+            <h2 className="text-4xl md:text-5xl font-serif font-semibold leading-tight">
+              A Guide Between
+              <span className="block text-ocre-clair">Worlds</span>
             </h2>
             
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                For over a decade, I have walked between worlds—studying ancient wisdom, 
-                modern psychology, and the quantum field of consciousness. My path has been 
-                one of deep surrender and radical transformation.
+            <div className="space-y-5 text-ivoire-cosmique/80 leading-relaxed">
+              <p className="font-cormorant text-xl italic text-ocre-clair/90">
+                Rooted in the earth, reaching for the infinite.
               </p>
               
               <p>
-                Through initiations in sacred temples, nights beneath star-filled skies, 
-                and moments of profound stillness, I discovered that true healing comes not 
-                from fixing what is broken, but from remembering what has always been whole.
+                With years of deep inner work and guided transformation, I have walked 
+                the path of remembrance — learning to honor both the grounded wisdom 
+                of the body and the expansive clarity of cosmic vision.
               </p>
               
-              <p className="text-foreground font-normal">
-                Now, I serve as a guide for those ready to step into their highest alignment—
-                holding space for the sacred unfolding that happens when we dare to see ourselves 
-                as we truly are: infinite, luminous, and free.
+              <p>
+                My purpose is to hold space for your own journey home. Through presence, 
+                intuition, and sacred practices, I guide you to reconnect with the 
+                truth that lives within you — waiting to be remembered.
               </p>
+              
+              <p>
+                Whether you seek clarity in times of transition, alignment with your 
+                life's purpose, or simply a deeper sense of peace, you are welcome here.
+              </p>
+            </div>
+
+            <div className="pt-4 flex items-center gap-4">
+              <div className="w-12 h-px bg-ocre-solaire/50" />
+              <span className="text-ocre-clair font-cormorant italic">
+                In service to your awakening
+              </span>
             </div>
           </div>
         </div>
