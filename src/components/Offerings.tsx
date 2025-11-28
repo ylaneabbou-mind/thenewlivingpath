@@ -113,8 +113,6 @@ const Offerings = () => {
         </div>
       </div>
 
-      {/* Transition gradient to cosmic section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bleu-profond/20 to-transparent" />
     </section>
   );
 };

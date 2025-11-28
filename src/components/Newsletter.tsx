@@ -49,8 +49,6 @@ const Newsletter = () => {
         </div>
       </div>
       
-      {/* Transition to grounded footer */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brun-racine to-transparent" />
     </section>
   );
 };

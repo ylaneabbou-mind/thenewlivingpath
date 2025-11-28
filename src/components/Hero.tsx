@@ -37,15 +37,13 @@ const Hero = () => {
             <Button size="lg" className="group text-lg px-8 py-6 bg-gradient-solar text-white shadow-glow-gold hover:shadow-lg hover:scale-105 transition-all duration-500 rounded-lg">
               Begin Your Journey<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-ivoire-cosmique/40 text-ivoire-cosmique hover:bg-ivoire-cosmique/10 hover:border-ivoire-cosmique rounded-lg backdrop-blur-sm">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-ivoire-cosmique/50 text-ivoire-cosmique hover:bg-ivoire-cosmique/10 hover:border-ivoire-cosmique rounded-lg backdrop-blur-sm">
               Discover the Path
             </Button>
           </div>
         </div>
       </div>
       
-      {/* Bottom gradient fade to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ivoire-cosmique to-transparent" />
     </section>
   );
 };

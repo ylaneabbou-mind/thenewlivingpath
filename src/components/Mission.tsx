@@ -25,8 +25,6 @@ const Mission = () => {
         </div>
       </div>
       
-      {/* Decorative earth-toned line */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-brun-racine/40 to-transparent" />
     </section>
   );
 };

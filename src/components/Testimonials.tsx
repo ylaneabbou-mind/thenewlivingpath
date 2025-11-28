@@ -65,8 +65,6 @@ const Testimonials = () => {
         </div>
       </div>
       
-      {/* Transition gradient to grounded section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-ivoire-cosmique to-transparent" />
     </section>
   );
 };

@@ -83,8 +83,6 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* Transition to cosmic section */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-bleu-profond/15 to-transparent" />
     </section>
   );
 };
