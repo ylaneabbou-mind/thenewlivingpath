@@ -1,23 +1,26 @@
 const About = () => {
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Cosmic section background */}
+      {/* Cosmic Stellar Flow background */}
       <div className="absolute inset-0 bg-gradient-stellar" />
       
-      {/* Soft glow overlay */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bleu-atmosphere/20 rounded-full blur-[200px]" />
+      {/* Cosmic glow effects */}
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-bleu-atmosphere/25 rounded-full blur-[200px] animate-glow-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-bleu-profond/30 rounded-full blur-[150px]" />
+      <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-ocre-solaire/15 rounded-full blur-[120px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Photo placeholder */}
+          {/* Photo placeholder - floating card effect */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-ivoire-cosmique/10 to-bleu-atmosphere/10 border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/40 font-cormorant text-lg">
+            <div className="aspect-[4/5] rounded-2xl bg-ivoire-cosmique/10 backdrop-blur-md border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/50 font-cormorant text-lg">
                 Your Image
               </div>
             </div>
-            {/* Decorative accent */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-ocre-solaire/30 blur-2xl" />
+            {/* Decorative glowing accent */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-ocre-solaire/40 blur-3xl animate-glow-pulse" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full bg-bleu-atmosphere/30 blur-2xl" />
           </div>
 
           {/* Content */}
@@ -31,7 +34,7 @@ const About = () => {
               <span className="block text-ocre-clair">Worlds</span>
             </h2>
             
-            <div className="space-y-5 text-ivoire-cosmique/80 leading-relaxed">
+            <div className="space-y-5 text-ivoire-cosmique/85 leading-relaxed">
               <p className="font-cormorant text-xl italic text-ocre-clair/90">
                 Rooted in the earth, reaching for the infinite.
               </p>
@@ -55,7 +58,7 @@ const About = () => {
             </div>
 
             <div className="pt-4 flex items-center gap-4">
-              <div className="w-12 h-px bg-ocre-solaire/50" />
+              <div className="w-12 h-px bg-ocre-solaire/60" />
               <span className="text-ocre-clair font-cormorant italic">
                 In service to your awakening
               </span>
