@@ -4,41 +4,31 @@ interface SectionTransitionProps {
 }
 
 const SectionTransition = ({ variant, className = '' }: SectionTransitionProps) => {
-  const gradients = {
-    'cosmic-to-earth': `linear-gradient(
-      180deg,
-      rgba(0,53,115,1) 0%,
-      rgba(0,104,197,0.35) 40%,
-      rgba(75,169,240,0.15) 70%,
-      rgba(249,245,241,1) 100%
-    )`,
-    'earth-to-cosmic': `linear-gradient(
-      180deg,
-      rgba(249,245,241,1) 0%,
-      rgba(193,126,84,0.12) 25%,
-      rgba(0,104,197,0.25) 60%,
-      rgba(0,53,115,1) 100%
-    )`,
-    'earth-to-earth': `linear-gradient(
-      180deg,
-      rgba(249,245,241,1) 0%,
-      rgba(111,61,32,0.08) 30%,
-      rgba(193,126,84,0.06) 70%,
-      rgba(249,245,241,1) 100%
-    )`,
-    'cosmic-to-dark-earth': `linear-gradient(
-      180deg,
-      rgba(0,53,115,1) 0%,
-      rgba(0,104,197,0.4) 30%,
-      rgba(111,61,32,0.6) 70%,
-      rgba(111,61,32,1) 100%
-    )`,
+  const config = {
+    'cosmic-to-earth': {
+      gradient: `linear-gradient(180deg, rgba(0,53,115,0.15) 0%, rgba(0,53,115,0) 100%)`,
+      height: 'h-5 md:h-6', // 20-24px
+    },
+    'earth-to-cosmic': {
+      gradient: `linear-gradient(180deg, rgba(249,245,241,0.8) 0%, rgba(0,104,197,0.12) 100%)`,
+      height: 'h-4 md:h-5', // 16-20px
+    },
+    'earth-to-earth': {
+      gradient: `linear-gradient(180deg, rgba(193,126,84,0.10) 0%, rgba(193,126,84,0) 100%)`,
+      height: 'h-3 md:h-4', // 12-16px
+    },
+    'cosmic-to-dark-earth': {
+      gradient: `linear-gradient(180deg, rgba(0,53,115,0.2) 0%, rgba(111,61,32,0.15) 100%)`,
+      height: 'h-5 md:h-6', // 20-24px
+    },
   };
+
+  const { gradient, height } = config[variant];
 
   return (
     <div 
-      className={`relative w-full h-24 md:h-32 -mt-1 -mb-1 ${className}`}
-      style={{ background: gradients[variant] }}
+      className={`relative w-full ${height} -mt-px ${className}`}
+      style={{ background: gradient }}
       aria-hidden="true"
     />
   );
