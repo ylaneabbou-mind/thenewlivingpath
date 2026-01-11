@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Stellar Flow gradient background */}
@@ -19,26 +22,26 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Portrait placeholder */}
           <div className="w-44 h-44 mx-auto mb-10 rounded-full bg-gradient-to-br from-ivoire-cosmique/20 to-ocre-clair/30 border-2 border-ivoire-cosmique/30 shadow-glow-gold overflow-hidden animate-float backdrop-blur-sm">
-            <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/60 text-sm font-cormorant">Your Portrait</div>
+            <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/60 text-sm font-cormorant">{t.hero.portrait_placeholder}</div>
           </div>
           
-          <p className="text-lg md:text-xl font-cormorant text-ocre-clair tracking-[0.2em] uppercase">Transformational Guidance</p>
+          <p className="text-lg md:text-xl font-cormorant text-ocre-clair tracking-[0.2em] uppercase">{t.hero.tagline}</p>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold tracking-tight leading-tight">
-            <span className="text-ivoire-cosmique">Grounded in Earth,</span><br />
-            <span className="text-ocre-clair">Aligned with the Stars</span>
+            <span className="text-ivoire-cosmique">{t.hero.title_line1}</span><br />
+            <span className="text-ocre-clair">{t.hero.title_line2}</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-ivoire-cosmique/80 max-w-2xl mx-auto font-light leading-relaxed">
-            Guiding you to realign with your true nature through clarity, presence, and the wisdom of transformation
+            {t.hero.description}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Button size="lg" className="group text-lg px-8 py-6 bg-gradient-solar text-white shadow-glow-gold hover:shadow-lg hover:scale-105 transition-all duration-500 rounded-lg">
-              Begin Your Journey<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              {t.hero.cta_primary}<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-ivoire-cosmique/50 text-ivoire-cosmique hover:bg-ivoire-cosmique/10 hover:border-ivoire-cosmique rounded-lg backdrop-blur-sm">
-              Discover the Path
+              {t.hero.cta_secondary}
             </Button>
           </div>
         </div>

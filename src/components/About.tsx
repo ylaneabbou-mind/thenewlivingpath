@@ -1,4 +1,8 @@
+import { useLanguage } from "@/i18n/LanguageContext";
+
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       {/* Cosmic Stellar Flow background */}
@@ -15,7 +19,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-2xl bg-ivoire-cosmique/10 backdrop-blur-md border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
               <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/50 font-cormorant text-lg">
-                Your Image
+                {t.about.image_placeholder}
               </div>
             </div>
             {/* Decorative glowing accent */}
@@ -26,41 +30,30 @@ const About = () => {
           {/* Content */}
           <div className="space-y-8 text-ivoire-cosmique">
             <p className="text-sm font-cormorant tracking-[0.25em] uppercase text-ocre-clair">
-              About Ylane
+              {t.about.subtitle}
             </p>
             
             <h2 className="text-4xl md:text-5xl font-serif font-semibold leading-tight">
-              A Guide Between
-              <span className="block text-ocre-clair">Worlds</span>
+              {t.about.title_line1}
+              <span className="block text-ocre-clair">{t.about.title_line2}</span>
             </h2>
             
             <div className="space-y-5 text-ivoire-cosmique/85 leading-relaxed">
               <p className="font-cormorant text-xl italic text-ocre-clair/90">
-                Rooted in the earth, reaching for the infinite.
+                {t.about.quote}
               </p>
               
-              <p>
-                With years of deep inner work and guided transformation, I have walked 
-                the path of remembrance — learning to honor both the grounded wisdom 
-                of the body and the expansive clarity of cosmic vision.
-              </p>
+              <p>{t.about.paragraph1}</p>
               
-              <p>
-                My purpose is to hold space for your own journey home. Through presence, 
-                intuition, and sacred practices, I guide you to reconnect with the 
-                truth that lives within you — waiting to be remembered.
-              </p>
+              <p>{t.about.paragraph2}</p>
               
-              <p>
-                Whether you seek clarity in times of transition, alignment with your 
-                life's purpose, or simply a deeper sense of peace, you are welcome here.
-              </p>
+              <p>{t.about.paragraph3}</p>
             </div>
 
             <div className="pt-4 flex items-center gap-4">
               <div className="w-12 h-px bg-ocre-solaire/60" />
               <span className="text-ocre-clair font-cormorant italic">
-                In service to your awakening
+                {t.about.signature}
               </span>
             </div>
           </div>

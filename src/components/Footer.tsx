@@ -1,11 +1,14 @@
 import { Instagram, Mail, Heart } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const navigation = [
-    { name: "About", href: "#about" },
-    { name: "Offerings", href: "#offerings" },
-    { name: "Writings", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { key: "about" as const, href: "#about" },
+    { key: "offerings" as const, href: "#offerings" },
+    { key: "writings" as const, href: "#blog" },
+    { key: "contact" as const, href: "#contact" },
   ];
 
   const socialLinks = [
@@ -27,7 +30,7 @@ const Footer = () => {
               Ylane
             </h3>
             <p className="text-ivoire-cosmique/70 font-light leading-relaxed">
-              Transformational guidance for those ready to remember their true nature.
+              {t.footer.tagline}
             </p>
           </div>
 
@@ -36,11 +39,11 @@ const Footer = () => {
             <nav className="flex flex-wrap gap-x-8 gap-y-3">
               {navigation.map((item) => (
                 <a
-                  key={item.name}
+                  key={item.key}
                   href={item.href}
                   className="text-ivoire-cosmique/70 hover:text-ocre-clair transition-colors font-light"
                 >
-                  {item.name}
+                  {t.footer.nav[item.key]}
                 </a>
               ))}
             </nav>
@@ -63,9 +66,9 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-ivoire-cosmique/15 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-ivoire-cosmique/60">
-          <p>© {new Date().getFullYear()} Ylane. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ylane. {t.footer.copyright}</p>
           <p className="flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-ocre-solaire" /> and intention
+            {t.footer.made_with} <Heart className="w-4 h-4 text-ocre-solaire" /> {t.footer.and_intention}
           </p>
         </div>
       </div>

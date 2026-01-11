@@ -1,24 +1,9 @@
 import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    quote: "Working with Ylane helped me find the clarity I had been searching for. I finally feel both grounded and free to expand into my true purpose.",
-    author: "Marie L.",
-    title: "Wellness Coach",
-  },
-  {
-    quote: "The sessions created a profound shift in how I relate to myself and my path. Ylane holds space with such presence and wisdom.",
-    author: "Thomas D.",
-    title: "Creative Director",
-  },
-  {
-    quote: "I came seeking answers and left with something far more precious — a deep trust in my own inner knowing.",
-    author: "Sophie R.",
-    title: "Entrepreneur",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       {/* Cosmic Stellar Flow background */}
@@ -32,16 +17,16 @@ const Testimonials = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 space-y-4">
           <p className="text-sm font-cormorant text-ocre-clair tracking-[0.25em] uppercase">
-            Words of Transformation
+            {t.testimonials.subtitle}
           </p>
           <h2 className="text-4xl md:text-5xl font-serif font-semibold text-ivoire-cosmique">
-            Voices from the
-            <span className="text-ocre-clair"> Journey</span>
+            {t.testimonials.title_line1}
+            <span className="text-ocre-clair"> {t.testimonials.title_line2}</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {t.testimonials.items.map((testimonial, index) => (
             <div
               key={testimonial.author}
               className="group relative p-8 rounded-2xl bg-ivoire-cosmique/10 backdrop-blur-md border border-ivoire-cosmique/20 hover:border-ivoire-cosmique/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-glow-blue"
