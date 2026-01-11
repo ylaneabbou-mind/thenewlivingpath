@@ -1,4 +1,8 @@
+import { useLanguage } from "@/i18n/LanguageContext";
+
 const Mission = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       {/* Grounded earth background with subtle texture */}
@@ -11,16 +15,16 @@ const Mission = () => {
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center space-y-10 animate-fade-in">
-          <p className="text-sm font-cormorant text-sable-chaud tracking-[0.25em] uppercase">The Vision</p>
+          <p className="text-sm font-cormorant text-sable-chaud tracking-[0.25em] uppercase">{t.mission.subtitle}</p>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-brun-racine leading-tight">
-            Where Earth Meets<span className="block mt-2 text-gradient-stellar">Infinite Possibility</span>
+            {t.mission.title_line1}<span className="block mt-2 text-gradient-stellar">{t.mission.title_line2}</span>
           </h2>
           
           <div className="space-y-6 text-lg md:text-xl text-foreground/80 leading-relaxed font-light max-w-3xl mx-auto">
-            <p className="font-cormorant text-2xl italic text-brun-racine">"True transformation begins when we remember both our roots and our wings."</p>
-            <p>Ylane creates a sacred space where you reconnect with your authentic self — grounded in the wisdom of the body, yet open to the vast possibilities that await when you align with your highest vision.</p>
-            <p className="text-ocre-solaire font-medium">This is not about becoming someone new. It's about remembering who you've always been.</p>
+            <p className="font-cormorant text-2xl italic text-brun-racine">{t.mission.quote}</p>
+            <p>{t.mission.description1}</p>
+            <p className="text-ocre-solaire font-medium">{t.mission.description2}</p>
           </div>
         </div>
       </div>
