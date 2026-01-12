@@ -10,12 +10,12 @@ const Offerings = () => {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Grounded background with earth tones */}
-      <div className="absolute inset-0 bg-ivoire-cosmique" />
-      <div className="absolute inset-0 bg-gradient-to-br from-brun-racine/8 via-transparent to-sable-chaud/8" />
+      {/* Warm sand background with clay undertones */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sable-doux via-ivoire-cosmique to-argile-clair/60" />
+      <div className="absolute inset-0 bg-gradient-to-tl from-terre-accent/[0.05] via-transparent to-ocre-profond/[0.04]" />
       
       {/* Subtle warm glows */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-ocre-clair/10 rounded-full blur-[180px]" />
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-ocre-clair/12 rounded-full blur-[180px]" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-terre-claire/10 rounded-full blur-[150px]" />
       
       <div className="container mx-auto max-w-6xl relative z-10">

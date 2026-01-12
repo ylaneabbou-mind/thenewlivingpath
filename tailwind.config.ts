@@ -63,6 +63,12 @@ export default {
         "terre-claire": "hsl(var(--terre-claire))",
         "ivoire-cosmique": "hsl(var(--ivoire-cosmique))",
         "gris-lune": "hsl(var(--gris-lune))",
+        // Warm Earth Backgrounds
+        "sable-doux": "hsl(var(--sable-doux))",
+        "argile-clair": "hsl(var(--argile-clair))",
+        "parchemin": "hsl(var(--parchemin))",
+        "terre-accent": "hsl(var(--terre-accent))",
+        "ocre-profond": "hsl(var(--ocre-profond))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -78,6 +84,7 @@ export default {
         soft: "var(--shadow-soft)",
         "glow-blue": "var(--shadow-glow-blue)",
         "glow-gold": "var(--shadow-glow-gold)",
+        "warm": "var(--shadow-warm)",
       },
       borderRadius: {
         lg: "var(--radius)",
