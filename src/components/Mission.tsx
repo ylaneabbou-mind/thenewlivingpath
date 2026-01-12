@@ -5,12 +5,12 @@ const Mission = () => {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Grounded earth background with subtle texture */}
-      <div className="absolute inset-0 bg-ivoire-cosmique" />
-      <div className="absolute inset-0 bg-gradient-to-b from-brun-racine/8 via-transparent to-sable-chaud/5" />
+      {/* Warm parchment background with earthy undertones */}
+      <div className="absolute inset-0 bg-gradient-to-b from-parchemin via-ivoire-cosmique to-sable-doux" />
+      <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.04] via-transparent to-ocre-profond/[0.03]" />
       
       {/* Warm glow accents */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-ocre-clair/10 rounded-full blur-[150px]" />
+      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-ocre-clair/12 rounded-full blur-[150px]" />
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-terre-claire/10 rounded-full blur-[120px]" />
       
       <div className="container mx-auto max-w-4xl relative z-10">

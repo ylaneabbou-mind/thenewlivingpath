@@ -6,9 +6,9 @@ const Blog = () => {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Grounded background with warm earth tones */}
-      <div className="absolute inset-0 bg-ivoire-cosmique" />
-      <div className="absolute inset-0 bg-gradient-to-br from-brun-racine/6 via-transparent to-sable-chaud/8" />
+      {/* Warm parchment background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-argile-clair/40 via-ivoire-cosmique to-parchemin" />
+      <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.03] via-transparent to-ocre-profond/[0.05]" />
       
       {/* Subtle earth glows */}
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-terre-claire/12 rounded-full blur-[150px]" />

@@ -17,10 +17,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative py-20 px-6 bg-brun-racine overflow-hidden">
+    <footer className="relative py-20 px-6 bg-gradient-to-b from-brun-racine to-ocre-profond overflow-hidden">
       {/* Warm earth glow effects */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[200px] bg-ocre-solaire/15 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-1/3 w-[300px] h-[150px] bg-terre-claire/10 rounded-full blur-[100px]" />
+      <div className="absolute top-0 left-1/4 w-[400px] h-[200px] bg-ocre-solaire/12 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/3 w-[300px] h-[150px] bg-terre-claire/8 rounded-full blur-[100px]" />
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid md:grid-cols-3 gap-12 items-start">
