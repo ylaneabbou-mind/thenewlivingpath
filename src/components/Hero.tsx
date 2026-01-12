@@ -18,6 +18,9 @@ const Hero = () => {
       {/* Subtle star-like particles effect */}
       <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 40% 80%, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '100px 100px, 150px 150px, 200px 200px' }} />
       
+      {/* Bottom edge fade for seamless transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(243,234,226,0.08) 0%, transparent 100%)' }} />
+      
       <div className="container relative z-10 px-6 py-20 mx-auto">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Portrait placeholder */}

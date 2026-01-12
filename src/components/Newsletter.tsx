@@ -13,6 +13,12 @@ const Newsletter = () => {
       {/* Cosmic Stellar Flow background */}
       <div className="absolute inset-0 bg-gradient-stellar" />
       
+      {/* Top edge fade - blends with earth section above */}
+      <div className="absolute top-0 left-0 right-0 h-[90px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(243,234,226,0.06) 0%, transparent 100%)' }} />
+      
+      {/* Bottom edge fade - prepares for dark footer below */}
+      <div className="absolute bottom-0 left-0 right-0 h-[100px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(111,61,32,0.08) 0%, transparent 100%)' }} />
+      
       {/* Deep cosmic glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-bleu-atmosphere/30 rounded-full blur-[200px] animate-glow-pulse" />
       <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-bleu-profond/40 rounded-full blur-[150px]" />
