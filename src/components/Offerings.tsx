@@ -14,6 +14,12 @@ const Offerings = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-sable-doux via-ivoire-cosmique to-argile-clair/60" />
       <div className="absolute inset-0 bg-gradient-to-tl from-terre-accent/[0.05] via-transparent to-ocre-profond/[0.04]" />
       
+      {/* Top edge fade - blends with cosmic section above */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />
+      
+      {/* Bottom edge fade - prepares for cosmic section below */}
+      <div className="absolute bottom-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(0,53,115,0.04) 0%, transparent 100%)' }} />
+      
       {/* Subtle warm glows */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-ocre-clair/12 rounded-full blur-[180px]" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-terre-claire/10 rounded-full blur-[150px]" />

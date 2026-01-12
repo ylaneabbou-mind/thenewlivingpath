@@ -10,6 +10,12 @@ const Blog = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-argile-clair/40 via-ivoire-cosmique to-parchemin" />
       <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.03] via-transparent to-ocre-profond/[0.05]" />
       
+      {/* Top edge fade - blends with cosmic section above */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />
+      
+      {/* Bottom edge fade - prepares for cosmic section below */}
+      <div className="absolute bottom-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(0,53,115,0.04) 0%, transparent 100%)' }} />
+      
       {/* Subtle earth glows */}
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-terre-claire/12 rounded-full blur-[150px]" />
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-ocre-clair/10 rounded-full blur-[130px]" />

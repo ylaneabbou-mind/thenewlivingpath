@@ -18,6 +18,9 @@ const Footer = () => {
 
   return (
     <footer className="relative py-20 px-6 bg-gradient-to-b from-brun-racine to-ocre-profond overflow-hidden">
+      {/* Top edge fade - blends with cosmic section above */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />
+      
       {/* Warm earth glow effects */}
       <div className="absolute top-0 left-1/4 w-[400px] h-[200px] bg-ocre-solaire/12 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-1/3 w-[300px] h-[150px] bg-terre-claire/8 rounded-full blur-[100px]" />

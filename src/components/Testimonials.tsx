@@ -9,6 +9,12 @@ const Testimonials = () => {
       {/* Cosmic Stellar Flow background */}
       <div className="absolute inset-0 bg-gradient-stellar" />
       
+      {/* Top edge fade - blends with earth section above */}
+      <div className="absolute top-0 left-0 right-0 h-[90px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(243,234,226,0.06) 0%, transparent 100%)' }} />
+      
+      {/* Bottom edge fade - prepares for earth section below */}
+      <div className="absolute bottom-0 left-0 right-0 h-[90px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(243,234,226,0.05) 0%, transparent 100%)' }} />
+      
       {/* Cosmic glow effects */}
       <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-bleu-atmosphere/25 rounded-full blur-[180px] animate-glow-pulse" />
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-bleu-profond/30 rounded-full blur-[150px]" />

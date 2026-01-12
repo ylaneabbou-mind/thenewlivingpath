@@ -9,6 +9,12 @@ const Mission = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-parchemin via-ivoire-cosmique to-sable-doux" />
       <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.04] via-transparent to-ocre-profond/[0.03]" />
       
+      {/* Top edge fade - blends with cosmic section above */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />
+      
+      {/* Bottom edge fade - prepares for cosmic section below */}
+      <div className="absolute bottom-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />
+      
       {/* Warm glow accents */}
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-ocre-clair/12 rounded-full blur-[150px]" />
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-terre-claire/10 rounded-full blur-[120px]" />
