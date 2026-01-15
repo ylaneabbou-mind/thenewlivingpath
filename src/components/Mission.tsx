@@ -5,9 +5,10 @@ const Mission = () => {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Warm parchment background with earthy undertones */}
-      <div className="absolute inset-0 bg-gradient-to-b from-parchemin via-ivoire-cosmique to-sable-doux" />
-      <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.04] via-transparent to-ocre-profond/[0.03]" />
+      {/* Explicit grounded brown background - warm clay/sand tone */}
+      <div className="absolute inset-0 bg-sable-doux" />
+      <div className="absolute inset-0 bg-gradient-to-b from-parchemin/60 via-transparent to-argile-clair/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.03] via-transparent to-ocre-profond/[0.02]" />
       
       {/* Top edge fade - blends with cosmic section above */}
       <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />

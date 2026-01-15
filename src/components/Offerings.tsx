@@ -10,9 +10,10 @@ const Offerings = () => {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Warm sand background with clay undertones */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sable-doux via-ivoire-cosmique to-argile-clair/60" />
-      <div className="absolute inset-0 bg-gradient-to-tl from-terre-accent/[0.05] via-transparent to-ocre-profond/[0.04]" />
+      {/* Explicit grounded brown background - anchored earth tone */}
+      <div className="absolute inset-0 bg-argile-clair" />
+      <div className="absolute inset-0 bg-gradient-to-br from-sable-doux/70 via-transparent to-terre-douce/30" />
+      <div className="absolute inset-0 bg-gradient-to-tl from-terre-accent/[0.04] via-transparent to-ocre-profond/[0.03]" />
       
       {/* Top edge fade - blends with cosmic section above */}
       <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />

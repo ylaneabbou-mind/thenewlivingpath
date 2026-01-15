@@ -19,43 +19,44 @@
     --terre-claire: 24 42% 46%;
     --gris-lune: 30 5% 84%;
     
-    /* Warm Earth Backgrounds - derived from #D3854F (24° 62% 57%) */
-    --ivoire-cosmique: 26 35% 94%;           /* Very light warm parchment */
-    --sable-doux: 24 40% 91%;                /* Soft sand background */
-    --argile-clair: 24 32% 88%;              /* Light clay tone */
-    --parchemin: 26 45% 96%;                 /* Warm parchment white */
+    /* Warm Grounded Backgrounds - derived from #D3854F (24° 62% 57%), desaturated & lightened */
+    --ivoire-cosmique: 28 30% 92%;           /* Warm base - grounded parchment */
+    --sable-doux: 26 28% 88%;                /* Soft sand - visible warmth */
+    --argile-clair: 24 25% 85%;              /* Light clay - anchored tone */
+    --parchemin: 28 32% 94%;                 /* Warm cream - soft backdrop */
+    --terre-douce: 25 22% 82%;               /* Grounded earth - stronger warmth */
     
-    /* Refined accent colors - darker, muted orange tones */
-    --terre-accent: 24 45% 42%;              /* Refined dark terracotta */
-    --ocre-profond: 22 55% 35%;              /* Deep ochre for accents */
+    /* Refined accent colors - darker, muted brown/orange tones */
+    --terre-accent: 24 40% 38%;              /* Refined dark brown-terracotta */
+    --ocre-profond: 22 48% 32%;              /* Deep brown ochre for accents */
 
-    /* Semantic Mappings - using warm earth tones */
-    --background: 26 35% 94%;                /* Warm parchment base */
-    --foreground: 22 55% 18%;                /* Deep brown text */
+    /* Semantic Mappings - using warm grounded earth tones */
+    --background: 28 30% 92%;                /* Warm grounded base */
+    --foreground: 22 45% 16%;                /* Deep warm brown text */
 
-    --card: 26 45% 96%;                      /* Slightly lighter warm card */
-    --card-foreground: 22 55% 18%;
+    --card: 28 32% 94%;                      /* Slightly lighter warm card */
+    --card-foreground: 22 45% 16%;
 
-    --popover: 26 45% 96%;
-    --popover-foreground: 22 55% 18%;
+    --popover: 28 32% 94%;
+    --popover-foreground: 22 45% 16%;
 
     --primary: 207 100% 39%;
-    --primary-foreground: 26 45% 96%;
+    --primary-foreground: 28 32% 94%;
 
     --secondary: 26 79% 61%;
-    --secondary-foreground: 22 55% 18%;
+    --secondary-foreground: 22 45% 16%;
 
-    --muted: 24 25% 89%;                     /* Warm muted background */
-    --muted-foreground: 22 30% 40%;          /* Warm brown muted text */
+    --muted: 26 22% 86%;                     /* Warm muted background */
+    --muted-foreground: 22 35% 35%;          /* Warm brown muted text */
 
-    --accent: 22 55% 28%;
-    --accent-foreground: 26 35% 94%;
+    --accent: 22 48% 28%;
+    --accent-foreground: 28 30% 92%;
 
     --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 26 45% 96%;
+    --destructive-foreground: 28 32% 94%;
 
-    --border: 24 20% 82%;                    /* Warm border */
-    --input: 24 20% 82%;
+    --border: 24 18% 78%;                    /* Warm brown border */
+    --input: 24 18% 78%;
     --ring: 207 100% 39%;
 
     --radius: 0.75rem;
@@ -63,10 +64,11 @@
     /* Gradients */
     --gradient-stellar: linear-gradient(135deg, hsl(209 100% 23%), hsl(207 100% 39%), hsl(206 85% 62%));
     --gradient-solar: linear-gradient(135deg, hsl(22 55% 28%), hsl(23 47% 54%), hsl(26 79% 61%));
-    --gradient-cosmic-subtle: linear-gradient(180deg, hsl(26 35% 94%), hsl(207 100% 39% / 0.05));
-    --gradient-earth-subtle: linear-gradient(180deg, hsl(26 35% 94%), hsl(22 55% 28% / 0.08));
-    --gradient-warm-earth: linear-gradient(180deg, hsl(26 35% 94%), hsl(24 40% 91%));
-    --gradient-parchment: linear-gradient(135deg, hsl(26 45% 96%), hsl(24 32% 88%));
+    --gradient-cosmic-subtle: linear-gradient(180deg, hsl(28 30% 92%), hsl(207 100% 39% / 0.05));
+    --gradient-earth-subtle: linear-gradient(180deg, hsl(28 30% 92%), hsl(22 48% 28% / 0.08));
+    --gradient-warm-earth: linear-gradient(180deg, hsl(28 30% 92%), hsl(26 28% 88%));
+    --gradient-grounded: linear-gradient(180deg, hsl(28 32% 94%), hsl(25 22% 82%));
+    --gradient-anchored: linear-gradient(135deg, hsl(26 28% 88%), hsl(24 25% 85%));
 
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(22 55% 28% / 0.08);
