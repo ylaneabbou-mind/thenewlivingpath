@@ -11,6 +11,29 @@ type TranslationSchema = {
   blog: { subtitle: string; title_line1: string; title_line2: string; view_all: string; image_placeholder: string; posts: Array<{ title: string; excerpt: string; date: string; category: string }> };
   newsletter: { subtitle: string; title_line1: string; title_line2: string; description: string; placeholder: string; cta: string; privacy: string };
   footer: { tagline: string; nav: { about: string; offerings: string; writings: string; contact: string }; copyright: string; made_with: string; and_intention: string };
+  storyPage: {
+    hero: { subtitle: string; title: string; description: string };
+    origins: { subtitle: string; title: string; paragraph1: string; paragraph2: string; image_placeholder: string };
+    transformation: { subtitle: string; title: string; quote: string; paragraph1: string; paragraph2: string; paragraph3: string };
+    mission: { subtitle: string; title: string; paragraph1: string; paragraph2: string; signature: string; image_placeholder: string };
+    cta: { title: string; description: string; button: string };
+  };
+  contactPage: {
+    hero: { subtitle: string; title: string; description: string };
+    methods: {
+      title: string;
+      description: string;
+      whatsapp: { label: string; description: string };
+      instagram: { label: string; description: string };
+      email: { label: string; description: string };
+    };
+    closing: { quote: string; message: string; signature: string };
+  };
+  resourcesPage: {
+    hero: { subtitle: string; title: string; description: string };
+    coming_soon: { badge: string; title: string; description: string };
+    newsletter: { title: string; description: string; note: string };
+  };
 };
 
 export const translations: Record<Language, TranslationSchema> = {
@@ -169,6 +192,92 @@ export const translations: Record<Language, TranslationSchema> = {
       made_with: "Made with",
       and_intention: "and intention",
     },
+    
+    // Story Page
+    storyPage: {
+      hero: {
+        subtitle: "My Story",
+        title: "A Journey of Remembering",
+        description: "The path that led me here was winding, beautiful, and deeply transformative. Let me share it with you.",
+      },
+      origins: {
+        subtitle: "The Beginning",
+        title: "Where It All Started",
+        paragraph1: "My journey began long before I understood what I was seeking. Like many, I walked the path of conventional success — achievements, milestones, external validation. Yet something within me whispered that there was more.",
+        paragraph2: "That whisper became a call I could no longer ignore. It led me to question everything I thought I knew and to begin the sacred work of remembering who I truly am.",
+        image_placeholder: "Portrait",
+      },
+      transformation: {
+        subtitle: "The Turning Point",
+        title: "When Everything Shifted",
+        quote: "Sometimes we must lose ourselves completely to find our way home.",
+        paragraph1: "There came a moment — a series of moments, really — when the old ways simply stopped working. The strategies, the pushing, the striving. Life invited me into surrender.",
+        paragraph2: "Through deep inner work, ancient practices, and the guidance of wise teachers, I learned to listen. To my body. To the subtle realms. To the wisdom that had always been there, waiting.",
+        paragraph3: "This wasn't about becoming someone new. It was about peeling away everything that was never truly me — and discovering the infinite spaciousness underneath.",
+      },
+      mission: {
+        subtitle: "Today",
+        title: "Holding Space for Your Journey",
+        paragraph1: "Now I walk alongside others on their path of remembering. I offer what I've learned: that transformation doesn't require force. That the body holds ancient wisdom. That we are both deeply human and infinitely cosmic.",
+        paragraph2: "My purpose is simple: to create a space where you can reconnect with your own truth. To be a mirror for the light you've always carried. To remind you that you already have everything you need.",
+        signature: "With love and presence, Ylane",
+        image_placeholder: "Vision",
+      },
+      cta: {
+        title: "Ready to Begin?",
+        description: "If something in these words resonates with you, perhaps it's time for us to connect.",
+        button: "Reach Out",
+      },
+    },
+    
+    // Contact Page
+    contactPage: {
+      hero: {
+        subtitle: "Let's Connect",
+        title: "I'm Here for You",
+        description: "Reaching out is the first step. There's no pressure, no obligation — just an open door and a warm welcome.",
+      },
+      methods: {
+        title: "Choose Your Path",
+        description: "I'm accessible and present. Choose the way that feels most comfortable for you.",
+        whatsapp: {
+          label: "WhatsApp",
+          description: "For a direct, personal conversation. This is often the quickest way to connect.",
+        },
+        instagram: {
+          label: "Instagram",
+          description: "Follow my journey and send a message through @ylane.",
+        },
+        email: {
+          label: "Email",
+          description: "For longer inquiries or if you prefer a more formal approach.",
+        },
+      },
+      closing: {
+        quote: "Every journey begins with a single step of courage.",
+        message: "Whether you're ready to begin or simply curious to learn more, I welcome your message with an open heart.",
+        signature: "Looking forward to meeting you",
+      },
+    },
+    
+    // Resources Page
+    resourcesPage: {
+      hero: {
+        subtitle: "Transmissions",
+        title: "Wisdom & Reflections",
+        description: "A space for shared contemplation, where words become bridges to deeper understanding.",
+      },
+      coming_soon: {
+        badge: "Coming Soon",
+        title: "Articles in Preparation",
+        description: "I'm carefully crafting reflections, insights, and practices to support your journey. Each piece is written with intention and care — they will arrive when the time is right.",
+      },
+      newsletter: {
+        title: "Be the First to Know",
+        description: "Join the inner circle and receive new writings directly in your inbox when they're ready.",
+        note: "Subscribe through the newsletter on the home page to stay connected.",
+      },
+    },
   },
   
   fr: {
@@ -325,6 +434,92 @@ export const translations: Record<Language, TranslationSchema> = {
       copyright: "Tous droits réservés.",
       made_with: "Fait avec",
       and_intention: "et intention",
+    },
+    
+    // Story Page
+    storyPage: {
+      hero: {
+        subtitle: "Mon Histoire",
+        title: "Un Voyage de Souvenance",
+        description: "Le chemin qui m'a menée ici était sinueux, beau et profondément transformateur. Laissez-moi vous le partager.",
+      },
+      origins: {
+        subtitle: "Les Débuts",
+        title: "Là Où Tout a Commencé",
+        paragraph1: "Mon voyage a commencé bien avant que je comprenne ce que je cherchais. Comme beaucoup, j'ai suivi le chemin du succès conventionnel — réussites, étapes, validation extérieure. Pourtant, quelque chose en moi murmurait qu'il y avait plus.",
+        paragraph2: "Ce murmure est devenu un appel que je ne pouvais plus ignorer. Il m'a amenée à remettre en question tout ce que je pensais savoir et à commencer le travail sacré de me souvenir de qui je suis vraiment.",
+        image_placeholder: "Portrait",
+      },
+      transformation: {
+        subtitle: "Le Tournant",
+        title: "Quand Tout a Basculé",
+        quote: "Parfois nous devons nous perdre complètement pour trouver notre chemin vers la maison.",
+        paragraph1: "Il y a eu un moment — une série de moments, en réalité — où les anciennes façons ont simplement cessé de fonctionner. Les stratégies, les efforts, la lutte. La vie m'a invitée à l'abandon.",
+        paragraph2: "À travers un travail intérieur profond, des pratiques anciennes et la guidance de sages enseignants, j'ai appris à écouter. Mon corps. Les royaumes subtils. La sagesse qui avait toujours été là, en attente.",
+        paragraph3: "Il ne s'agissait pas de devenir quelqu'un de nouveau. Il s'agissait de retirer tout ce qui n'a jamais été vraiment moi — et de découvrir l'espace infini en dessous.",
+      },
+      mission: {
+        subtitle: "Aujourd'hui",
+        title: "Tenir l'Espace pour Votre Voyage",
+        paragraph1: "Maintenant, je marche aux côtés des autres sur leur chemin de souvenance. J'offre ce que j'ai appris : que la transformation ne nécessite pas de force. Que le corps détient une sagesse ancienne. Que nous sommes à la fois profondément humains et infiniment cosmiques.",
+        paragraph2: "Mon but est simple : créer un espace où vous pouvez vous reconnecter avec votre propre vérité. Être un miroir pour la lumière que vous avez toujours portée. Vous rappeler que vous avez déjà tout ce dont vous avez besoin.",
+        signature: "Avec amour et présence, Ylane",
+        image_placeholder: "Vision",
+      },
+      cta: {
+        title: "Prête à Commencer ?",
+        description: "Si quelque chose dans ces mots résonne en vous, peut-être est-il temps pour nous de nous connecter.",
+        button: "Me Contacter",
+      },
+    },
+    
+    // Contact Page
+    contactPage: {
+      hero: {
+        subtitle: "Connectons-nous",
+        title: "Je Suis Là Pour Vous",
+        description: "Tendre la main est la première étape. Pas de pression, pas d'obligation — juste une porte ouverte et un accueil chaleureux.",
+      },
+      methods: {
+        title: "Choisissez Votre Chemin",
+        description: "Je suis accessible et présente. Choisissez la voie qui vous semble la plus confortable.",
+        whatsapp: {
+          label: "WhatsApp",
+          description: "Pour une conversation directe et personnelle. C'est souvent le moyen le plus rapide de se connecter.",
+        },
+        instagram: {
+          label: "Instagram",
+          description: "Suivez mon parcours et envoyez un message via @ylane.",
+        },
+        email: {
+          label: "Email",
+          description: "Pour des demandes plus longues ou si vous préférez une approche plus formelle.",
+        },
+      },
+      closing: {
+        quote: "Chaque voyage commence par un seul pas de courage.",
+        message: "Que vous soyez prête à commencer ou simplement curieuse d'en savoir plus, j'accueille votre message avec un cœur ouvert.",
+        signature: "Au plaisir de vous rencontrer",
+      },
+    },
+    
+    // Resources Page
+    resourcesPage: {
+      hero: {
+        subtitle: "Transmissions",
+        title: "Sagesse & Réflexions",
+        description: "Un espace de contemplation partagée, où les mots deviennent des ponts vers une compréhension plus profonde.",
+      },
+      coming_soon: {
+        badge: "Bientôt Disponible",
+        title: "Articles en Préparation",
+        description: "Je prépare soigneusement des réflexions, des perspectives et des pratiques pour accompagner votre voyage. Chaque texte est écrit avec intention et soin — ils arriveront quand le moment sera venu.",
+      },
+      newsletter: {
+        title: "Soyez les Premiers Informés",
+        description: "Rejoignez le cercle intérieur et recevez les nouveaux écrits directement dans votre boîte mail quand ils seront prêts.",
+        note: "Inscrivez-vous via la newsletter sur la page d'accueil pour rester connectée.",
+      },
     },
   },
 };
