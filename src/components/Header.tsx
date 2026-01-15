@@ -2,21 +2,27 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 
 const Header = () => {
   const { t } = useLanguage();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("home");
 
   const navItems = [
-    { key: "home", href: "#home" },
-    { key: "histoire", href: "#histoire" },
-    { key: "services", href: "#services" },
-    { key: "ressources", href: "#ressources" },
-    { key: "contact", href: "#contact" },
-  ] as const;
+    { key: "home" as const, href: "/" },
+    { key: "histoire" as const, href: "/story" },
+    { key: "services" as const, href: "/#services" },
+    { key: "ressources" as const, href: "/resources" },
+    { key: "contact" as const, href: "/contact" },
+  ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname === href || location.pathname.startsWith(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,15 +32,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (key: string, href: string) => {
-    setActiveItem(key);
+  const handleNavClick = () => {
     setIsMobileMenuOpen(false);
-    
-    // Smooth scroll to section
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   return (
@@ -49,29 +48,26 @@ const Header = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo / Brand */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             className="group flex items-center gap-3"
-            onClick={() => setActiveItem("home")}
+            onClick={handleNavClick}
           >
             <span className="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-brun-racine transition-colors duration-300 group-hover:text-bleu-cosmique">
               Ylane
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.key}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.key, item.href);
-                }}
+                to={item.href}
+                onClick={handleNavClick}
                 className={cn(
                   "font-cormorant text-lg tracking-wide relative py-2 transition-colors duration-300",
-                  activeItem === item.key
+                  isActive(item.href)
                     ? "text-ocre-solaire"
                     : "text-brun-racine hover:text-bleu-cosmique"
                 )}
@@ -81,12 +77,10 @@ const Header = () => {
                 <span
                   className={cn(
                     "absolute bottom-0 left-0 h-[2px] bg-bleu-cosmique rounded-full transition-all duration-300",
-                    activeItem === item.key ? "w-full" : "w-0 group-hover:w-full"
+                    isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
                   )}
                 />
-                {/* Hover underline effect */}
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-bleu-cosmique/50 rounded-full transition-all duration-300 hover:w-full" />
-              </a>
+              </Link>
             ))}
             
             {/* Language Selector */}
@@ -120,16 +114,13 @@ const Header = () => {
       >
         <nav className="container mx-auto px-6 py-6 flex flex-col gap-4 bg-gradient-to-b from-sable-doux to-argile-clair/50">
           {navItems.map((item, index) => (
-            <a
+            <Link
               key={item.key}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.key, item.href);
-              }}
+              to={item.href}
+              onClick={handleNavClick}
               className={cn(
                 "font-cormorant text-xl tracking-wide py-3 px-4 rounded-md transition-all duration-300",
-                activeItem === item.key
+                isActive(item.href)
                   ? "text-ocre-solaire bg-ocre-solaire/5"
                   : "text-brun-racine hover:text-bleu-cosmique hover:bg-bleu-cosmique/5"
               )}
@@ -138,7 +129,7 @@ const Header = () => {
               }}
             >
               {t.nav[item.key]}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
