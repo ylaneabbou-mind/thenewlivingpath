@@ -6,9 +6,10 @@ const Blog = () => {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Warm parchment background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-argile-clair/40 via-ivoire-cosmique to-parchemin" />
-      <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.03] via-transparent to-ocre-profond/[0.05]" />
+      {/* Explicit grounded brown background - warm earth */}
+      <div className="absolute inset-0 bg-sable-doux" />
+      <div className="absolute inset-0 bg-gradient-to-b from-argile-clair/50 via-transparent to-parchemin/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-terre-accent/[0.02] via-transparent to-ocre-profond/[0.04]" />
       
       {/* Top edge fade - blends with cosmic section above */}
       <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />

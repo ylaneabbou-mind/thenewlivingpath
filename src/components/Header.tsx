@@ -42,8 +42,8 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-parchemin/95 backdrop-blur-md shadow-warm"
-          : "bg-parchemin"
+          ? "bg-sable-doux/95 backdrop-blur-md shadow-warm"
+          : "bg-sable-doux"
       )}
     >
       <div className="container mx-auto px-6 lg:px-12">
@@ -114,11 +114,11 @@ const Header = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "lg:hidden overflow-hidden transition-all duration-500 ease-in-out bg-parchemin/98 backdrop-blur-md",
+          "lg:hidden overflow-hidden transition-all duration-500 ease-in-out bg-sable-doux/98 backdrop-blur-md",
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <nav className="container mx-auto px-6 py-6 flex flex-col gap-4 bg-gradient-to-b from-parchemin to-sable-doux/50">
+        <nav className="container mx-auto px-6 py-6 flex flex-col gap-4 bg-gradient-to-b from-sable-doux to-argile-clair/50">
           {navItems.map((item, index) => (
             <a
               key={item.key}

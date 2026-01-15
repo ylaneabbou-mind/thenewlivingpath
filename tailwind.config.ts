@@ -63,10 +63,11 @@ export default {
         "terre-claire": "hsl(var(--terre-claire))",
         "ivoire-cosmique": "hsl(var(--ivoire-cosmique))",
         "gris-lune": "hsl(var(--gris-lune))",
-        // Warm Earth Backgrounds
+        // Warm Grounded Earth Backgrounds
         "sable-doux": "hsl(var(--sable-doux))",
         "argile-clair": "hsl(var(--argile-clair))",
         "parchemin": "hsl(var(--parchemin))",
+        "terre-douce": "hsl(var(--terre-douce))",
         "terre-accent": "hsl(var(--terre-accent))",
         "ocre-profond": "hsl(var(--ocre-profond))",
         sidebar: {
