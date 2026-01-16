@@ -7,87 +7,93 @@
 @layer base {
   :root {
     /* Primary Colors */
-    --bleu-cosmique: 207 100% 39%;
-    --ocre-solaire: 26 79% 61%;
-    --brun-racine: 22 55% 28%;
+    --bleu-cosmique: 211 87% 24%;         /* Deepened blue #083B73 for brown backgrounds */
+    --ocre-solaire: 18 64% 33%;           /* Deepened orange #8A3F1E for accents */
+    --brun-racine: 19 45% 13%;            /* Deep espresso brown #2F1B12 for text */
     
     /* Extended Palette */
-    --bleu-profond: 209 100% 23%;
-    --bleu-atmosphere: 206 85% 62%;
-    --ocre-clair: 29 85% 72%;
-    --sable-chaud: 23 47% 54%;
-    --terre-claire: 24 42% 46%;
+    --bleu-profond: 211 87% 20%;          /* Even deeper blue for strong contrast */
+    --bleu-atmosphere: 206 75% 35%;       /* Muted blue for softer accents */
+    --ocre-clair: 24 50% 45%;             /* Muted ochre */
+    --sable-chaud: 24 30% 49%;            /* Mid-tone brown for CTA - #B68561 */
+    --terre-claire: 24 40% 38%;           /* Refined earth tone */
     --gris-lune: 30 5% 84%;
     
-    /* Warm Grounded Backgrounds - derived from #D3854F (24° 62% 57%), desaturated & lightened */
-    --ivoire-cosmique: 28 30% 92%;           /* Warm base - grounded parchment */
-    --sable-doux: 26 28% 88%;                /* Soft sand - visible warmth */
-    --argile-clair: 24 25% 85%;              /* Light clay - anchored tone */
-    --parchemin: 28 32% 94%;                 /* Warm cream - soft backdrop */
-    --terre-douce: 25 22% 82%;               /* Grounded earth - stronger warmth */
+    /* CTA Brown Background - derived from #B68561 (24° 37% 55%) */
+    --cta-brun: 24 37% 55%;               /* Exact CTA button color #B68561 */
+    --cta-brun-start: 24 30% 49%;         /* Gradient start #A1765A */
+    --cta-brun-end: 26 48% 60%;           /* Gradient end #CB9368 */
     
-    /* Refined accent colors - darker, muted brown/orange tones */
-    --terre-accent: 24 40% 38%;              /* Refined dark brown-terracotta */
-    --ocre-profond: 22 48% 32%;              /* Deep brown ochre for accents */
+    /* Warm Grounded Backgrounds - CTA button tones */
+    --ivoire-cosmique: 28 30% 92%;        /* Warm base for cosmic sections */
+    --sable-doux: 24 37% 55%;             /* Now matches CTA button #B68561 */
+    --argile-clair: 24 35% 53%;           /* Slightly varied for depth */
+    --parchemin: 26 48% 60%;              /* Lighter gradient end tone */
+    --terre-douce: 24 30% 49%;            /* Darker gradient start tone */
+    
+    /* Refined accent colors - deeper for contrast on brown */
+    --terre-accent: 18 64% 33%;           /* Deep orange accent #8A3F1E */
+    --ocre-profond: 19 55% 20%;           /* Very deep brown for strong accents */
 
-    /* Semantic Mappings - using warm grounded earth tones */
-    --background: 28 30% 92%;                /* Warm grounded base */
-    --foreground: 22 45% 16%;                /* Deep warm brown text */
+    /* Semantic Mappings - CTA brown for neutral sections */
+    --background: 24 37% 55%;             /* CTA brown as base background */
+    --foreground: 19 45% 13%;             /* Deep espresso brown #2F1B12 */
 
-    --card: 28 32% 94%;                      /* Slightly lighter warm card */
-    --card-foreground: 22 45% 16%;
+    --card: 26 40% 58%;                   /* Slightly lighter card on brown */
+    --card-foreground: 19 45% 13%;
 
-    --popover: 28 32% 94%;
-    --popover-foreground: 22 45% 16%;
+    --popover: 26 40% 58%;
+    --popover-foreground: 19 45% 13%;
 
-    --primary: 207 100% 39%;
-    --primary-foreground: 28 32% 94%;
+    --primary: 211 87% 24%;               /* Deep blue #083B73 */
+    --primary-foreground: 28 30% 92%;
 
-    --secondary: 26 79% 61%;
-    --secondary-foreground: 22 45% 16%;
+    --secondary: 18 64% 33%;              /* Deep orange #8A3F1E */
+    --secondary-foreground: 28 30% 92%;
 
-    --muted: 26 22% 86%;                     /* Warm muted background */
-    --muted-foreground: 22 35% 35%;          /* Warm brown muted text */
+    --muted: 24 28% 50%;                  /* Muted brown */
+    --muted-foreground: 19 35% 25%;       /* Softer brown for secondary text */
 
-    --accent: 22 48% 28%;
+    --accent: 19 45% 13%;                 /* Deep espresso for accents */
     --accent-foreground: 28 30% 92%;
 
     --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 28 32% 94%;
+    --destructive-foreground: 28 30% 92%;
 
-    --border: 24 18% 78%;                    /* Warm brown border */
-    --input: 24 18% 78%;
-    --ring: 207 100% 39%;
+    --border: 24 25% 45%;                 /* Brown border */
+    --input: 24 25% 45%;
+    --ring: 211 87% 24%;
 
     --radius: 0.75rem;
 
     /* Gradients */
     --gradient-stellar: linear-gradient(135deg, hsl(209 100% 23%), hsl(207 100% 39%), hsl(206 85% 62%));
     --gradient-solar: linear-gradient(135deg, hsl(22 55% 28%), hsl(23 47% 54%), hsl(26 79% 61%));
+    --gradient-cta-brown: linear-gradient(90deg, hsl(24 30% 49%) 0%, hsl(26 48% 60%) 100%);
     --gradient-cosmic-subtle: linear-gradient(180deg, hsl(28 30% 92%), hsl(207 100% 39% / 0.05));
-    --gradient-earth-subtle: linear-gradient(180deg, hsl(28 30% 92%), hsl(22 48% 28% / 0.08));
-    --gradient-warm-earth: linear-gradient(180deg, hsl(28 30% 92%), hsl(26 28% 88%));
-    --gradient-grounded: linear-gradient(180deg, hsl(28 32% 94%), hsl(25 22% 82%));
-    --gradient-anchored: linear-gradient(135deg, hsl(26 28% 88%), hsl(24 25% 85%));
+    --gradient-earth-subtle: linear-gradient(180deg, hsl(24 37% 55%), hsl(19 45% 13% / 0.08));
+    --gradient-warm-earth: linear-gradient(180deg, hsl(24 37% 55%), hsl(24 30% 49%));
+    --gradient-grounded: linear-gradient(180deg, hsl(26 48% 60%), hsl(24 30% 49%));
+    --gradient-anchored: linear-gradient(135deg, hsl(24 37% 55%), hsl(24 35% 53%));
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(22 55% 28% / 0.08);
-    --shadow-glow-blue: 0 0 40px hsl(207 100% 39% / 0.2);
-    --shadow-glow-gold: 0 0 40px hsl(26 79% 61% / 0.25);
-    --shadow-warm: 0 4px 24px hsl(24 45% 42% / 0.12);
+    --shadow-soft: 0 4px 20px hsl(19 45% 13% / 0.15);
+    --shadow-glow-blue: 0 0 40px hsl(211 87% 24% / 0.3);
+    --shadow-glow-gold: 0 0 40px hsl(26 48% 60% / 0.35);
+    --shadow-warm: 0 4px 24px hsl(19 45% 13% / 0.18);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Sidebar (if needed) */
-    --sidebar-background: 26 45% 96%;
-    --sidebar-foreground: 22 55% 18%;
-    --sidebar-primary: 207 100% 39%;
-    --sidebar-primary-foreground: 26 45% 96%;
-    --sidebar-accent: 26 79% 61%;
-    --sidebar-accent-foreground: 22 55% 18%;
-    --sidebar-border: 24 20% 82%;
-    --sidebar-ring: 207 100% 39%;
+    --sidebar-background: 24 37% 55%;
+    --sidebar-foreground: 19 45% 13%;
+    --sidebar-primary: 211 87% 24%;
+    --sidebar-primary-foreground: 28 30% 92%;
+    --sidebar-accent: 18 64% 33%;
+    --sidebar-accent-foreground: 28 30% 92%;
+    --sidebar-border: 24 25% 45%;
+    --sidebar-ring: 211 87% 24%;
   }
 
   .dark {

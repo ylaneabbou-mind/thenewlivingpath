@@ -36,32 +36,32 @@ const Story = () => {
 
       {/* Origins Section */}
       <section className="relative py-16 md:py-24 px-5 md:px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-sable-doux" />
-        <div className="absolute inset-0 bg-gradient-to-b from-argile-clair/40 via-transparent to-parchemin/60" />
+        {/* CTA brown background */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #A1765A 0%, #CB9368 100%)' }} />
         
         {/* Top edge fade */}
-        <div className="absolute top-0 left-0 right-0 h-[60px] md:h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />
+        <div className="absolute top-0 left-0 right-0 h-[60px] md:h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />
         
-        <div className="absolute top-1/4 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-ocre-clair/10 rounded-full blur-[100px] md:blur-[150px]" />
+        <div className="absolute top-1/4 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-parchemin/12 rounded-full blur-[100px] md:blur-[150px]" />
         
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="flex flex-col lg:grid lg:grid-cols-5 gap-8 md:gap-12 items-center">
             {/* Image placeholder */}
             <div className="w-full max-w-[280px] mx-auto lg:max-w-none lg:col-span-2">
-              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-brun-racine/10 to-ocre-solaire/15 border border-brun-racine/20 shadow-warm flex items-center justify-center">
-                <span className="text-brun-racine/40 font-cormorant text-base md:text-lg">{t.storyPage.origins.image_placeholder}</span>
+              <div className="aspect-[3/4] rounded-2xl border shadow-warm flex items-center justify-center" style={{ background: 'linear-gradient(to bottom right, rgba(47, 27, 18, 0.12), rgba(138, 63, 30, 0.18))', borderColor: 'rgba(47, 27, 18, 0.25)' }}>
+                <span className="font-cormorant text-base md:text-lg" style={{ color: 'rgba(47, 27, 18, 0.50)' }}>{t.storyPage.origins.image_placeholder}</span>
               </div>
             </div>
             
             {/* Content */}
             <div className="lg:col-span-3 space-y-5 md:space-y-6 text-center lg:text-left">
-              <p className="text-xs md:text-sm font-cormorant text-sable-chaud tracking-[0.2em] md:tracking-[0.25em] uppercase">
+              <p className="text-xs md:text-sm font-cormorant tracking-[0.2em] md:tracking-[0.25em] uppercase" style={{ color: 'rgba(47, 27, 18, 0.70)' }}>
                 {t.storyPage.origins.subtitle}
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine leading-[1.25] md:leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold leading-[1.25] md:leading-tight" style={{ color: '#2F1B12' }}>
                 {t.storyPage.origins.title}
               </h2>
-              <div className="space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base">
+              <div className="space-y-5 md:space-y-5 leading-[1.8] md:leading-relaxed text-base" style={{ color: 'rgba(47, 27, 18, 0.85)' }}>
                 <p>{t.storyPage.origins.paragraph1}</p>
                 <p>{t.storyPage.origins.paragraph2}</p>
               </div>
@@ -103,32 +103,32 @@ const Story = () => {
 
       {/* Mission Section */}
       <section className="relative py-16 md:py-24 px-5 md:px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-argile-clair" />
-        <div className="absolute inset-0 bg-gradient-to-br from-sable-doux/60 via-transparent to-terre-douce/30" />
+        {/* CTA brown background */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #A1765A 0%, #CB9368 100%)' }} />
         
         {/* Top edge fade */}
-        <div className="absolute top-0 left-0 right-0 h-[60px] md:h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />
+        <div className="absolute top-0 left-0 right-0 h-[60px] md:h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />
         
-        <div className="absolute bottom-1/4 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-terre-claire/12 rounded-full blur-[100px] md:blur-[150px]" />
+        <div className="absolute bottom-1/4 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-terre-douce/15 rounded-full blur-[100px] md:blur-[150px]" />
         
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="flex flex-col lg:grid lg:grid-cols-5 gap-8 md:gap-12 items-center">
             {/* Content */}
             <div className="lg:col-span-3 space-y-5 md:space-y-6 order-2 lg:order-1 text-center lg:text-left">
-              <p className="text-xs md:text-sm font-cormorant text-sable-chaud tracking-[0.2em] md:tracking-[0.25em] uppercase">
+              <p className="text-xs md:text-sm font-cormorant tracking-[0.2em] md:tracking-[0.25em] uppercase" style={{ color: 'rgba(47, 27, 18, 0.70)' }}>
                 {t.storyPage.mission.subtitle}
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine leading-[1.25] md:leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold leading-[1.25] md:leading-tight" style={{ color: '#2F1B12' }}>
                 {t.storyPage.mission.title}
               </h2>
-              <div className="space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base">
+              <div className="space-y-5 md:space-y-5 leading-[1.8] md:leading-relaxed text-base" style={{ color: 'rgba(47, 27, 18, 0.85)' }}>
                 <p>{t.storyPage.mission.paragraph1}</p>
                 <p>{t.storyPage.mission.paragraph2}</p>
               </div>
               
               <div className="pt-4 flex items-center justify-center lg:justify-start gap-4">
-                <div className="w-10 md:w-12 h-px bg-ocre-solaire/60" />
-                <span className="text-terre-accent font-cormorant italic text-sm md:text-base">
+                <div className="w-10 md:w-12 h-px" style={{ backgroundColor: 'rgba(138, 63, 30, 0.60)' }} />
+                <span className="font-cormorant italic text-sm md:text-base" style={{ color: '#8A3F1E' }}>
                   {t.storyPage.mission.signature}
                 </span>
               </div>
@@ -136,8 +136,8 @@ const Story = () => {
             
             {/* Image placeholder */}
             <div className="w-full max-w-[240px] mx-auto lg:max-w-none lg:col-span-2 order-1 lg:order-2">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-bleu-profond/10 to-bleu-atmosphere/15 border border-bleu-cosmique/20 shadow-soft flex items-center justify-center">
-                <span className="text-bleu-cosmique/40 font-cormorant text-base md:text-lg">{t.storyPage.mission.image_placeholder}</span>
+              <div className="aspect-square rounded-2xl border shadow-soft flex items-center justify-center" style={{ background: 'linear-gradient(to bottom right, rgba(8, 59, 115, 0.12), rgba(8, 59, 115, 0.18))', borderColor: 'rgba(8, 59, 115, 0.25)' }}>
+                <span className="font-cormorant text-base md:text-lg" style={{ color: 'rgba(8, 59, 115, 0.50)' }}>{t.storyPage.mission.image_placeholder}</span>
               </div>
             </div>
           </div>
