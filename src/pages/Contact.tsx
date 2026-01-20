@@ -59,21 +59,21 @@ const Contact = () => {
 
       {/* Contact Methods Section */}
       <section className="relative py-14 md:py-24 px-5 md:px-6 overflow-hidden">
-        {/* CTA brown background */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #A1765A 0%, #CB9368 100%)' }} />
+        <div className="absolute inset-0 bg-sable-doux" />
+        <div className="absolute inset-0 bg-gradient-to-b from-argile-clair/40 via-transparent to-parchemin/60" />
         
         {/* Top edge fade */}
-        <div className="absolute top-0 left-0 right-0 h-[60px] md:h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />
+        <div className="absolute top-0 left-0 right-0 h-[60px] md:h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.05) 0%, transparent 100%)' }} />
         
-        <div className="absolute top-1/4 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-parchemin/12 rounded-full blur-[100px] md:blur-[150px]" />
-        <div className="absolute bottom-1/3 left-0 w-[200px] md:w-[350px] h-[200px] md:h-[350px] bg-terre-douce/10 rounded-full blur-[90px] md:blur-[130px]" />
+        <div className="absolute top-1/4 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-ocre-clair/10 rounded-full blur-[100px] md:blur-[150px]" />
+        <div className="absolute bottom-1/3 left-0 w-[200px] md:w-[350px] h-[200px] md:h-[350px] bg-terre-claire/8 rounded-full blur-[90px] md:blur-[130px]" />
         
         <div className="container mx-auto max-w-3xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold mb-3 md:mb-4 leading-[1.25]" style={{ color: '#2F1B12' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine mb-3 md:mb-4 leading-[1.25]">
               {t.contactPage.methods.title}
             </h2>
-            <p className="text-base md:text-lg max-w-xl mx-auto font-light leading-[1.7]" style={{ color: 'rgba(47, 27, 18, 0.75)' }}>
+            <p className="text-base md:text-lg text-foreground/70 max-w-xl mx-auto font-light leading-[1.7]">
               {t.contactPage.methods.description}
             </p>
           </div>
@@ -87,35 +87,30 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className={`group flex items-center gap-4 md:gap-6 p-5 md:p-6 rounded-2xl border transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-1 ${
                   method.primary
-                    ? "border-terre-accent/40 md:hover:border-terre-accent/70 md:hover:shadow-glow-gold"
-                    : "border-bleu-cosmique/30 md:hover:border-bleu-cosmique/60 md:hover:shadow-glow-blue"
+                    ? "bg-gradient-to-r from-brun-racine/10 to-ocre-solaire/15 border-ocre-solaire/30 md:hover:border-ocre-solaire/60 md:hover:shadow-glow-gold"
+                    : "bg-bleu-profond/5 border-bleu-cosmique/20 md:hover:border-bleu-cosmique/50 md:hover:shadow-glow-blue"
                 }`}
-                style={{ 
-                  background: method.primary 
-                    ? 'rgba(47, 27, 18, 0.12)' 
-                    : 'rgba(8, 59, 115, 0.10)',
-                  animationDelay: `${index * 100}ms` 
-                }}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${
                   method.primary
-                    ? "bg-terre-accent/25 text-terre-accent"
-                    : "bg-bleu-cosmique/20 text-bleu-cosmique"
+                    ? "bg-ocre-solaire/20 text-ocre-solaire"
+                    : "bg-bleu-cosmique/15 text-bleu-cosmique"
                 }`}>
                   <method.icon className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
                 
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg md:text-xl font-serif font-semibold group-hover:text-bleu-cosmique transition-colors" style={{ color: '#2F1B12' }}>
+                  <h3 className="text-lg md:text-xl font-serif font-semibold text-brun-racine group-hover:text-bleu-cosmique transition-colors">
                     {method.label}
                   </h3>
-                  <p className="text-sm md:text-base font-light leading-[1.6] truncate md:whitespace-normal" style={{ color: 'rgba(47, 27, 18, 0.70)' }}>
+                  <p className="text-sm md:text-base text-foreground/60 font-light leading-[1.6] truncate md:whitespace-normal">
                     {method.description}
                   </p>
                 </div>
                 
                 <span className={`text-xl md:text-2xl transition-transform group-hover:translate-x-1 flex-shrink-0 ${
-                  method.primary ? "text-terre-accent" : "text-bleu-cosmique"
+                  method.primary ? "text-ocre-solaire" : "text-bleu-cosmique"
                 }`}>
                   →
                 </span>

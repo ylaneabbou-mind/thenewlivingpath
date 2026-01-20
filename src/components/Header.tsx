@@ -41,10 +41,9 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "backdrop-blur-md shadow-warm"
-          : ""
+          ? "bg-sable-doux/95 backdrop-blur-md shadow-warm"
+          : "bg-sable-doux"
       )}
-      style={{ backgroundColor: isScrolled ? 'rgba(182, 133, 97, 0.95)' : '#B68561' }}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
@@ -54,7 +53,7 @@ const Header = () => {
             className="group flex items-center gap-3"
             onClick={handleNavClick}
           >
-            <span className="font-serif text-2xl lg:text-3xl font-semibold tracking-wide transition-colors duration-300 group-hover:text-bleu-cosmique" style={{ color: '#2F1B12' }}>
+            <span className="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-brun-racine transition-colors duration-300 group-hover:text-bleu-cosmique">
               Ylane
             </span>
           </Link>
@@ -69,10 +68,9 @@ const Header = () => {
                 className={cn(
                   "font-cormorant text-lg tracking-wide relative py-2 transition-colors duration-300",
                   isActive(item.href)
-                    ? "text-bleu-cosmique"
-                    : "hover:text-bleu-cosmique"
+                    ? "text-ocre-solaire"
+                    : "text-brun-racine hover:text-bleu-cosmique"
                 )}
-                style={{ color: isActive(item.href) ? undefined : '#2F1B12' }}
               >
                 {t.nav[item.key]}
                 {/* Animated underline */}
@@ -94,8 +92,7 @@ const Header = () => {
             <LanguageSelector />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md hover:text-bleu-cosmique hover:bg-bleu-cosmique/10 transition-colors duration-300"
-              style={{ color: '#2F1B12' }}
+              className="p-2 rounded-md text-brun-racine hover:text-bleu-cosmique hover:bg-bleu-cosmique/5 transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -111,12 +108,11 @@ const Header = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "lg:hidden overflow-hidden transition-all duration-500 ease-in-out backdrop-blur-md",
+          "lg:hidden overflow-hidden transition-all duration-500 ease-in-out bg-sable-doux/98 backdrop-blur-md",
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
-        style={{ backgroundColor: 'rgba(182, 133, 97, 0.98)' }}
       >
-        <nav className="container mx-auto px-6 py-6 flex flex-col gap-4" style={{ background: 'linear-gradient(to bottom, #B68561, rgba(161, 118, 90, 0.5))' }}>
+        <nav className="container mx-auto px-6 py-6 flex flex-col gap-4 bg-gradient-to-b from-sable-doux to-argile-clair/50">
           {navItems.map((item, index) => (
             <Link
               key={item.key}
@@ -125,10 +121,12 @@ const Header = () => {
               className={cn(
                 "font-cormorant text-xl tracking-wide py-3 px-4 rounded-md transition-all duration-300",
                 isActive(item.href)
-                  ? "text-bleu-cosmique bg-bleu-cosmique/10"
-                  : "hover:text-bleu-cosmique hover:bg-bleu-cosmique/10"
+                  ? "text-ocre-solaire bg-ocre-solaire/5"
+                  : "text-brun-racine hover:text-bleu-cosmique hover:bg-bleu-cosmique/5"
               )}
-              style={{ color: isActive(item.href) ? undefined : '#2F1B12' }}
+              style={{
+                animationDelay: `${index * 50}ms`,
+              }}
             >
               {t.nav[item.key]}
             </Link>

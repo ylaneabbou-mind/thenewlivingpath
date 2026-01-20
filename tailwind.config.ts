@@ -63,11 +63,7 @@ export default {
         "terre-claire": "hsl(var(--terre-claire))",
         "ivoire-cosmique": "hsl(var(--ivoire-cosmique))",
         "gris-lune": "hsl(var(--gris-lune))",
-        // CTA Brown Backgrounds
-        "cta-brun": "hsl(var(--cta-brun))",
-        "cta-brun-start": "hsl(var(--cta-brun-start))",
-        "cta-brun-end": "hsl(var(--cta-brun-end))",
-        // Warm Grounded Earth Backgrounds (now CTA-based)
+        // Warm Grounded Earth Backgrounds
         "sable-doux": "hsl(var(--sable-doux))",
         "argile-clair": "hsl(var(--argile-clair))",
         "parchemin": "hsl(var(--parchemin))",
