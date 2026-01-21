@@ -14,7 +14,7 @@ const Header = () => {
   const navItems = [
     { key: "home" as const, href: "/" },
     { key: "histoire" as const, href: "/story" },
-    { key: "services" as const, href: "/#services" },
+    { key: "services" as const, href: "/services" },
     { key: "ressources" as const, href: "/resources" },
     { key: "contact" as const, href: "/contact" },
   ];

@@ -34,6 +34,24 @@ type TranslationSchema = {
     coming_soon: { badge: string; title: string; description: string };
     newsletter: { title: string; description: string; note: string };
   };
+  servicesPage: {
+    hero: { subtitle: string; title: string; description: string };
+    catalog_section: { subtitle: string; title: string; note: string };
+    catalog: Array<{ slug: string; title: string; subtitle: string; description: string; cta: string }>;
+    details: Array<{
+      tagline: string;
+      what: { title: string; paragraph1: string; paragraph2: string };
+      who: { title: string; items: string[] };
+      transformation: { title: string; quote: string; paragraph1: string; paragraph2: string };
+      how: { title: string; steps: Array<{ title: string; description: string }> };
+      cta: { title: string; description: string; button: string };
+    }>;
+    detail_page: {
+      back: string;
+      sections: { what: string; who: string; transformation: string; how: string };
+    };
+    cta: { title: string; description: string; button: string };
+  };
 };
 
 export const translations: Record<Language, TranslationSchema> = {
@@ -278,6 +296,91 @@ export const translations: Record<Language, TranslationSchema> = {
         note: "Subscribe through the newsletter on the home page to stay connected.",
       },
     },
+    
+    // Services Page
+    servicesPage: {
+      hero: {
+        subtitle: "Sacred Offerings",
+        title: "Pathways to Transformation",
+        description: "Each offering is designed to meet you where you are, honoring both your groundedness and your expansion.",
+      },
+      catalog_section: {
+        subtitle: "Ways to Work Together",
+        title: "Choose Your Path",
+        note: "More offerings will be available soon. Each path is crafted with intention.",
+      },
+      catalog: [
+        {
+          slug: "vision-alignment",
+          title: "Vision Alignment",
+          subtitle: "1:1 Guidance Sessions",
+          description: "Deep transformational sessions to clarify your path, release what no longer serves, and align with your authentic direction.",
+          cta: "Explore This Path",
+        },
+      ],
+      details: [
+        {
+          tagline: "A sacred space to remember who you truly are.",
+          what: {
+            title: "What This Service Is",
+            paragraph1: "Vision Alignment is a deeply personal, one-on-one guidance experience. Through intuitive presence and grounded practices, we create a sacred space where you can reconnect with your authentic self and clarify your life's direction.",
+            paragraph2: "This is not coaching in the traditional sense. It's a journey of remembering — peeling away the layers of conditioning to reveal the truth that has always lived within you.",
+          },
+          who: {
+            title: "This Path Is For You If",
+            items: [
+              "You feel called to something deeper but can't quite name it",
+              "You're navigating a significant life transition or crossroads",
+              "You sense there's more to life than what you've been living",
+              "You're ready to release old patterns that no longer serve you",
+              "You seek clarity, alignment, and a deeper connection to your purpose",
+            ],
+          },
+          transformation: {
+            title: "The Transformation",
+            quote: "True transformation begins when we stop trying to become someone new and start remembering who we've always been.",
+            paragraph1: "Through our work together, you'll cultivate a profound trust in your own inner knowing. The noise of external expectations quiets, and you begin to hear the voice of your authentic self — clear, calm, and unwavering.",
+            paragraph2: "This isn't about dramatic change. It's about coming home to yourself. About moving through life with a sense of groundedness and possibility that feels both ancient and entirely new.",
+          },
+          how: {
+            title: "How It Works",
+            steps: [
+              {
+                title: "Initial Connection",
+                description: "We begin with a conversation to understand where you are and what's calling you forward.",
+              },
+              {
+                title: "Sacred Sessions",
+                description: "Through 1:1 sessions, we work with intuition, presence, and grounded practices to illuminate your path.",
+              },
+              {
+                title: "Integration",
+                description: "Between sessions, you'll receive practices and reflections to deepen your journey.",
+              },
+            ],
+          },
+          cta: {
+            title: "Ready to Begin?",
+            description: "If something in these words resonates with you, perhaps it's time for us to connect.",
+            button: "Start the Conversation",
+          },
+        },
+      ],
+      detail_page: {
+        back: "Back to Services",
+        sections: {
+          what: "The Offering",
+          who: "Who It's For",
+          transformation: "The Journey",
+          how: "The Process",
+        },
+      },
+      cta: {
+        title: "Not Sure Where to Start?",
+        description: "If you're feeling the call but unsure which path is right for you, reach out. We can explore together.",
+        button: "Let's Connect",
+      },
+    },
   },
   
   fr: {
@@ -519,6 +622,91 @@ export const translations: Record<Language, TranslationSchema> = {
         title: "Soyez les Premiers Informés",
         description: "Rejoignez le cercle intérieur et recevez les nouveaux écrits directement dans votre boîte mail quand ils seront prêts.",
         note: "Inscrivez-vous via la newsletter sur la page d'accueil pour rester connectée.",
+      },
+    },
+    
+    // Services Page
+    servicesPage: {
+      hero: {
+        subtitle: "Offrandes Sacrées",
+        title: "Chemins vers la Transformation",
+        description: "Chaque offrande est conçue pour vous rencontrer là où vous êtes, honorant à la fois votre ancrage et votre expansion.",
+      },
+      catalog_section: {
+        subtitle: "Travailler Ensemble",
+        title: "Choisissez Votre Chemin",
+        note: "D'autres offrandes seront bientôt disponibles. Chaque chemin est créé avec intention.",
+      },
+      catalog: [
+        {
+          slug: "vision-alignment",
+          title: "Alignement de Vision",
+          subtitle: "Séances de Guidance 1:1",
+          description: "Des séances transformationnelles profondes pour clarifier votre chemin, libérer ce qui ne vous sert plus, et vous aligner avec votre direction authentique.",
+          cta: "Explorer Ce Chemin",
+        },
+      ],
+      details: [
+        {
+          tagline: "Un espace sacré pour vous souvenir de qui vous êtes vraiment.",
+          what: {
+            title: "Ce Qu'est Ce Service",
+            paragraph1: "L'Alignement de Vision est une expérience de guidance profondément personnelle, en tête-à-tête. À travers une présence intuitive et des pratiques ancrées, nous créons un espace sacré où vous pouvez vous reconnecter avec votre moi authentique et clarifier la direction de votre vie.",
+            paragraph2: "Ce n'est pas du coaching au sens traditionnel. C'est un voyage de souvenance — retirer les couches de conditionnement pour révéler la vérité qui a toujours vécu en vous.",
+          },
+          who: {
+            title: "Ce Chemin Est Pour Vous Si",
+            items: [
+              "Vous vous sentez appelée vers quelque chose de plus profond mais ne pouvez pas tout à fait le nommer",
+              "Vous naviguez une transition de vie significative ou un carrefour",
+              "Vous sentez qu'il y a plus dans la vie que ce que vous avez vécu",
+              "Vous êtes prête à libérer les anciens schémas qui ne vous servent plus",
+              "Vous cherchez la clarté, l'alignement et une connexion plus profonde avec votre but",
+            ],
+          },
+          transformation: {
+            title: "La Transformation",
+            quote: "La vraie transformation commence quand nous arrêtons d'essayer de devenir quelqu'un de nouveau et commençons à nous souvenir de qui nous avons toujours été.",
+            paragraph1: "À travers notre travail ensemble, vous cultiverez une confiance profonde en votre propre connaissance intérieure. Le bruit des attentes extérieures s'apaise, et vous commencez à entendre la voix de votre moi authentique — claire, calme et inébranlable.",
+            paragraph2: "Il ne s'agit pas de changement dramatique. Il s'agit de revenir à vous-même. De traverser la vie avec un sentiment d'ancrage et de possibilité qui semble à la fois ancien et entièrement nouveau.",
+          },
+          how: {
+            title: "Comment Ça Fonctionne",
+            steps: [
+              {
+                title: "Connexion Initiale",
+                description: "Nous commençons par une conversation pour comprendre où vous êtes et ce qui vous appelle.",
+              },
+              {
+                title: "Séances Sacrées",
+                description: "À travers des séances 1:1, nous travaillons avec l'intuition, la présence et des pratiques ancrées pour illuminer votre chemin.",
+              },
+              {
+                title: "Intégration",
+                description: "Entre les séances, vous recevrez des pratiques et des réflexions pour approfondir votre voyage.",
+              },
+            ],
+          },
+          cta: {
+            title: "Prête à Commencer ?",
+            description: "Si quelque chose dans ces mots résonne en vous, peut-être est-il temps pour nous de nous connecter.",
+            button: "Commencer la Conversation",
+          },
+        },
+      ],
+      detail_page: {
+        back: "Retour aux Services",
+        sections: {
+          what: "L'Offrande",
+          who: "Pour Qui",
+          transformation: "Le Voyage",
+          how: "Le Processus",
+        },
+      },
+      cta: {
+        title: "Pas Sûre Par Où Commencer ?",
+        description: "Si vous ressentez l'appel mais n'êtes pas sûre quel chemin vous convient, contactez-moi. Nous pouvons explorer ensemble.",
+        button: "Connectons-nous",
       },
     },
   },
