@@ -3,88 +3,62 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const About = () => {
   const { t } = useLanguage();
 
-  // Test colors for #F4B57B background - easily reversible
-  const testColors = {
-    heading: "#2A160C",
-    body: "rgba(42, 22, 12, 0.88)",
-    label: "rgba(42, 22, 12, 0.65)",
-    accentBlue: "#083B73",
-    accentOrange: "#8A3F1E",
-  };
-
   return (
-    <section 
-      className="relative py-36 md:py-40 px-6 overflow-hidden"
-      style={{ backgroundColor: "#F4B57B" }}
-    >
-      {/* Soft top transition */}
-      <div className="absolute top-0 left-0 right-0 h-[40px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(243,234,226,0.3) 0%, transparent 100%)' }} />
+    <section className="relative py-32 px-6 overflow-hidden">
+      {/* Cosmic Stellar Flow background */}
+      <div className="absolute inset-0 bg-gradient-stellar" />
       
-      {/* Soft bottom transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-[40px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(243,234,226,0.3) 0%, transparent 100%)' }} />
+      {/* Top edge fade - blends with earth section above */}
+      <div className="absolute top-0 left-0 right-0 h-[90px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(243,234,226,0.07) 0%, transparent 100%)' }} />
+      
+      {/* Bottom edge fade - prepares for earth section below */}
+      <div className="absolute bottom-0 left-0 right-0 h-[90px] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(243,234,226,0.06) 0%, transparent 100%)' }} />
+      
+      {/* Cosmic glow effects */}
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-bleu-atmosphere/25 rounded-full blur-[200px] animate-glow-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-bleu-profond/30 rounded-full blur-[150px]" />
+      <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-ocre-solaire/15 rounded-full blur-[120px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Photo placeholder */}
+          {/* Photo placeholder - floating card effect */}
           <div className="relative">
-            <div 
-              className="aspect-[4/5] rounded-2xl border overflow-hidden"
-              style={{ 
-                backgroundColor: "rgba(42, 22, 12, 0.08)",
-                borderColor: "rgba(42, 22, 12, 0.15)"
-              }}
-            >
-              <div 
-                className="w-full h-full flex items-center justify-center font-cormorant text-lg"
-                style={{ color: testColors.label }}
-              >
+            <div className="aspect-[4/5] rounded-2xl bg-ivoire-cosmique/10 backdrop-blur-md border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/50 font-cormorant text-lg">
                 {t.about.image_placeholder}
               </div>
             </div>
-            {/* Subtle decorative accent */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full blur-3xl" style={{ backgroundColor: "rgba(138, 63, 30, 0.2)" }} />
+            {/* Decorative glowing accent */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-ocre-solaire/40 blur-3xl animate-glow-pulse" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full bg-bleu-atmosphere/30 blur-2xl" />
           </div>
 
-          {/* Content with test typography */}
-          <div className="space-y-8">
-            <p 
-              className="text-sm font-cormorant tracking-[0.25em] uppercase"
-              style={{ color: testColors.label }}
-            >
+          {/* Content */}
+          <div className="space-y-8 text-ivoire-cosmique">
+            <p className="text-sm font-cormorant tracking-[0.25em] uppercase text-ocre-clair">
               {t.about.subtitle}
             </p>
             
-            <h2 
-              className="text-4xl md:text-5xl font-serif font-semibold leading-tight"
-              style={{ color: testColors.heading }}
-            >
+            <h2 className="text-4xl md:text-5xl font-serif font-semibold leading-tight">
               {t.about.title_line1}
-              <span className="block" style={{ color: testColors.accentOrange }}>
-                {t.about.title_line2}
-              </span>
+              <span className="block text-ocre-clair">{t.about.title_line2}</span>
             </h2>
             
-            <div className="space-y-5 leading-relaxed">
-              <p 
-                className="font-cormorant text-xl italic"
-                style={{ color: testColors.accentOrange }}
-              >
+            <div className="space-y-5 text-ivoire-cosmique/85 leading-relaxed">
+              <p className="font-cormorant text-xl italic text-ocre-clair/90">
                 {t.about.quote}
               </p>
               
-              <p style={{ color: testColors.body }}>{t.about.paragraph1}</p>
+              <p>{t.about.paragraph1}</p>
               
-              <p style={{ color: testColors.body }}>{t.about.paragraph2}</p>
+              <p>{t.about.paragraph2}</p>
               
-              <p style={{ color: testColors.body }}>{t.about.paragraph3}</p>
+              <p>{t.about.paragraph3}</p>
             </div>
 
             <div className="pt-4 flex items-center gap-4">
-              <div className="w-12 h-px" style={{ backgroundColor: testColors.accentOrange }} />
-              <span 
-                className="font-cormorant italic"
-                style={{ color: testColors.accentOrange }}
-              >
+              <div className="w-12 h-px bg-ocre-solaire/60" />
+              <span className="text-ocre-clair font-cormorant italic">
                 {t.about.signature}
               </span>
             </div>
