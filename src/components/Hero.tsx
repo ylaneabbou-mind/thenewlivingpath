@@ -21,7 +21,7 @@ const Hero = () => {
       {/* Bottom edge fade for seamless transition */}
       <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(243,234,226,0.08) 0%, transparent 100%)' }} />
       
-      <div className="container relative z-10 px-6 pt-24 md:pt-20 pb-20 mx-auto">
+      <div className="container relative z-10 px-6 pt-24 md:pt-32 lg:pt-40 pb-20 mx-auto">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Portrait placeholder */}
           <div className="w-44 h-44 mx-auto mb-10 rounded-full bg-gradient-to-br from-ivoire-cosmique/20 to-ocre-clair/30 border-2 border-ivoire-cosmique/30 shadow-glow-gold overflow-hidden animate-float backdrop-blur-sm">
