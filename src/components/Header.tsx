@@ -45,28 +45,28 @@ const Header = () => {
           : "bg-sable-doux"
       )}
     >
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+      <div className="container mx-auto px-5 lg:px-10">
+        <div className="flex items-center justify-between h-14 md:h-16 lg:h-[72px]">
           {/* Logo / Brand */}
           <Link
             to="/"
-            className="group flex items-center gap-3"
+            className="group flex items-center gap-2"
             onClick={handleNavClick}
           >
-            <span className="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-brun-racine transition-colors duration-300 group-hover:text-bleu-cosmique">
+            <span className="font-serif text-xl md:text-2xl lg:text-[1.65rem] font-semibold tracking-wide text-brun-racine transition-colors duration-300 group-hover:text-bleu-cosmique">
               Ylane
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 to={item.href}
                 onClick={handleNavClick}
                 className={cn(
-                  "font-cormorant text-lg tracking-wide relative py-2 transition-colors duration-300",
+                  "font-cormorant text-base lg:text-[1.05rem] tracking-wide relative py-1 transition-colors duration-300",
                   isActive(item.href)
                     ? "text-ocre-solaire"
                     : "text-brun-racine hover:text-bleu-cosmique"
@@ -112,14 +112,14 @@ const Header = () => {
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <nav className="container mx-auto px-6 py-6 flex flex-col gap-4 bg-gradient-to-b from-sable-doux to-argile-clair/50">
+        <nav className="container mx-auto px-5 py-4 flex flex-col gap-2 bg-gradient-to-b from-sable-doux to-argile-clair/50">
           {navItems.map((item, index) => (
             <Link
               key={item.key}
               to={item.href}
               onClick={handleNavClick}
               className={cn(
-                "font-cormorant text-xl tracking-wide py-3 px-4 rounded-md transition-all duration-300",
+                "font-cormorant text-lg tracking-wide py-2.5 px-4 rounded-md transition-all duration-300",
                 isActive(item.href)
                   ? "text-ocre-solaire bg-ocre-solaire/5"
                   : "text-brun-racine hover:text-bleu-cosmique hover:bg-bleu-cosmique/5"
