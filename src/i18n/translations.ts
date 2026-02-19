@@ -64,41 +64,41 @@ export const translations: Record<Language, TranslationSchema> = {
       ressources: "Resources",
       contact: "Contact",
     },
-    
+
     // Hero
     hero: {
       tagline: "Transformational Guidance",
       title_line1: "Grounded in Earth,",
       title_line2: "Aligned with the Stars",
-      description: "Guiding you to realign with your True nature through a deep reconnection with the body's Wisdom by surrendering to life",
+      description: "Guiding you to realign with your True nature through a deep reconnection with the body's Wisdom by surrendering to life.",
       cta_primary: "Begin Your Journey",
       cta_secondary: "Discover the Path",
       portrait_placeholder: "Your Portrait",
     },
-    
+
     // Mission
     mission: {
       subtitle: "The Vision",
       title_line1: "Where Earth Meets",
       title_line2: "Infinite Possibility",
       quote: '"True transformation begins when we step out of the strategic mind and allow life\'s infinite possibilities to meet us."',
-      description1: "Ylane creates a sacred space where you reconnect with your authentic self — grounded in the wisdom of the body, yet open to the vast possibilities that await when you align with your highest vision.",
-      description2: "This is not about becoming someone new. It's about remembering who you've always been.",
+      description1: "Ylane creates a sacred space where you can release the conditioning that has shaped you since birth and step into a new way of living guided by your body’s intelligence.",
+      description2: "This is not about becoming someone New. It's about remembering who you've always been.",
     },
-    
+
     // About
     about: {
-      subtitle: "About Ylane",
-      title_line1: "A Guide Between",
+      subtitle: "ABOUT YLANE",
+      title_line1: "A guide Between",
       title_line2: "Worlds",
-      quote: "Rooted in the earth, reaching for the infinite.",
-      paragraph1: "With years of deep inner work and guided transformation, I have walked the path of remembrance — learning to honor both the grounded wisdom of the body and the expansive clarity of cosmic vision.",
-      paragraph2: "My purpose is to hold space for your own journey home. Through presence, intuition, and sacred practices, I guide you to reconnect with the truth that lives within you — waiting to be remembered.",
-      paragraph3: "Whether you seek clarity in times of transition, alignment with your life's purpose, or simply a deeper sense of peace, you are welcome here.",
-      signature: "In service to your awakening",
+      quote: "Rooted in the Earth, reaching for the Infinite.",
+      paragraph1: "Through years of deep inner work and radical transformation, I have learned to walk a new way of being. A path where honoring the body’s intelligence is Key.",
+      paragraph2: "I jumped into the unknown, letting go of the need to control my life with the mind. My purpose is to hold space for your journey home. Through presence, intuition, and sacred practices, I guide you to reconnect with the truth that dwells within, waiting to be awakened.",
+      paragraph3: "Whether you are seeking clarity in times of change, alignment with your life’s purpose, or a deeper sense of peace, you are welcome here.",
+      signature: "I am in service to your awakening.",
       image_placeholder: "Your Image",
     },
-    
+
     // Offerings
     offerings: {
       subtitle: "Sacred Offerings",
@@ -107,32 +107,20 @@ export const translations: Record<Language, TranslationSchema> = {
       description: "Each offering is designed to meet you where you are, honoring both your groundedness and your expansion",
       items: [
         {
-          title: "Vision Alignment",
+          title: "Individual 1:1 Guidance Sessions",
           subtitle: "1:1 Guidance Sessions",
-          description: "Deep transformational sessions to clarify your path, release what no longer serves, and align with your authentic direction.",
+          description: "This offering is a journey in itself, designed to support you in creating a real structure in your life and establish a solid foundation so you can move through life with greater ease, clarity and direction.",
           cta: "Learn More",
         },
         {
-          title: "Soul Readings",
-          subtitle: "Intuitive Clarity",
-          description: "Receive insight and guidance from the field of infinite wisdom. Understand the deeper patterns shaping your journey.",
+          title: "4-Week Transformational Journey",
+          subtitle: "Personalized Support",
+          description: "Over the course of these four sessions, you will receive my personal and dedicated guidance, supported by practical tools and insights I have gathered and embodied through my own path.",
           cta: "Discover",
-        },
-        {
-          title: "Group Journeys",
-          subtitle: "Collective Transformation",
-          description: "Join intimate gatherings where we explore consciousness together, supported by the power of collective intention.",
-          cta: "View Programs",
-        },
-        {
-          title: "Embodiment Work",
-          subtitle: "Grounding Practices",
-          description: "Reconnect with the wisdom of your body through somatic practices, breathwork, and earth-based rituals.",
-          cta: "Explore",
         },
       ],
     },
-    
+
     // Testimonials
     testimonials: {
       subtitle: "Words of Transformation",
@@ -156,7 +144,7 @@ export const translations: Record<Language, TranslationSchema> = {
         },
       ],
     },
-    
+
     // Blog
     blog: {
       subtitle: "Transmissions",
@@ -185,7 +173,7 @@ export const translations: Record<Language, TranslationSchema> = {
         },
       ],
     },
-    
+
     // Newsletter
     newsletter: {
       subtitle: "Stay Connected",
@@ -196,7 +184,7 @@ export const translations: Record<Language, TranslationSchema> = {
       cta: "Join the Circle",
       privacy: "Your journey is sacred. We honor your inbox with care.",
     },
-    
+
     // Footer
     footer: {
       tagline: "Transformational guidance for those ready to remember their true nature.",
@@ -210,7 +198,7 @@ export const translations: Record<Language, TranslationSchema> = {
       made_with: "Made with",
       and_intention: "and intention",
     },
-    
+
     // Story Page
     storyPage: {
       hero: {
@@ -247,7 +235,7 @@ export const translations: Record<Language, TranslationSchema> = {
         button: "Reach Out",
       },
     },
-    
+
     // Contact Page
     contactPage: {
       hero: {
@@ -277,7 +265,7 @@ export const translations: Record<Language, TranslationSchema> = {
         signature: "Looking forward to meeting you",
       },
     },
-    
+
     // Resources Page
     resourcesPage: {
       hero: {
@@ -296,7 +284,7 @@ export const translations: Record<Language, TranslationSchema> = {
         note: "Subscribe through the newsletter on the home page to stay connected.",
       },
     },
-    
+
     // Services Page
     servicesPage: {
       hero: {
@@ -312,10 +300,17 @@ export const translations: Record<Language, TranslationSchema> = {
       catalog: [
         {
           slug: "vision-alignment",
-          title: "Vision Alignment",
+          title: "Individual 1:1 Guidance Sessions",
           subtitle: "1:1 Guidance Sessions",
-          description: "Deep transformational sessions to clarify your path, release what no longer serves, and align with your authentic direction.",
+          description: "This offering is a journey in itself, designed to support you in creating a real structure in your life and establish a solid foundation so you can move through life with greater ease, clarity and direction.",
           cta: "Explore This Path",
+        },
+        {
+          slug: "transformational-journey",
+          title: "4-Week Transformational Journey",
+          subtitle: "Personalized Guidance & Support",
+          description: "Over the course of these four sessions, you will receive my personal and dedicated guidance, supported by practical tools and insights I have gathered and embodied through my own path.",
+          cta: "Begin Your Journey",
         },
       ],
       details: [
@@ -323,7 +318,7 @@ export const translations: Record<Language, TranslationSchema> = {
           tagline: "A sacred space to remember who you truly are.",
           what: {
             title: "What This Service Is",
-            paragraph1: "Vision Alignment is a deeply personal, one-on-one guidance experience. Through intuitive presence and grounded practices, we create a sacred space where you can reconnect with your authentic self and clarify your life's direction.",
+            paragraph1: "Individual 1:1 Guidance Sessions are a journey in themselves, designed to support you in creating a real structure in your life and establish a solid foundation so you can move through life with greater ease, clarity and direction.",
             paragraph2: "This is not coaching in the traditional sense. It's a journey of remembering — peeling away the layers of conditioning to reveal the truth that has always lived within you.",
           },
           who: {
@@ -365,6 +360,51 @@ export const translations: Record<Language, TranslationSchema> = {
             button: "Start the Conversation",
           },
         },
+        {
+          tagline: "Dedicated support to embody your radical transformation.",
+          what: {
+            title: "What This Journey Is",
+            paragraph1: "The 4-Week Transformational Journey is a deep dive into your inner landscape. Over four focused sessions, we work closely together to navigate the blocks and openings that arise as you step into a new way of being.",
+            paragraph2: "This is a dedicated containers for those ready to move beyond insight and into the lived reality of their truth.",
+          },
+          who: {
+            title: "This Journey Is For You If",
+            items: [
+              "You are ready for consistent, focused support over a dedicated period",
+              "You want practical tools to integrate transformation into your daily life",
+              "You feel the call to dive deeper into the body's wisdom",
+              "You are navigating a period of intense change and seeking a grounded anchor",
+            ],
+          },
+          transformation: {
+            title: "The Shift",
+            quote: "Transformation is not a destination, but a way of walking through the world.",
+            paragraph1: "By the end of these four weeks, you'll have established a new baseline of presence and trust. The tools we explore become part of your own wisdom, allowing you to sustain your alignment long after our sessions end.",
+            paragraph2: "This is about building the capacity to stay present with yourself through all the seasons of your awakening.",
+          },
+          how: {
+            title: "The Path",
+            steps: [
+              {
+                title: "Week 1: Foundations",
+                description: "Grounding into your current reality and identifying the core intentions for our work.",
+              },
+              {
+                title: "Week 2 & 3: Deepening",
+                description: "Moving through layers of conditioning and opening to the body's intelligence.",
+              },
+              {
+                title: "Week 4: Integration",
+                description: "Establishing practices and rhythms to sustain your transformation in the world.",
+              },
+            ],
+          },
+          cta: {
+            title: "Ready to Dive Deep?",
+            description: "If you feel the call for dedicated support, let's explore if this journey is right for you.",
+            button: "Apply for the Journey",
+          },
+        },
       ],
       detail_page: {
         back: "Back to Services",
@@ -382,7 +422,7 @@ export const translations: Record<Language, TranslationSchema> = {
       },
     },
   },
-  
+
   fr: {
     // Navigation
     nav: {
@@ -392,41 +432,41 @@ export const translations: Record<Language, TranslationSchema> = {
       ressources: "Ressources",
       contact: "Contact",
     },
-    
+
     // Hero
     hero: {
       tagline: "Guidance Transformationnelle",
-      title_line1: "Enracinée dans la Terre,",
-      title_line2: "Alignée avec les Étoiles",
-      description: "Je vous guide pour vous réaligner avec votre Vraie nature à travers une reconnexion profonde avec la Sagesse du corps en s'abandonnant à la vie",
+      title_line1: "Enraciné dans la terre,",
+      title_line2: "Aligné avec les étoiles",
+      description: "Je te guide à te réaligner avec ta vraie nature, par une reconnexion profonde à la sagesse du corps, en apprenant à déposer les armes face à la VIE.",
       cta_primary: "Commencer Votre Voyage",
       cta_secondary: "Découvrir le Chemin",
       portrait_placeholder: "Votre Portrait",
     },
-    
+
     // Mission
     mission: {
       subtitle: "La Vision",
-      title_line1: "Là où la Terre Rencontre",
-      title_line2: "L'Infini Possible",
-      quote: '"La vraie transformation commence quand nous sortons du mental stratégique et permettons aux possibilités infinies de la vie de nous rencontrer."',
-      description1: "Ylane crée un espace sacré où vous vous reconnectez avec votre moi authentique — ancré dans la sagesse du corps, tout en restant ouvert aux vastes possibilités qui vous attendent lorsque vous vous alignez avec votre vision la plus élevée.",
-      description2: "Il ne s'agit pas de devenir quelqu'un de nouveau. Il s'agit de vous souvenir de qui vous avez toujours été.",
+      title_line1: "Là où la Terre",
+      title_line2: "Rencontre Le Monde des Possibles",
+      quote: '"La véritable transformation naît lorsque nous quittons l’aspect stratégique du mental, et que le cœur s’ouvre aux possibilités infinies que la vie a à nous offrir."',
+      description1: "Ylane crée un espace sacré dans lequel tu peux te défaire des conditionnements qui t’ont façonné depuis la naissance, et apprendre à naviguer avec plus d’aisance, de fluidité, guidé par l’intelligence innée de ton corps.",
+      description2: "Il ne s’agit pas de changer qui tu es, mais de te reconnecter à ton essence originelle.",
     },
-    
+
     // About
     about: {
-      subtitle: "À Propos d'Ylane",
-      title_line1: "Un Guide Entre",
-      title_line2: "Les Mondes",
-      quote: "Enracinée dans la terre, atteignant l'infini.",
-      paragraph1: "Avec des années de travail intérieur profond et de transformation guidée, j'ai parcouru le chemin du souvenir — apprenant à honorer à la fois la sagesse ancrée du corps et la clarté expansive de la vision cosmique.",
-      paragraph2: "Mon but est de tenir l'espace pour votre propre voyage de retour. À travers la présence, l'intuition et les pratiques sacrées, je vous guide pour vous reconnecter avec la vérité qui vit en vous — attendant d'être retrouvée.",
-      paragraph3: "Que vous cherchiez la clarté en période de transition, l'alignement avec le but de votre vie, ou simplement un sentiment plus profond de paix, vous êtes la bienvenue ici.",
-      signature: "Au service de votre éveil",
+      subtitle: "À PROPOS DE YLANE",
+      title_line1: "Un guide entre les",
+      title_line2: "Mondes",
+      quote: "Ancré dans la Terre, tourné vers le Ciel.",
+      paragraph1: "Après des années de longs voyages intérieurs et de transformations radicales, j’ai appris à naviguer dans ce monde avec un autre rythme. Un chemin où le corps guide et les souffles de la vie sont entendus.",
+      paragraph2: "J’ai sauté dans l’inconnu en lâchant le besoin de contrôler ma vie au travers du prisme du mental. Ma mission est de t’accompagner vers un retour à la maison. Par la présence, le ressenti et la vision, je te guide à te reconnecter à la vérité qui sommeille en toi.",
+      paragraph3: "Que tu traverses une période de changements, que tu cherches plus de clarté, un alignement avec ce qui a du sens, ce qui compte vraiment, ou simplement plus de bien-être et de sérénité, tu es le bienvenu dans cet espace.",
+      signature: "Je suis ici à ton service.",
       image_placeholder: "Votre Image",
     },
-    
+
     // Offerings
     offerings: {
       subtitle: "Offrandes Sacrées",
@@ -435,32 +475,26 @@ export const translations: Record<Language, TranslationSchema> = {
       description: "Chaque offrande est conçue pour vous rencontrer là où vous êtes, honorant à la fois votre ancrage et votre expansion",
       items: [
         {
-          title: "Alignement de Vision",
-          subtitle: "Séances de Guidance 1:1",
-          description: "Des séances transformationnelles profondes pour clarifier votre chemin, libérer ce qui ne vous sert plus, et vous aligner avec votre direction authentique.",
+          title: "Chemin de Réalignement",
+          subtitle: "Guidance Intuitive",
+          description: "Chaque espace de guidance est pensé pour te rejoindre exactement là où tu en es, en honorant ton unicité et tes besoins du moment.",
           cta: "En Savoir Plus",
         },
         {
-          title: "Lectures de l'Âme",
-          subtitle: "Clarté Intuitive",
-          description: "Recevez des insights et des guidances du champ de la sagesse infinie. Comprenez les schémas profonds qui façonnent votre voyage.",
+          title: "4× Sessions de guidance individuelle",
+          subtitle: "Séances de Guidance 1:1",
+          description: "Cet accompagnement est un voyage à part entière. Il te guide à créer une structure juste dans ta vie, à ancrer des fondations stables et solides.",
           cta: "Découvrir",
         },
         {
-          title: "Voyages de Groupe",
-          subtitle: "Transformation Collective",
-          description: "Rejoignez des rassemblements intimes où nous explorons la conscience ensemble, soutenus par la puissance de l'intention collective.",
-          cta: "Voir les Programmes",
-        },
-        {
-          title: "Travail d'Incarnation",
-          subtitle: "Pratiques d'Ancrage",
-          description: "Reconnectez-vous à la sagesse de votre corps à travers des pratiques somatiques, le travail du souffle et des rituels terrestres.",
-          cta: "Explorer",
+          title: "Chemin de retour à Soi (4 semaines)",
+          subtitle: "Voyage Intérieur",
+          description: "Au fil de ces 4 sessions, je t’emmène pas à pas vers un retour à ton essence, au travers d’une guidance personnalisée attentive.",
+          cta: "Voir le Programme",
         },
       ],
     },
-    
+
     // Testimonials
     testimonials: {
       subtitle: "Paroles de Transformation",
@@ -484,7 +518,7 @@ export const translations: Record<Language, TranslationSchema> = {
         },
       ],
     },
-    
+
     // Blog
     blog: {
       subtitle: "Transmissions",
@@ -513,7 +547,7 @@ export const translations: Record<Language, TranslationSchema> = {
         },
       ],
     },
-    
+
     // Newsletter
     newsletter: {
       subtitle: "Restez Connecté",
@@ -524,7 +558,7 @@ export const translations: Record<Language, TranslationSchema> = {
       cta: "Rejoindre le Cercle",
       privacy: "Votre voyage est sacré. Nous honorons votre boîte mail avec soin.",
     },
-    
+
     // Footer
     footer: {
       tagline: "Guidance transformationnelle pour ceux qui sont prêts à se souvenir de leur vraie nature.",
@@ -538,7 +572,7 @@ export const translations: Record<Language, TranslationSchema> = {
       made_with: "Fait avec",
       and_intention: "et intention",
     },
-    
+
     // Story Page
     storyPage: {
       hero: {
@@ -575,7 +609,7 @@ export const translations: Record<Language, TranslationSchema> = {
         button: "Me Contacter",
       },
     },
-    
+
     // Contact Page
     contactPage: {
       hero: {
@@ -605,7 +639,7 @@ export const translations: Record<Language, TranslationSchema> = {
         signature: "Au plaisir de vous rencontrer",
       },
     },
-    
+
     // Resources Page
     resourcesPage: {
       hero: {
@@ -624,7 +658,7 @@ export const translations: Record<Language, TranslationSchema> = {
         note: "Inscrivez-vous via la newsletter sur la page d'accueil pour rester connectée.",
       },
     },
-    
+
     // Services Page
     servicesPage: {
       hero: {
@@ -639,19 +673,73 @@ export const translations: Record<Language, TranslationSchema> = {
       },
       catalog: [
         {
+          slug: "chemin-realignement",
+          title: "Chemin de Réalignement",
+          subtitle: "Guidance Intuitive",
+          description: "Chaque espace de guidance est pensé pour te rejoindre exactement là où tu en es, en honorant ton unicité et tes besoins du moment.",
+          cta: "Découvrir ce chemin",
+        },
+        {
           slug: "vision-alignment",
-          title: "Alignement de Vision",
+          title: "4× Sessions de guidance individuelle",
           subtitle: "Séances de Guidance 1:1",
-          description: "Des séances transformationnelles profondes pour clarifier votre chemin, libérer ce qui ne vous sert plus, et vous aligner avec votre direction authentique.",
+          description: "Cet accompagnement est un voyage à part entière. Il te guide à créer une structure juste dans ta vie, à ancrer des fondations stables et solides, afin de cheminer avec davantage de clarté, plus de fluidité et de sens.",
           cta: "Explorer Ce Chemin",
+        },
+        {
+          slug: "transformational-journey",
+          title: "Chemin de retour à Soi (4 semaines)",
+          subtitle: "Voyage Intérieur",
+          description: "Au fil de ces 4 sessions, je t’emmène pas à pas vers un retour à ton essence, au travers d’une guidance personnalisée attentive, nourrie de ce que j’ai moi-même exploré, intégré et incarné au fil de mon propre chemin.",
+          cta: "Commencer Votre Voyage",
         },
       ],
       details: [
         {
+          tagline: "Un espace pour te rejoindre là où tu es.",
+          what: {
+            title: "Ce Qu'est Ce Chemin",
+            paragraph1: "Chaque espace de guidance est pensé pour te rejoindre exactement là où tu en es, en honorant ton unicité et tes besoins du moment.",
+            paragraph2: "C'est une invitation à ralentir et à écouter ce qui est présent en toi.",
+          },
+          who: {
+            title: "Ce Chemin Est Pour Toi Si",
+            items: [
+              "Tu cherches un espace d'écoute et de présence",
+              "Tu traverses un moment de flou ou de questionnement",
+              "Tu as besoin d'un regard extérieur bienveillant",
+            ],
+          },
+          transformation: {
+            title: "Le Voyage",
+            quote: "Le premier pas vers soi est souvent le plus simple.",
+            paragraph1: "Par la présence et l'écoute, nous créons ensemble l'espace nécessaire pour que ta propre clarté puisse émerger.",
+            paragraph2: "Une séance pour retrouver ton centre.",
+          },
+          how: {
+            title: "Le Processus",
+            steps: [
+              {
+                title: "Rencontre",
+                description: "Un temps pour poser ce qui est là pour toi aujourd'hui.",
+              },
+              {
+                title: "Guidance",
+                description: "Une exploration intuitive pour éclairer ton chemin.",
+              },
+            ],
+          },
+          cta: {
+            title: "Prêt à Commencer ?",
+            description: "Contacte-moi pour explorer ce chemin ensemble.",
+            button: "Me Contacter",
+          },
+        },
+        {
           tagline: "Un espace sacré pour vous souvenir de qui vous êtes vraiment.",
           what: {
             title: "Ce Qu'est Ce Service",
-            paragraph1: "L'Alignement de Vision est une expérience de guidance profondément personnelle, en tête-à-tête. À travers une présence intuitive et des pratiques ancrées, nous créons un espace sacré où vous pouvez vous reconnecter avec votre moi authentique et clarifier la direction de votre vie.",
+            paragraph1: "Les Séances de Guidance Individuelles 1:1 sont un voyage en soi, conçu pour vous accompagner dans la création d'une véritable structure dans votre vie et établir une base solide afin que vous puissiez traverser la vie avec plus de facilité, de clarté et de direction.",
             paragraph2: "Ce n'est pas du coaching au sens traditionnel. C'est un voyage de souvenance — retirer les couches de conditionnement pour révéler la vérité qui a toujours vécu en vous.",
           },
           who: {
@@ -691,6 +779,51 @@ export const translations: Record<Language, TranslationSchema> = {
             title: "Prête à Commencer ?",
             description: "Si quelque chose dans ces mots résonne en vous, peut-être est-il temps pour nous de nous connecter.",
             button: "Commencer la Conversation",
+          },
+        },
+        {
+          tagline: "Un soutien dédié pour incarner votre transformation radicale.",
+          what: {
+            title: "Ce Qu'est Ce Voyage",
+            paragraph1: "Le Voyage Transformationnel de 4 Semaines est une immersion profonde dans votre paysage intérieur. Au cours de quatre sessions ciblées, nous travaillons en étroite collaboration pour naviguer à travers les blocages et les ouvertures qui se présentent alors que vous entrez dans une nouvelle façon d'être.",
+            paragraph2: "C'est un espace dédié pour ceux qui sont prêts à aller au-delà de la simple compréhension et à vivre la réalité de leur vérité.",
+          },
+          who: {
+            title: "Ce Voyage Est Pour Vous Si",
+            items: [
+              "Vous êtes prêt pour un soutien constant et ciblé sur une période dédiée",
+              "Vous voulez des outils pratiques pour intégrer la transformation dans votre vie quotidienne",
+              "Vous ressentez l'appel à plonger plus profondément dans la sagesse du corps",
+              "Vous traversez une période de changement intense et cherchez une ancre solide",
+            ],
+          },
+          transformation: {
+            title: "Le Changement",
+            quote: "La vraie transformation commence quand nous arrêtons d'essayer de devenir quelqu'un de nouveau et commençons à nous souvenir de qui nous avons toujours été.",
+            paragraph1: "À travers notre travail ensemble, vous cultiverez une confiance profonde en votre propre connaissance intérieure. Le bruit des attentes extérieures s'apaise, et vous commencez à entendre la voix de votre moi authentique — claire, calme et inébranlable.",
+            paragraph2: "Il s'agit de renforcer votre capacité à rester présent avec vous-même à travers toutes les saisons de votre éveil.",
+          },
+          how: {
+            title: "Le Chemin",
+            steps: [
+              {
+                title: "Semaine 1 : Fondations",
+                description: "S'ancrer dans votre réalité actuelle et identifier les intentions fondamentales de notre travail.",
+              },
+              {
+                title: "Semaine 2 & 3 : Approfondissement",
+                description: "Traverser les couches de conditionnement et s'ouvrir à l'intelligence du corps.",
+              },
+              {
+                title: "Semaine 4 : Intégration",
+                description: "Établir des pratiques et des rythmes pour soutenir votre transformation dans le monde.",
+              },
+            ],
+          },
+          cta: {
+            title: "Prêt à Plonger ?",
+            description: "Si vous ressentez l'appel d'un soutien dédié, explorons ensemble si ce voyage vous convient.",
+            button: "Postuler pour le Voyage",
           },
         },
       ],
