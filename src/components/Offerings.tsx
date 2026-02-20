@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Compass, Sparkles, Users, Heart } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Link } from "react-router-dom";
 
 const icons = [Compass, Sparkles, Users, Heart];
 const accents = ["cosmic", "earth", "cosmic", "earth"] as const;
@@ -39,7 +40,7 @@ const Offerings = () => {
           </p>
         </div>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 ${t.offerings.items.length === 3 ? 'lg:grid-cols-3' : ''} gap-8`}>
+        <div className={`grid grid-cols-1 ${t.offerings.items.length === 1 ? 'max-w-2xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
           {t.offerings.items.map((offering, index) => {
             const Icon = icons[index];
             const accent = accents[index];
@@ -48,15 +49,15 @@ const Offerings = () => {
               <div
                 key={offering.title}
                 className={`group relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 hover:shadow-soft hover:-translate-y-1 ${accent === "cosmic"
-                    ? "bg-bleu-profond/10 border-bleu-cosmique/25 hover:border-bleu-cosmique/50 hover:shadow-glow-blue"
-                    : "bg-brun-racine/8 border-brun-racine/25 hover:border-ocre-solaire/50 hover:shadow-glow-gold"
+                  ? "bg-bleu-profond/10 border-bleu-cosmique/25 hover:border-bleu-cosmique/50 hover:shadow-glow-blue"
+                  : "bg-brun-racine/8 border-brun-racine/25 hover:border-ocre-solaire/50 hover:shadow-glow-gold"
                   }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Icon */}
                 <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${accent === "cosmic"
-                    ? "bg-bleu-cosmique/15 text-bleu-cosmique"
-                    : "bg-ocre-solaire/20 text-ocre-solaire"
+                  ? "bg-bleu-cosmique/15 text-bleu-cosmique"
+                  : "bg-ocre-solaire/20 text-ocre-solaire"
                   }`}>
                   <Icon className="w-7 h-7" />
                 </div>
@@ -75,16 +76,16 @@ const Offerings = () => {
                   {offering.description}
                 </p>
 
-                <Button
-                  variant="ghost"
-                  className={`group/btn px-0 font-medium ${accent === "cosmic"
-                      ? "text-bleu-cosmique hover:text-bleu-atmosphere"
-                      : "text-ocre-solaire hover:text-ocre-clair"
-                    } hover:bg-transparent`}
+                <Link
+                  to="/services/vision-alignment"
+                  className={`inline-flex items-center justify-center group/btn px-0 font-medium ${accent === "cosmic"
+                    ? "text-bleu-cosmique hover:text-bleu-atmosphere"
+                    : "text-ocre-solaire hover:text-ocre-clair"
+                    } hover:bg-transparent transition-colors`}
                 >
                   {offering.cta}
                   <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
-                </Button>
+                </Link>
               </div>
             );
           })}
