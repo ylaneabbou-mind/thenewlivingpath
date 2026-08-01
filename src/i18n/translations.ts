@@ -4,15 +4,15 @@ export type Language = "en" | "fr";
 type TranslationSchema = {
   nav: { home: string; histoire: string; services: string; ressources: string; contact: string };
   hero: { tagline: string; title_line1: string; title_line2: string; description: string; cta_primary: string; cta_secondary: string; portrait_placeholder: string };
-  mission: { subtitle: string; title_line1: string; title_line2: string; quote: string; description1: string; description2: string };
+  mission: { subtitle: string; title_line1: string; title_line2: string; quote: string; description1: string; description2: string; description3: string; description4: string };
   about: { subtitle: string; title_line1: string; title_line2: string; quote: string; paragraph1: string; paragraph2: string; paragraph3: string; signature: string; image_placeholder: string };
   offerings: { subtitle: string; title_line1: string; title_line2: string; description: string; items: Array<{ title: string; subtitle: string; description: string; cta: string }> };
-  testimonials: { subtitle: string; title_line1: string; title_line2: string; items: Array<{ quote: string; author: string; title: string }> };
-  blog: { subtitle: string; title_line1: string; title_line2: string; view_all: string; image_placeholder: string; posts: Array<{ title: string; excerpt: string; date: string; category: string }> };
+  testimonials: { subtitle: string; title_line1: string; title_line2: string; view_more: string; view_less: string; items: Array<{ quote: string; author: string; title: string }> };
+  blog: { subtitle: string; title_line1: string; title_line2: string; view_all: string; image_placeholder: string; coming_soon: string; posts: Array<{ title: string; excerpt: string; date: string; category: string }> };
   newsletter: { subtitle: string; title_line1: string; title_line2: string; description: string; placeholder: string; cta: string; privacy: string };
   footer: { tagline: string; nav: { about: string; offerings: string; writings: string; contact: string }; copyright: string; made_with: string; and_intention: string };
   storyPage: {
-    hero: { subtitle: string; title: string; description: string };
+    hero: { subtitle: string; title: string; description: string; quote: string; description2: string };
     origins: { subtitle: string; title: string; paragraph1: string; paragraph2: string; image_placeholder: string };
     transformation: { subtitle: string; title: string; quote: string; paragraph1: string; paragraph2: string; paragraph3: string };
     mission: { subtitle: string; title: string; paragraph1: string; paragraph2: string; signature: string; image_placeholder: string };
@@ -67,10 +67,10 @@ export const translations: Record<Language, TranslationSchema> = {
 
     // Hero
     hero: {
-      tagline: "Transformational Guidance",
+      tagline: "Guidance",
       title_line1: "Grounded in Earth,",
       title_line2: "Aligned with the Stars",
-      description: "Guiding you to realign with your True nature through a deep reconnection with the body's Wisdom by surrendering to life.",
+      description: "A space to reconnect with your inner compass, where the wisdom of your body meets the deeper rhythm of life.\n\nThrough Human Design, presence, and embodied practices, I guide you to release what no longer serves you and reconnect with the truth of who you are.",
       cta_primary: "Begin Your Journey",
       cta_secondary: "Discover the Path",
       portrait_placeholder: "Your Portrait",
@@ -79,11 +79,13 @@ export const translations: Record<Language, TranslationSchema> = {
     // Mission
     mission: {
       subtitle: "The Vision",
-      title_line1: "Where Earth Meets",
-      title_line2: "Infinite Possibility",
-      quote: '"True transformation begins when we step out of the strategic mind and allow life\'s infinite possibilities to meet us."',
-      description1: "Ylane creates a sacred space where you can release the conditioning that has shaped you since birth and step into a new way of living guided by your body’s intelligence.",
-      description2: "This is not about becoming someone New. It's about remembering who you've always been.",
+      title_line1: "Returning to Your",
+      title_line2: "True Nature",
+      quote: '"True transformation begins when we stop trying to control the path ahead and learn to trust the wisdom that has always guided us from within."',
+      description1: "We spend so much of our lives trying to become someone else — following expectations, conditioning, and the endless voice of the mind.",
+      description2: "Yet beneath all of this, there is a deeper intelligence waiting to be trusted.",
+      description3: "I create a space where you can reconnect with your body, understand your unique nature, and move through life with greater clarity, trust, and alignment.",
+      description4: "This journey is not about creating a new version of yourself. It is about reconnecting with the wisdom and aliveness that have always been within you.",
     },
 
     // About
@@ -92,10 +94,10 @@ export const translations: Record<Language, TranslationSchema> = {
       title_line1: "A guide Between",
       title_line2: "Worlds",
       quote: "Rooted in the Earth, reaching for the Infinite.",
-      paragraph1: "Through years of deep inner work and radical transformation, I have learned to walk a new way of being. A path where honoring the body’s intelligence is Key.",
-      paragraph2: "I jumped into the unknown, letting go of the need to control my life with the mind. My purpose is to hold space for your journey home. Through presence, intuition, and sacred practices, I guide you to reconnect with the truth that dwells within, waiting to be awakened.",
-      paragraph3: "Whether you are seeking clarity in times of change, alignment with your life’s purpose, or a deeper sense of peace, you are welcome here.",
-      signature: "I am in service to your awakening.",
+      paragraph1: "My journey has taught me that life becomes richer when we stop trying to control every step and begin listening to the wisdom within.",
+      paragraph2: "Through Human Design, embodied practices, and deep presence, I support you in reconnecting with your own inner guidance and honoring the unique way you are designed to move through life.",
+      paragraph3: "Whether you are navigating a transition, seeking deeper clarity, or feeling called to live in a more authentic way, you are welcome here.",
+      signature: "I am here to walk alongside you on your journey.",
       image_placeholder: "Your Image",
     },
 
@@ -120,16 +122,18 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle: "Words of Transformation",
       title_line1: "Voices from the",
       title_line2: "Journey",
+      view_more: "View more",
+      view_less: "View less",
       items: [
         {
-          quote: "Working with Ylane helped me find the clarity I had been searching for. I finally feel both grounded and free to expand into my true purpose.",
-          author: "Marie L.",
-          title: "Wellness Coach",
+          quote: "Ylane has been an invaluable guide and ally on my journey. Through his ability to clearly recognize the patterns that needed to change, along with his gift for helping release mental, emotional, and energetic blockages, he helped me create a life that is aligned with health, harmony, and my true nature. Today, I feel deeply connected to my inner authority and able to continue my path without relying on external guidance. Meeting Ylane and receiving his support has truly been a blessing, and I am deeply grateful that our paths crossed.",
+          author: "Solène",
+          title: "Generator, 3/5, Sacral",
         },
         {
-          quote: "The sessions created a profound shift in how I relate to myself and my path. Ylane holds space with such presence and wisdom.",
-          author: "Thomas D.",
-          title: "Creative Director",
+          quote: "Ylane has helped me tremendously and continues to support me to this day on my journey of reconnecting with my true self. There was truly a \"before\" and an \"after.\" Thank you for your guidance, your presence, and everything you've shared. I'm deeply grateful. 🙏🙂",
+          author: "Arthur",
+          title: "Generator, 2/5, Sacral",
         },
         {
           quote: "I came seeking answers and left with something far more precious — a deep trust in my own inner knowing.",
@@ -146,26 +150,8 @@ export const translations: Record<Language, TranslationSchema> = {
       title_line2: "Insights",
       view_all: "View All Writings",
       image_placeholder: "Image",
-      posts: [
-        {
-          title: "The Art of Grounded Expansion",
-          excerpt: "How to stay rooted while opening to infinite possibility — the paradox at the heart of transformation.",
-          date: "Nov 2024",
-          category: "Consciousness",
-        },
-        {
-          title: "Listening to the Body's Wisdom",
-          excerpt: "Your body holds ancient knowledge. Here's how to tune in and receive its guidance.",
-          date: "Oct 2024",
-          category: "Embodiment",
-        },
-        {
-          title: "Navigating Life Transitions",
-          excerpt: "When everything shifts, how do we find our center? Reflections on change as initiation.",
-          date: "Sep 2024",
-          category: "Transformation",
-        },
-      ],
+      coming_soon: "New reflections are coming soon",
+      posts: [],
     },
 
     // Newsletter
@@ -181,16 +167,16 @@ export const translations: Record<Language, TranslationSchema> = {
 
     // Footer
     footer: {
-      tagline: "Transformational guidance for those ready to remember their true nature.",
+      tagline: "A space for those seeking a deeper understanding of themselves, a closer connection with their inner guidance, and a more authentic way of living.",
       nav: {
-        about: "About",
-        offerings: "Offerings",
-        writings: "Writings",
+        about: "Story",
+        offerings: "Services",
+        writings: "Resources",
         contact: "Contact",
       },
       copyright: "All rights reserved.",
-      made_with: "Made with",
-      and_intention: "and intention",
+      made_with: "Created with Heart and Soul",
+      and_intention: "",
     },
 
     // Story Page
@@ -198,28 +184,30 @@ export const translations: Record<Language, TranslationSchema> = {
       hero: {
         subtitle: "My Story",
         title: "A Journey of Remembering",
-        description: "The path that led me here was winding, beautiful, and deeply transformative. Let me share it with you.",
+        description: "Looking back, I can see that my path has been guided by one question:",
+        quote: "There has to be another way to live",
+        description2: "This question became the <strong>root of my journey</strong> and the driving force behind a <em>transformation</em> I could have never imagined.",
       },
       origins: {
         subtitle: "The Beginning",
         title: "Where It All Started",
-        paragraph1: "My journey began long before I understood what I was seeking. Like many, I walked the path of conventional success — achievements, milestones, external validation. Yet something within me whispered that there was more.",
-        paragraph2: "That whisper became a call I could no longer ignore. It led me to question everything I thought I knew and to begin the sacred work of remembering who I truly am.",
+        paragraph1: "My encounter with the <strong>Human Design System</strong> during an extended trip to <em>Mexico</em> became a profound turning point in my life. By honoring my <strong>Strategy</strong> and <strong>Authority</strong>, I discovered a different way of living—one that brought me closer to my true nature and to the natural flow of life.",
+        paragraph2: "This journey has taken me across <em>many countries</em>, opened doors I could never have planned, and brought <strong>extraordinary encounters</strong> that no amount of control could have created. Each experience reminded me that when we learn to <em>listen within</em>, life can reveal paths the mind could never have imagined.",
         image_placeholder: "Portrait",
       },
       transformation: {
         subtitle: "The Turning Point",
         title: "When Everything Shifted",
-        quote: "Sometimes we must lose ourselves completely to find our way home.",
-        paragraph1: "There came a moment — a series of moments, really — when the old ways simply stopped working. The strategies, the pushing, the striving. Life invited me into surrender.",
-        paragraph2: "Through deep inner work, ancient practices, and the guidance of wise teachers, I learned to listen. To my body. To the subtle realms. To the wisdom that had always been there, waiting.",
-        paragraph3: "This wasn't about becoming someone new. It was about peeling away everything that was never truly me — and discovering the infinite spaciousness underneath.",
+        quote: "A new way of living",
+        paragraph1: "Meeting <strong>Benjamin Thorre</strong> became one of the quiet turning points of my path. Through his guidance, alongside <strong>Human Design</strong> and years of embodied practice, I began to experience a <em>profound shift</em> in the way I relate to life.",
+        paragraph2: "Along the way, I discovered the power of <em>simple daily rituals</em>:<ul><li><strong>Tea Ceremony</strong> — a practice of presence and connection.</li><li><strong>Food as medicine</strong> — a way to honor the body and its intelligence.</li></ul>Through these rituals, I found a deeper appreciation for the simple things that bring <strong>vitality, joy, and meaning</strong> into life.",
+        paragraph3: "This way of living has brought me a profound sense of <strong>liberation</strong>. It allowed me to reconnect with parts of myself that had always been there: the <em>love of cooking</em>, the <em>joy of dancing</em>, the <em>desire to explore the world</em>, and the natural impulse to <em>support and guide others</em>.",
       },
       mission: {
         subtitle: "Today",
         title: "Holding Space for Your Journey",
-        paragraph1: "Now I walk alongside others on their path of remembering. I offer what I've learned: that transformation doesn't require force. That the body holds ancient wisdom. That we are both deeply human and infinitely cosmic.",
-        paragraph2: "My purpose is simple: to create a space where you can reconnect with your own truth. To be a mirror for the light you've always carried. To remind you that you already have everything you need.",
+        paragraph1: "Today, I offer a space where people discover the <strong>freedom of living as they were designed to live</strong>. A space where they can reconnect with their own <em>inner guidance</em>, trust the <em>wisdom of their body</em>, and feel safe to honor their true nature.",
+        paragraph2: "My role isn't to tell people who they should become. It is to help them <u>remember who they have always been</u>. Because I believe that each of us carries a <strong>unique design</strong>, and that life becomes more <em>fluid, meaningful, and fulfilling</em> when we stop trying to become someone else and begin honoring who we truly are.",
         signature: "With love and presence, Ylane",
         image_placeholder: "Vision",
       },
@@ -235,11 +223,11 @@ export const translations: Record<Language, TranslationSchema> = {
       hero: {
         subtitle: "Let's Connect",
         title: "I'm Here for You",
-        description: "Reaching out is the first step. There's no pressure, no obligation — just an open door and a warm welcome.",
+        description: "Every journey begins with a first step.",
       },
       methods: {
         title: "Choose Your Path",
-        description: "I'm accessible and present. Choose the way that feels most comfortable for you.",
+        description: "There is no pressure and no obligation. Simply an opportunity to connect, share what is present for you, and discover what may emerge from this encounter.\n\nChoose the way that feels most natural for you to get in touch. I will be happy to welcome you.",
         whatsapp: {
           label: "WhatsApp",
           description: "For a direct, personal conversation. This is often the quickest way to connect.",
@@ -255,7 +243,7 @@ export const translations: Record<Language, TranslationSchema> = {
       },
       closing: {
         quote: "Every journey begins with a single step of courage.",
-        message: "Whether you're ready to begin or simply curious to learn more, I welcome your message with an open heart.",
+        message: "Whether you're ready to take the next step or simply curious to explore, I welcome the opportunity to connect and exchange with you.",
         signature: "Looking forward to meeting you",
       },
     },
@@ -265,12 +253,12 @@ export const translations: Record<Language, TranslationSchema> = {
       hero: {
         subtitle: "Transmissions",
         title: "Wisdom & Reflections",
-        description: "A space for shared contemplation, where words become bridges to deeper understanding.",
+        description: "A space where I share my reflections, my experiences, and the teachings that continue to transform the way I see life.",
       },
       coming_soon: {
         badge: "Coming Soon",
         title: "Articles in Preparation",
-        description: "I'm carefully crafting reflections, insights, and practices to support your journey. Each piece is written with intention and care — they will arrive when the time is right.",
+        description: "I take the time to let the reflections and experiences I wish to share with you emerge naturally. Each message is inspired by my own journey and by the discoveries that continue to transform the way I see and experience life. They will arrive when the moment is right.",
       },
       newsletter: {
         title: "Be the First to Know",
@@ -288,7 +276,7 @@ export const translations: Record<Language, TranslationSchema> = {
       catalog_section: {
         subtitle: "Ways to Work Together",
         title: "Choose Your Path",
-        note: "More offerings will be available soon. Each path is crafted with intention.",
+        note: "More services will be available soon. Each path is crafted with intention.",
       },
       catalog: [
         {
@@ -375,10 +363,10 @@ export const translations: Record<Language, TranslationSchema> = {
 
     // Hero
     hero: {
-      tagline: "Guidance Transformationnelle",
-      title_line1: "Enraciné dans la terre,",
+      tagline: "Guidance",
+      title_line1: "Ancré dans la Terre,",
       title_line2: "Aligné avec les étoiles",
-      description: "Je te guide à te réaligner avec ta vraie nature, par une reconnexion profonde à la sagesse du corps, en apprenant à déposer les armes face à la VIE.",
+      description: "Un espace pour reconnecter avec votre boussole intérieure, là où la sagesse du corps rencontre le rythme naturel de la vie.\n\nÀ travers le Design Humain, la présence et des pratiques d'ancrage, je vous accompagne pour vous libérer de ce qui ne vous sert plus et vous reconnecter à votre essence.",
       cta_primary: "Commencer Votre Voyage",
       cta_secondary: "Découvrir le Chemin",
       portrait_placeholder: "Votre Portrait",
@@ -387,11 +375,13 @@ export const translations: Record<Language, TranslationSchema> = {
     // Mission
     mission: {
       subtitle: "La Vision",
-      title_line1: "Là où la Terre",
-      title_line2: "Rencontre Le Monde des Possibles",
-      quote: '"La véritable transformation naît lorsque nous quittons l’aspect stratégique du mental, et que le cœur s’ouvre aux possibilités infinies que la vie a à nous offrir."',
-      description1: "Ylane crée un espace sacré dans lequel tu peux te défaire des conditionnements qui t’ont façonné depuis la naissance, et apprendre à naviguer avec plus d’aisance, de fluidité, guidé par l’intelligence innée de ton corps.",
-      description2: "Il ne s’agit pas de changer qui tu es, mais de te reconnecter à ton essence originelle.",
+      title_line1: "Revenir à votre",
+      title_line2: "Vraie Nature",
+      quote: '"La véritable transformation commence lorsque nous cessons de vouloir contrôler le chemin et apprenons à faire confiance à la sagesse qui nous guide depuis toujours de l’intérieur."',
+      description1: "Nous passons souvent une grande partie de notre vie à essayer de devenir quelqu’un d’autre — influencés par les attentes, les conditionnements et le bruit incessant du mental.",
+      description2: "Pourtant, au-delà de tout cela, existe une intelligence plus profonde qui ne demande qu’à être écoutée.",
+      description3: "Je crée un espace où vous pouvez renouer avec votre corps, comprendre votre nature unique et avancer dans la vie avec plus de clarté, de confiance et d’alignement.",
+      description4: "Ce voyage ne consiste pas à créer une nouvelle version de vous-même. Il consiste à vous reconnecter à la sagesse et à l’élan de vie qui ont toujours été présents en vous.",
     },
 
     // About
@@ -399,11 +389,11 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle: "À PROPOS DE YLANE",
       title_line1: "Un guide entre les",
       title_line2: "Mondes",
-      quote: "Ancré dans la Terre, tourné vers le Ciel.",
-      paragraph1: "Après des années de longs voyages intérieurs et de transformations radicales, j’ai appris à naviguer dans ce monde avec un autre rythme. Un chemin où le corps guide et les souffles de la vie sont entendus.",
-      paragraph2: "J’ai sauté dans l’inconnu en lâchant le besoin de contrôler ma vie au travers du prisme du mental. Ma mission est de t’accompagner vers un retour à la maison. Par la présence, le ressenti et la vision, je te guide à te reconnecter à la vérité qui sommeille en toi.",
-      paragraph3: "Que tu traverses une période de changements, que tu cherches plus de clarté, un alignement avec ce qui a du sens, ce qui compte vraiment, ou simplement plus de bien-être et de sérénité, tu es le bienvenu dans cet espace.",
-      signature: "Je suis ici à ton service.",
+      quote: "Ancré dans la Terre, tourné vers l’Infini.",
+      paragraph1: "Mon parcours m’a appris que la vie devient plus riche lorsque nous cessons de vouloir contrôler chaque étape et commençons à écouter la sagesse qui réside en nous.",
+      paragraph2: "À travers le Design Humain, des pratiques d’ancrage et une présence profonde, je vous accompagne pour renouer avec votre propre guidance intérieure et honorer la manière unique dont vous êtes conçu pour avancer dans la vie.",
+      paragraph3: "Que vous traversiez une période de changement, que vous cherchiez plus de clarté ou que vous ressentiez l’appel de transformer votre manière de vivre, vous êtes le bienvenu ici.",
+      signature: "Je suis ici pour marcher à vos côtés sur votre chemin.",
       image_placeholder: "Votre Image",
     },
 
@@ -428,16 +418,18 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle: "Paroles de Transformation",
       title_line1: "Voix du",
       title_line2: "Voyage",
+      view_more: "Voir plus",
+      view_less: "Voir moins",
       items: [
         {
-          quote: "Travailler avec Ylane m'a aidée à trouver la clarté que je cherchais. Je me sens enfin à la fois ancrée et libre de m'épanouir dans mon vrai but.",
-          author: "Marie L.",
-          title: "Coach Bien-être",
+          quote: "Ylane a été pour moi un précieux guide et allié sur mon chemin. Grâce à sa capacité à voir clairement les comportements à corriger ainsi que son don pour libérer les blocages — qu'ils soient mentaux, émotionnels ou énergétiques — il m'a permis d'établir pour moi-même une vie de santé et d'harmonie avec ma véritable nature. À présent, je me sens connecté avec mon autorité intérieure et suis capable de poursuivre ma voie sans besoin d'intervention extérieure. C'est vraiment une bénédiction de l'avoir croisé sur mon chemin et d'avoir reçu sa guidance !",
+          author: "Solène",
+          title: "Générateur, 3/5, Sacral",
         },
         {
-          quote: "Les séances ont créé un changement profond dans ma relation avec moi-même et mon chemin. Ylane tient l'espace avec tant de présence et de sagesse.",
-          author: "Thomas D.",
-          title: "Directeur Créatif",
+          quote: "Ylane m'a beaucoup aidé (et m'aide encore à ce jour !) dans ma démarche de ré-alignement avec mon « True Self » ; il y a eu un avant et un après. Merci à Toi 🙏🙂.",
+          author: "Arthur",
+          title: "Générateur, 2/5, Sacral",
         },
         {
           quote: "Je suis venue chercher des réponses et suis repartie avec quelque chose de bien plus précieux — une confiance profonde en ma propre connaissance intérieure.",
@@ -454,26 +446,8 @@ export const translations: Record<Language, TranslationSchema> = {
       title_line2: "Perspectives",
       view_all: "Voir Tous les Écrits",
       image_placeholder: "Image",
-      posts: [
-        {
-          title: "L'Art de l'Expansion Ancrée",
-          excerpt: "Comment rester enraciné tout en s'ouvrant à l'infini possible — le paradoxe au cœur de la transformation.",
-          date: "Nov 2024",
-          category: "Conscience",
-        },
-        {
-          title: "Écouter la Sagesse du Corps",
-          excerpt: "Votre corps détient une connaissance ancienne. Voici comment vous connecter et recevoir sa guidance.",
-          date: "Oct 2024",
-          category: "Incarnation",
-        },
-        {
-          title: "Naviguer les Transitions de Vie",
-          excerpt: "Quand tout change, comment trouvons-nous notre centre ? Réflexions sur le changement comme initiation.",
-          date: "Sep 2024",
-          category: "Transformation",
-        },
-      ],
+      coming_soon: "De nouveaux articles arrivent bientôt",
+      posts: [],
     },
 
     // Newsletter
@@ -489,45 +463,47 @@ export const translations: Record<Language, TranslationSchema> = {
 
     // Footer
     footer: {
-      tagline: "Guidance transformationnelle pour ceux qui sont prêts à se souvenir de leur vraie nature.",
+      tagline: "Un espace pour celles et ceux qui souhaitent mieux se comprendre, se reconnecter plus profondément à leur guidance intérieure, et avancer vers une manière de vivre plus authentique.",
       nav: {
-        about: "À Propos",
-        offerings: "Offrandes",
-        writings: "Écrits",
+        about: "Histoire",
+        offerings: "Services",
+        writings: "Resources",
         contact: "Contact",
       },
       copyright: "Tous droits réservés.",
-      made_with: "Fait avec",
-      and_intention: "et intention",
+      made_with: "Créé avec le cœur et l'âme",
+      and_intention: "",
     },
 
     // Story Page
     storyPage: {
       hero: {
         subtitle: "Mon Histoire",
-        title: "Un Voyage de Souvenance",
-        description: "Le chemin qui m'a menée ici était sinueux, beau et profondément transformateur. Laissez-moi vous le partager.",
+        title: "Un chemin de reconnexion à soi",
+        description: "Lorsque je regarde le chemin parcouru, je réalise qu'une question m'a accompagné depuis toujours :",
+        quote: "Il doit exister une autre façon de vivre",
+        description2: "Cette question a été comme une <strong>graine plantée en moi</strong>. Une invitation à chercher, à explorer, à remettre en question ce que l'on m'avait appris, et à découvrir une <em>manière de vivre plus alignée</em> avec ce que je ressentais profondément à l'intérieur.",
       },
       origins: {
         subtitle: "Les Débuts",
         title: "Là Où Tout a Commencé",
-        paragraph1: "Mon voyage a commencé bien avant que je comprenne ce que je cherchais. Comme beaucoup, j'ai suivi le chemin du succès conventionnel — réussites, étapes, validation extérieure. Pourtant, quelque chose en moi murmurait qu'il y avait plus.",
-        paragraph2: "Ce murmure est devenu un appel que je ne pouvais plus ignorer. Il m'a amenée à remettre en question tout ce que je pensais savoir et à commencer le travail sacré de me souvenir de qui je suis vraiment.",
+        paragraph1: "Cette quête m'a conduit vers des expériences que je n'aurais jamais pu imaginer. Ma rencontre avec le <strong>Design Humain</strong>, lors d'un long voyage au <em>Mexique</em>, a été un véritable tournant dans ma vie. Pour la première fois, j'ai découvert une approche qui ne me demandait pas de devenir quelqu'un d'autre, mais simplement de <em>revenir à qui j'étais déjà</em>.",
+        paragraph2: "En apprenant à honorer ma <strong>Stratégie</strong> et mon <strong>Autorité intérieure</strong>, j'ai commencé à faire davantage confiance à la sagesse de mon corps, à <em>écouter mes ressentis</em> et à avancer avec plus de fluidité dans la vie. Ce voyage m'a emmené à travers <em>différents pays</em>, m'a ouvert des portes que mon mental n'aurait jamais pu prévoir, et m'a offert des <strong>rencontres extraordinaires</strong> qui n'auraient jamais pu être créées par le contrôle.",
         image_placeholder: "Portrait",
       },
       transformation: {
         subtitle: "Le Tournant",
         title: "Quand Tout a Basculé",
-        quote: "Parfois nous devons nous perdre complètement pour trouver notre chemin vers la maison.",
-        paragraph1: "Il y a eu un moment — une série de moments, en réalité — où les anciennes façons ont simplement cessé de fonctionner. Les stratégies, les efforts, la lutte. La vie m'a invitée à l'abandon.",
-        paragraph2: "À travers un travail intérieur profond, des pratiques anciennes et la guidance de sages enseignants, j'ai appris à écouter. Mon corps. Les royaumes subtils. La sagesse qui avait toujours été là, en attente.",
-        paragraph3: "Il ne s'agissait pas de devenir quelqu'un de nouveau. Il s'agissait de retirer tout ce qui n'a jamais été vraiment moi — et de découvrir l'espace infini en dessous.",
+        quote: "Une autre façon de vivre",
+        paragraph1: "Ma rencontre avec <strong>Benjamin Thorre</strong> a marqué un tournant profond dans mon parcours. J'ai eu la chance de croiser le chemin d'un être humain qui vit en harmonie avec son essence. Le temps passé à ses côtés a été un <em>véritable cadeau</em> dans mon parcours. À travers sa présence et sa façon unique d'habiter la vie, j'ai découvert qu'il existait une autre manière d'être au monde : <em>plus authentique, plus consciente et profondément libre</em>. À travers son accompagnement, le <strong>Design Humain</strong> et des années de suivi personnel, j'ai commencé à transformer ma relation à moi-même et à la vie. J'ai appris à voir le corps non plus comme quelque chose à contrôler, mais comme un <strong>véritable guide</strong>.",
+        paragraph2: "Au fil de ce chemin, j'ai également redécouvert la <em>beauté des choses simples</em> :<ul><li><strong>La cérémonie du thé</strong> — un espace de présence, de connexion et de contemplation.</li><li><strong>La nourriture</strong> — une manière d'écouter mon corps, de le nourrir avec conscience et d'honorer son intelligence.</li></ul>À travers ces rituels du quotidien, j'ai retrouvé une profonde gratitude pour les petites choses qui donnent de la couleur à la vie : un repas préparé avec amour, une danse qui reconnecte au corps, des moments de présence, et des <strong>connexions authentiques</strong>.",
+        paragraph3: "Cette façon de vivre m'a apporté un profond sentiment de <strong>liberté</strong>. Elle m'a permis de retrouver des parts de moi qui avaient toujours été là : l'<em>amour de cuisiner</em>, la <em>joie de danser</em>, la <em>curiosité d'explorer le monde</em>, et cet élan naturel de <em>guider et d'aider les autres</em>.",
       },
       mission: {
         subtitle: "Aujourd'hui",
-        title: "Tenir l'Espace pour Votre Voyage",
-        paragraph1: "Maintenant, je marche aux côtés des autres sur leur chemin de souvenance. J'offre ce que j'ai appris : que la transformation ne nécessite pas de force. Que le corps détient une sagesse ancienne. Que nous sommes à la fois profondément humains et infiniment cosmiques.",
-        paragraph2: "Mon but est simple : créer un espace où vous pouvez vous reconnecter avec votre propre vérité. Être un miroir pour la lumière que vous avez toujours portée. Vous rappeler que vous avez déjà tout ce dont vous avez besoin.",
+        title: "Tenir un espace pour votre chemin",
+        paragraph1: "Aujourd'hui, j'offre un espace où chacun peut découvrir la <strong>liberté de vivre en accord avec sa nature profonde</strong>. Un espace où les personnes peuvent se reconnecter à leur <em>guidance intérieure</em>, faire confiance à la <em>sagesse de leur corps</em>, et se sentir suffisamment en sécurité pour honorer pleinement qui elles sont.",
+        paragraph2: "Mon rôle n'est pas de dire aux autres qui ils devraient devenir. Mon rôle est de les accompagner à <u>se souvenir de qui ils ont toujours été</u>. Car je crois profondément que chacun porte en lui une <strong>manière unique d'être au monde</strong>. Et que lorsque nous arrêtons de lutter pour devenir quelqu'un d'autre, la vie devient <em>plus fluide, plus authentique et pleine de sens</em>.",
         signature: "Avec amour et présence, Ylane",
         image_placeholder: "Vision",
       },
@@ -543,11 +519,11 @@ export const translations: Record<Language, TranslationSchema> = {
       hero: {
         subtitle: "Connectons-nous",
         title: "Je Suis Là Pour Vous",
-        description: "Tendre la main est la première étape. Pas de pression, pas d'obligation — juste une porte ouverte et un accueil chaleureux.",
+        description: "Chaque chemin commence par un premier pas.",
       },
       methods: {
         title: "Choisissez Votre Chemin",
-        description: "Je suis accessible et présente. Choisissez la voie qui vous semble la plus confortable.",
+        description: "Il n'y a aucune pression, aucune obligation. Seulement l'opportunité d'échanger, de partager ce qui vous traverse et de voir ce qui peut émerger de cette rencontre.\n\nChoisissez la façon qui vous convient le mieux pour entrer en contact. Je serai heureux de vous accueillir.",
         whatsapp: {
           label: "WhatsApp",
           description: "Pour une conversation directe et personnelle. C'est souvent le moyen le plus rapide de se connecter.",
@@ -563,7 +539,7 @@ export const translations: Record<Language, TranslationSchema> = {
       },
       closing: {
         quote: "Chaque voyage commence par un seul pas de courage.",
-        message: "Que vous soyez prête à commencer ou simplement curieuse d'en savoir plus, j'accueille votre message avec un cœur ouvert.",
+        message: "Que vous soyez prêt à faire le prochain pas ou simplement curieux d'explorer, je serai heureux d'échanger avec vous et de découvrir ce qui vous amène.",
         signature: "Au plaisir de vous rencontrer",
       },
     },
@@ -573,7 +549,7 @@ export const translations: Record<Language, TranslationSchema> = {
       hero: {
         subtitle: "Transmissions",
         title: "Sagesse & Réflexions",
-        description: "Un espace de contemplation partagée, où les mots deviennent des ponts vers une compréhension plus profonde.",
+        description: "Je prends le temps de laisser mûrir les réflexions et les expériences que je souhaite vous transmettre. Chaque partage est inspiré par mon propre chemin et par les découvertes qui continuent de transformer ma manière de voir la vie. Ils arriveront lorsque le moment sera juste.",
       },
       coming_soon: {
         badge: "Bientôt Disponible",
@@ -597,7 +573,7 @@ export const translations: Record<Language, TranslationSchema> = {
       catalog_section: {
         subtitle: "Travailler Ensemble",
         title: "Choisissez Votre Chemin",
-        note: "D'autres offrandes seront bientôt disponibles. Chaque chemin est créé avec intention.",
+        note: "D'autres services seront bientôt disponibles. Chaque chemin est créé avec intention.",
       },
       catalog: [
         {

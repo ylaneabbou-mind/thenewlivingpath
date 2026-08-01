@@ -1,18 +1,40 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { BookOpen, Sparkles } from "lucide-react";
+import { BookOpen, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const Resources = () => {
   const { t } = useLanguage();
 
-  // Placeholder articles for future content - show fewer on mobile
+  // Placeholder articles for future content
   const placeholderArticles = [
     { id: 1 },
     { id: 2 },
     { id: 3 },
     { id: 4 },
   ];
+
+  // Carousel: 1 card per view on mobile, 3 on desktop
+  const [perView, setPerView] = useState(1);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setPerView(mq.matches ? 3 : 1);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const pageCount = Math.max(1, Math.ceil(placeholderArticles.length / perView));
+
+  useEffect(() => {
+    setPage((p) => Math.min(p, pageCount - 1));
+  }, [pageCount]);
+
+  const goTo = (p: number) => setPage(((p % pageCount) + pageCount) % pageCount);
 
   return (
     <div className="min-h-screen">
@@ -66,37 +88,86 @@ const Resources = () => {
             </p>
           </div>
           
-          {/* Placeholder Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
-            {placeholderArticles.map((article, index) => (
-              <article
-                key={article.id}
-                className="group relative p-4 md:p-6 rounded-2xl bg-ivoire-cosmique/60 border border-gris-lune/40 opacity-60"
-                style={{ animationDelay: `${index * 100}ms` }}
+          {/* Placeholder Carousel */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${page * 100}%)` }}
               >
-                {/* Image placeholder */}
-                <div className="aspect-[16/10] rounded-xl bg-gradient-to-br from-gris-lune/30 to-gris-lune/10 border border-gris-lune/20 mb-4 md:mb-6 flex items-center justify-center">
-                  <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-gris-lune" />
-                </div>
-                
-                <div className="space-y-2.5 md:space-y-3">
-                  <div className="flex items-center gap-2 md:gap-3 text-sm">
-                    <span className="w-12 md:w-16 h-2.5 md:h-3 rounded bg-gris-lune/40" />
-                    <span className="text-gris-lune">•</span>
-                    <span className="w-10 md:w-12 h-2.5 md:h-3 rounded bg-gris-lune/30" />
+                {placeholderArticles.map((article) => (
+                  <div
+                    key={article.id}
+                    className="shrink-0 px-2.5 md:px-4"
+                    style={{ flexBasis: `${100 / perView}%`, maxWidth: `${100 / perView}%` }}
+                  >
+                    <article className="group relative h-full p-4 md:p-6 rounded-2xl bg-ivoire-cosmique/60 border border-gris-lune/40 opacity-60">
+                      {/* Image placeholder */}
+                      <div className="aspect-[16/10] rounded-xl bg-gradient-to-br from-gris-lune/30 to-gris-lune/10 border border-gris-lune/20 mb-4 md:mb-6 flex items-center justify-center">
+                        <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-gris-lune" />
+                      </div>
+
+                      <div className="space-y-2.5 md:space-y-3">
+                        <div className="flex items-center gap-2 md:gap-3 text-sm">
+                          <span className="w-12 md:w-16 h-2.5 md:h-3 rounded bg-gris-lune/40" />
+                          <span className="text-gris-lune">•</span>
+                          <span className="w-10 md:w-12 h-2.5 md:h-3 rounded bg-gris-lune/30" />
+                        </div>
+
+                        <div className="w-full h-4 md:h-5 rounded bg-gris-lune/40" />
+                        <div className="w-3/4 h-4 md:h-5 rounded bg-gris-lune/30" />
+
+                        <div className="space-y-1.5 md:space-y-2 pt-1.5 md:pt-2">
+                          <div className="w-full h-2.5 md:h-3 rounded bg-gris-lune/25" />
+                          <div className="w-5/6 h-2.5 md:h-3 rounded bg-gris-lune/20" />
+                        </div>
+                      </div>
+                    </article>
                   </div>
-                  
-                  <div className="w-full h-4 md:h-5 rounded bg-gris-lune/40" />
-                  <div className="w-3/4 h-4 md:h-5 rounded bg-gris-lune/30" />
-                  
-                  <div className="space-y-1.5 md:space-y-2 pt-1.5 md:pt-2">
-                    <div className="w-full h-2.5 md:h-3 rounded bg-gris-lune/25" />
-                    <div className="w-5/6 h-2.5 md:h-3 rounded bg-gris-lune/20" />
-                  </div>
-                </div>
-              </article>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Arrows */}
+            {pageCount > 1 && (
+              <>
+                <button
+                  type="button"
+                  aria-label="Previous"
+                  onClick={() => goTo(page - 1)}
+                  className="absolute -left-3 md:-left-14 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-ivoire-cosmique/70 backdrop-blur-md border border-gris-lune/40 flex items-center justify-center text-brun-racine hover:bg-ivoire-cosmique transition-colors"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next"
+                  onClick={() => goTo(page + 1)}
+                  className="absolute -right-3 md:-right-14 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-ivoire-cosmique/70 backdrop-blur-md border border-gris-lune/40 flex items-center justify-center text-brun-racine hover:bg-ivoire-cosmique transition-colors"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </>
+            )}
           </div>
+
+          {/* Dots */}
+          {pageCount > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-8 md:mt-10">
+              {Array.from({ length: pageCount }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to page ${i + 1}`}
+                  onClick={() => goTo(i)}
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300",
+                    i === page ? "w-6 bg-ocre-solaire" : "w-2 bg-gris-lune/40 hover:bg-gris-lune/60"
+                  )}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

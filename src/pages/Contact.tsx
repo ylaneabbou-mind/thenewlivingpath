@@ -12,21 +12,21 @@ const Contact = () => {
       icon: MessageCircle,
       label: t.contactPage.methods.whatsapp.label,
       description: t.contactPage.methods.whatsapp.description,
-      href: "https://wa.me/yourphonenumber",
+      href: "https://wa.me/33669220082",
       primary: true,
     },
     {
       icon: Instagram,
       label: t.contactPage.methods.instagram.label,
       description: t.contactPage.methods.instagram.description,
-      href: "https://instagram.com/ylane",
+      href: "https://www.instagram.com/ylane_abbou?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       primary: false,
     },
     {
       icon: Mail,
       label: t.contactPage.methods.email.label,
       description: t.contactPage.methods.email.description,
-      href: "mailto:hello@ylane.com",
+      href: "mailto:ylaneabbou@gmail.com",
       primary: false,
     },
   ];
@@ -73,7 +73,7 @@ const Contact = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine mb-3 md:mb-4 leading-[1.25]">
               {t.contactPage.methods.title}
             </h2>
-            <p className="text-base md:text-lg text-foreground/70 max-w-xl mx-auto font-light leading-[1.7]">
+            <p className="text-base md:text-lg text-foreground/70 max-w-xl mx-auto font-light leading-[1.7] whitespace-pre-line">
               {t.contactPage.methods.description}
             </p>
           </div>

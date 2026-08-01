@@ -4,9 +4,15 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import portraitStory from "@/assets/portrait-story.jpeg";
+import missionTea from "@/assets/mission-tea.jpeg";
 
 const Story = () => {
   const { t } = useLanguage();
+
+  // Rich-text styling for paragraph markup (bold / italic / underline / lists)
+  const richText =
+    "[&_strong]:font-semibold [&_em]:italic [&_u]:underline [&_u]:decoration-ocre-solaire/60 [&_u]:underline-offset-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-4 [&_ul]:space-y-2 [&_ul]:text-left [&_li]:marker:text-ocre-solaire [&_li]:pl-1";
 
   return (
     <div className="min-h-screen">
@@ -31,6 +37,17 @@ const Story = () => {
           <p className="text-lg md:text-xl lg:text-2xl text-ivoire-cosmique/80 max-w-2xl mx-auto font-light leading-[1.7] md:leading-relaxed animate-fade-in">
             {t.storyPage.hero.description}
           </p>
+          <blockquote className="relative max-w-2xl mx-auto my-6 md:my-8 animate-fade-in">
+            <span aria-hidden className="absolute -top-4 md:-top-6 left-1/2 -translate-x-1/2 font-serif text-5xl md:text-6xl text-ocre-clair/40 leading-none select-none">“</span>
+            <p className="font-cormorant italic text-2xl md:text-3xl lg:text-4xl text-ocre-clair leading-[1.35] px-6">
+              {t.storyPage.hero.quote}
+            </p>
+            <span className="block mx-auto mt-4 md:mt-5 w-12 md:w-16 h-px bg-ocre-clair/50" />
+          </blockquote>
+          <p
+            className={`text-lg md:text-xl lg:text-2xl text-ivoire-cosmique/80 max-w-2xl mx-auto font-light leading-[1.7] md:leading-relaxed animate-fade-in ${richText}`}
+            dangerouslySetInnerHTML={{ __html: t.storyPage.hero.description2 }}
+          />
         </div>
       </section>
 
@@ -48,8 +65,8 @@ const Story = () => {
           <div className="flex flex-col lg:grid lg:grid-cols-5 gap-8 md:gap-12 items-center">
             {/* Image placeholder */}
             <div className="w-full max-w-[280px] mx-auto lg:max-w-none lg:col-span-2">
-              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-brun-racine/10 to-ocre-solaire/15 border border-brun-racine/20 shadow-warm flex items-center justify-center">
-                <span className="text-brun-racine/40 font-cormorant text-base md:text-lg">{t.storyPage.origins.image_placeholder}</span>
+              <div className="aspect-[3/4] rounded-2xl border border-brun-racine/20 shadow-warm overflow-hidden">
+                <img src={portraitStory} alt={t.storyPage.origins.image_placeholder} className="w-full h-full object-cover" />
               </div>
             </div>
             
@@ -61,9 +78,9 @@ const Story = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine leading-[1.25] md:leading-tight">
                 {t.storyPage.origins.title}
               </h2>
-              <div className="space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base">
-                <p>{t.storyPage.origins.paragraph1}</p>
-                <p>{t.storyPage.origins.paragraph2}</p>
+              <div className={`space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base ${richText}`}>
+                <p dangerouslySetInnerHTML={{ __html: t.storyPage.origins.paragraph1 }} />
+                <p dangerouslySetInnerHTML={{ __html: t.storyPage.origins.paragraph2 }} />
               </div>
             </div>
           </div>
@@ -90,13 +107,13 @@ const Story = () => {
             </h2>
           </div>
           
-          <div className="space-y-6 md:space-y-8 text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed max-w-3xl mx-auto text-base">
+          <div className={`space-y-6 md:space-y-8 text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed max-w-3xl mx-auto text-base ${richText}`}>
             <p className="font-cormorant text-xl md:text-2xl italic text-ocre-clair/90 text-center leading-[1.5]">
               {t.storyPage.transformation.quote}
             </p>
-            <p>{t.storyPage.transformation.paragraph1}</p>
-            <p>{t.storyPage.transformation.paragraph2}</p>
-            <p>{t.storyPage.transformation.paragraph3}</p>
+            <p dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.paragraph1 }} />
+            <div dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.paragraph2 }} />
+            <p dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.paragraph3 }} />
           </div>
         </div>
       </section>
@@ -121,9 +138,9 @@ const Story = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine leading-[1.25] md:leading-tight">
                 {t.storyPage.mission.title}
               </h2>
-              <div className="space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base">
-                <p>{t.storyPage.mission.paragraph1}</p>
-                <p>{t.storyPage.mission.paragraph2}</p>
+              <div className={`space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base ${richText}`}>
+                <p dangerouslySetInnerHTML={{ __html: t.storyPage.mission.paragraph1 }} />
+                <p dangerouslySetInnerHTML={{ __html: t.storyPage.mission.paragraph2 }} />
               </div>
               
               <div className="pt-4 flex items-center justify-center lg:justify-start gap-4">
@@ -135,9 +152,9 @@ const Story = () => {
             </div>
             
             {/* Image placeholder */}
-            <div className="w-full max-w-[240px] mx-auto lg:max-w-none lg:col-span-2 order-1 lg:order-2">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-bleu-profond/10 to-bleu-atmosphere/15 border border-bleu-cosmique/20 shadow-soft flex items-center justify-center">
-                <span className="text-bleu-cosmique/40 font-cormorant text-base md:text-lg">{t.storyPage.mission.image_placeholder}</span>
+            <div className="w-full mx-auto lg:col-span-2 order-1 lg:order-2">
+              <div className="aspect-[4/3] rounded-2xl border border-bleu-cosmique/20 shadow-soft overflow-hidden">
+                <img src={missionTea} alt={t.storyPage.mission.image_placeholder} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

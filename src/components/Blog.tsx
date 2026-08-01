@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Blog = () => {
@@ -22,53 +22,24 @@ const Blog = () => {
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-ocre-clair/10 rounded-full blur-[130px]" />
       
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-          <div className="space-y-4">
-            <p className="text-sm font-cormorant text-sable-chaud tracking-[0.25em] uppercase">
-              {t.blog.subtitle}
-            </p>
-            <h2 className="text-4xl md:text-5xl font-serif font-semibold text-brun-racine">
-              {t.blog.title_line1}
-              <span className="text-gradient-solar"> {t.blog.title_line2}</span>
-            </h2>
-          </div>
-          
-          <a href="#" className="group flex items-center gap-2 text-bleu-cosmique hover:text-bleu-profond transition-colors font-medium">
-            {t.blog.view_all}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+        <div className="text-center space-y-4 mb-16">
+          <p className="text-sm font-cormorant text-sable-chaud tracking-[0.25em] uppercase">
+            {t.blog.subtitle}
+          </p>
+          <h2 className="text-4xl md:text-5xl font-serif font-semibold text-brun-racine">
+            {t.blog.title_line1}
+            <span className="text-gradient-solar"> {t.blog.title_line2}</span>
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {t.blog.posts.map((post, index) => (
-            <article
-              key={post.title}
-              className="group cursor-pointer"
-            >
-              {/* Image placeholder with floating effect */}
-              <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-bleu-profond/15 to-bleu-atmosphere/10 border border-bleu-cosmique/20 group-hover:border-bleu-cosmique/40 group-hover:shadow-glow-blue transition-all duration-500 mb-6 overflow-hidden group-hover:-translate-y-1">
-                <div className="w-full h-full flex items-center justify-center text-bleu-cosmique/30 font-cormorant">
-                  {t.blog.image_placeholder}
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="text-ocre-solaire font-cormorant font-medium">{post.category}</span>
-                  <span className="text-gris-lune">•</span>
-                  <span className="text-foreground/50">{post.date}</span>
-                </div>
-                
-                <h3 className="text-xl font-serif font-semibold text-brun-racine group-hover:text-bleu-cosmique transition-colors">
-                  {post.title}
-                </h3>
-                
-                <p className="text-foreground/70 leading-relaxed">
-                  {post.excerpt}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="max-w-2xl mx-auto text-center py-10 md:py-16">
+          <div className="mx-auto mb-8 w-16 h-16 rounded-full bg-gradient-to-br from-bleu-profond/15 to-ocre-clair/20 border border-bleu-cosmique/20 flex items-center justify-center">
+            <Sparkles className="w-7 h-7 text-ocre-solaire" />
+          </div>
+          <p className="font-cormorant text-2xl md:text-3xl italic text-brun-racine/90 leading-[1.4]">
+            {t.blog.coming_soon}
+          </p>
+          <span className="block mx-auto mt-6 w-14 h-px bg-ocre-solaire/50" />
         </div>
       </div>
 

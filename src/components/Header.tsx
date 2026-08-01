@@ -41,8 +41,8 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-sable-doux/95 backdrop-blur-md shadow-warm"
-          : "bg-sable-doux"
+          ? "bg-argile-clair/95 backdrop-blur-md shadow-warm"
+          : "bg-argile-clair"
       )}
     >
       <div className="container mx-auto px-5 lg:px-10">
@@ -54,7 +54,7 @@ const Header = () => {
             onClick={handleNavClick}
           >
             <span className="font-serif text-xl md:text-2xl lg:text-[1.65rem] font-semibold tracking-wide text-brun-racine transition-colors duration-300 group-hover:text-bleu-cosmique">
-              Ylane
+              The New Living Path
             </span>
           </Link>
 
@@ -108,11 +108,11 @@ const Header = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "lg:hidden overflow-hidden transition-all duration-500 ease-in-out bg-sable-doux/98 backdrop-blur-md",
+          "lg:hidden overflow-hidden transition-all duration-500 ease-in-out bg-argile-clair/98 backdrop-blur-md",
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <nav className="container mx-auto px-5 py-4 flex flex-col gap-2 bg-gradient-to-b from-sable-doux to-argile-clair/50">
+        <nav className="container mx-auto px-5 py-4 flex flex-col gap-2 bg-gradient-to-b from-argile-clair to-terre-douce/50">
           {navItems.map((item, index) => (
             <Link
               key={item.key}

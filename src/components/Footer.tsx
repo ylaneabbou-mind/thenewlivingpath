@@ -1,23 +1,26 @@
-import { Instagram, Mail, Heart } from "lucide-react";
+import { Instagram, Mail, Heart, Youtube, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
   const { t } = useLanguage();
 
   const navigation = [
-    { key: "about" as const, href: "#about" },
-    { key: "offerings" as const, href: "#offerings" },
-    { key: "writings" as const, href: "#blog" },
-    { key: "contact" as const, href: "#contact" },
+    { key: "about" as const, href: "/story" },
+    { key: "offerings" as const, href: "/services" },
+    { key: "writings" as const, href: "/resources" },
+    { key: "contact" as const, href: "/contact" },
   ];
 
   const socialLinks = [
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "Email", icon: Mail, href: "mailto:hello@ylane.com" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/ylane_abbou?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+    { name: "YouTube", icon: Youtube, href: "https://www.youtube.com/@abbouylane" },
+    { name: "WhatsApp", icon: MessageCircle, href: "https://wa.me/33669220082" },
+    { name: "Email", icon: Mail, href: "mailto:ylaneabbou@gmail.com" },
   ];
 
   return (
-    <footer className="relative py-20 px-6 bg-gradient-to-b from-brun-racine to-ocre-profond overflow-hidden">
+    <footer className="relative py-20 px-6 bg-gradient-to-b from-terre-claire to-terre-accent overflow-hidden">
       {/* Top edge fade - blends with cosmic section above */}
       <div className="absolute top-0 left-0 right-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,53,115,0.06) 0%, transparent 100%)' }} />
       
@@ -30,7 +33,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-serif font-semibold text-ivoire-cosmique">
-              Ylane
+              The New Living Path
             </h3>
             <p className="text-ivoire-cosmique/70 font-light leading-relaxed">
               {t.footer.tagline}
@@ -41,13 +44,13 @@ const Footer = () => {
           <div className="flex justify-center">
             <nav className="flex flex-wrap gap-x-8 gap-y-3">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.key}
-                  href={item.href}
+                  to={item.href}
                   className="text-ivoire-cosmique/70 hover:text-ocre-clair transition-colors font-light"
                 >
                   {t.footer.nav[item.key]}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -69,9 +72,11 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-ivoire-cosmique/15 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-ivoire-cosmique/60">
-          <p>© {new Date().getFullYear()} Ylane. {t.footer.copyright}</p>
+          <p>© {new Date().getFullYear()} The New Living Path. {t.footer.copyright}</p>
           <p className="flex items-center gap-1">
-            {t.footer.made_with} <Heart className="w-4 h-4 text-ocre-solaire" /> {t.footer.and_intention}
+            {t.footer.made_with}
+            {t.footer.and_intention && <Heart className="w-4 h-4 text-ocre-solaire" />}
+            {t.footer.and_intention}
           </p>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Link } from "react-router-dom";
+import portraitHero from "@/assets/portrait-hero.jpeg";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -21,30 +23,34 @@ const Hero = () => {
       {/* Bottom edge fade for seamless transition */}
       <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(243,234,226,0.08) 0%, transparent 100%)' }} />
       
-      <div className="container relative z-10 px-6 pt-24 md:pt-32 lg:pt-40 pb-20 mx-auto">
+      <div className="container relative z-10 px-6 pt-40 md:pt-32 lg:pt-40 pb-20 mx-auto">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Portrait placeholder */}
-          <div className="w-44 h-44 mx-auto mb-10 rounded-full bg-gradient-to-br from-ivoire-cosmique/20 to-ocre-clair/30 border-2 border-ivoire-cosmique/30 shadow-glow-gold overflow-hidden animate-float backdrop-blur-sm">
-            <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/60 text-sm font-cormorant">{t.hero.portrait_placeholder}</div>
+          <div className="w-44 h-44 mx-auto mb-10 rounded-full border-2 border-ivoire-cosmique/30 shadow-glow-gold overflow-hidden animate-float">
+            <img src={portraitHero} alt={t.hero.portrait_placeholder} className="w-full h-full object-cover scale-[1.7] object-[57%_40%]" />
           </div>
           
           <p className="text-lg md:text-xl font-cormorant text-ocre-clair tracking-[0.2em] uppercase">{t.hero.tagline}</p>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold tracking-tight leading-tight">
             <span className="text-ivoire-cosmique">{t.hero.title_line1}</span><br />
             <span className="text-ocre-clair">{t.hero.title_line2}</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-ivoire-cosmique/80 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-ivoire-cosmique/80 max-w-2xl mx-auto font-light leading-relaxed whitespace-pre-line">
             {t.hero.description}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <Button size="lg" className="group text-lg px-8 py-6 bg-gradient-solar text-white shadow-glow-gold hover:shadow-lg hover:scale-105 transition-all duration-500 rounded-lg">
-              {t.hero.cta_primary}<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="group text-lg px-8 py-6 bg-gradient-solar text-white shadow-glow-gold hover:shadow-lg hover:scale-105 transition-all duration-500 rounded-lg">
+              <Link to="/contact">
+                {t.hero.cta_primary}<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-ivoire-cosmique/50 text-ivoire-cosmique hover:bg-ivoire-cosmique/10 hover:border-ivoire-cosmique rounded-lg backdrop-blur-sm">
-              {t.hero.cta_secondary}
+            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-ivoire-cosmique/50 text-ivoire-cosmique hover:bg-ivoire-cosmique/10 hover:border-ivoire-cosmique rounded-lg backdrop-blur-sm">
+              <Link to="/services/vision-alignment">
+                {t.hero.cta_secondary}
+              </Link>
             </Button>
           </div>
         </div>

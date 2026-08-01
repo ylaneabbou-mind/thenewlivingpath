@@ -1,4 +1,5 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import aboutYlane from "@/assets/about-ylane.jpg";
 
 const About = () => {
   const { t } = useLanguage();
@@ -23,10 +24,8 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Photo placeholder - floating card effect */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl bg-ivoire-cosmique/10 backdrop-blur-md border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-ivoire-cosmique/50 font-cormorant text-lg">
-                {t.about.image_placeholder}
-              </div>
+            <div className="aspect-[4/5] rounded-2xl border border-ivoire-cosmique/20 shadow-glow-blue overflow-hidden">
+              <img src={aboutYlane} alt={t.about.image_placeholder} className="w-full h-full object-cover" />
             </div>
             {/* Decorative glowing accent */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-ocre-solaire/40 blur-3xl animate-glow-pulse" />
