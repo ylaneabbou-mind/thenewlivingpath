@@ -63,7 +63,7 @@ const About = () => {
               {t.about.pills.map((pill, i) => (
                 <span
                   key={pill}
-                  className="inline-flex items-center rounded-full border border-ocre-clair/40 bg-ocre-solaire/10 px-4 py-1.5 text-sm font-cormorant tracking-wide text-ocre-clair backdrop-blur-sm motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-out"
+                  className="inline-flex items-center rounded-full border border-ocre-clair/40 bg-ocre-solaire/10 px-4 py-1.5 text-sm font-serif tracking-wide text-ocre-clair backdrop-blur-sm motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-out"
                   style={{
                     opacity: pillsInView ? 1 : 0,
                     transform: pillsInView ? "scale(1)" : "scale(0.85)",
@@ -77,7 +77,7 @@ const About = () => {
 
             <div className="pt-4 flex items-center gap-4">
               <div className="w-12 h-px bg-ocre-solaire/60" />
-              <span className="text-ocre-clair font-cormorant italic">
+              <span className="text-ocre-clair font-serif italic">
                 {t.about.signature}
               </span>
             </div>
