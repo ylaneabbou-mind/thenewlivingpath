@@ -42,8 +42,8 @@ const About = () => {
             </p>
             
             <h2 className="text-4xl md:text-5xl font-serif font-semibold leading-tight">
-              {t.about.title_line1}
-              <span className="block text-ocre-clair">{t.about.title_line2}</span>
+              <span className="block whitespace-nowrap">{t.about.title_line1}</span>
+              <span className="block whitespace-nowrap text-ocre-clair">{t.about.title_line2}</span>
             </h2>
             
             <div className="space-y-5 text-ivoire-cosmique/85 leading-relaxed">

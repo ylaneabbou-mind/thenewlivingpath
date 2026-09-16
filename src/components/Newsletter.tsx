@@ -33,7 +33,7 @@ const Newsletter = () => {
           <p className="text-sm font-cormorant text-ocre-clair tracking-[0.25em] uppercase">{t.newsletter.subtitle}</p>
           
           <h2 className="text-4xl md:text-5xl font-serif font-semibold text-ivoire-cosmique leading-tight">
-            {t.newsletter.title_line1}<span className="block mt-2 text-ocre-clair">{t.newsletter.title_line2}</span>
+            {t.newsletter.title_line1}<span className="block mt-2 whitespace-nowrap text-ocre-clair">{t.newsletter.title_line2}</span>
           </h2>
           
           <p className="text-xl text-ivoire-cosmique/80 max-w-xl mx-auto leading-relaxed font-light">

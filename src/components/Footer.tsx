@@ -1,6 +1,7 @@
 import { Instagram, Mail, Heart, Youtube, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
+import treeOfLife from "@/assets/tree-of-life.png";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -71,9 +72,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-ivoire-cosmique/15 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-ivoire-cosmique/60">
+        <div className="mt-16 pt-8 border-t border-ivoire-cosmique/15 flex flex-col items-center gap-5 text-center text-sm text-ivoire-cosmique/60">
+          <img
+            src={treeOfLife}
+            alt=""
+            aria-hidden
+            className="w-14 h-14 md:w-16 md:h-16 object-contain opacity-90"
+          />
           <p>© {new Date().getFullYear()} The New Living Path. {t.footer.copyright}</p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center justify-center gap-1">
             {t.footer.made_with}
             {t.footer.and_intention && <Heart className="w-4 h-4 text-ocre-solaire" />}
             {t.footer.and_intention}

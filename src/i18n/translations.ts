@@ -573,8 +573,8 @@ export const translations: Record<Language, TranslationSchema> = {
     // About
     about: {
       subtitle: "À PROPOS DE YLANE",
-      title_line1: "Un guide entre les",
-      title_line2: "Mondes",
+      title_line1: "Un guide entre",
+      title_line2: "les Mondes",
       quote: "Ancré dans la Terre, tourné vers l’Infini.",
       paragraph1: "Mon parcours m’a appris que la vie devient plus riche lorsque nous cessons de vouloir contrôler chaque étape et commençons à écouter la sagesse qui réside en nous.",
       paragraph2: "À travers le Design Humain, des pratiques d’ancrage et une présence profonde, je vous accompagne pour renouer avec votre propre guidance intérieure et honorer la manière unique dont vous êtes conçu pour avancer dans la vie.",
