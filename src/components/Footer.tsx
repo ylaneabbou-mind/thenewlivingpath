@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid md:grid-cols-3 gap-12 items-start">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h3 className="text-2xl font-serif font-semibold text-ivoire-cosmique">
               The New Living Path
             </h3>
