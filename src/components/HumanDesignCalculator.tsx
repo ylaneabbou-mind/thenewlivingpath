@@ -278,7 +278,7 @@ const HumanDesignCalculator = () => {
             />
           </div>
           <p className="mt-8 text-xl md:text-2xl font-serif text-brun-racine">{hd.loadingTitle}</p>
-          <p className="mt-2 text-sm md:text-base font-cormorant italic text-ocre-clair/90">
+          <p className="mt-2 text-sm md:text-base font-cormorant italic text-accent-on-light">
             {hd.loadingSubtitle}
           </p>
         </div>
@@ -288,7 +288,7 @@ const HumanDesignCalculator = () => {
       {status === "result" && chart && (
         <div>
           <Reveal className="text-center mb-8 md:mb-12">
-            <p className="text-xs md:text-sm font-cormorant text-ocre-clair tracking-[0.2em] uppercase mb-3">
+            <p className="text-xs md:text-sm font-cormorant text-accent-on-light tracking-[0.2em] uppercase mb-3">
               {hd.result.eyebrow}
             </p>
             <h3 className="text-2xl md:text-4xl font-serif font-semibold text-brun-racine leading-[1.2]">
@@ -342,7 +342,7 @@ const HumanDesignCalculator = () => {
           )}
 
           <Reveal delay={640} className="text-center">
-            <p className="mt-8 md:mt-10 text-sm md:text-base font-cormorant italic text-ocre-clair/90 max-w-xl mx-auto leading-[1.6]">
+            <p className="mt-8 md:mt-10 text-sm md:text-base font-cormorant italic text-accent-on-light max-w-xl mx-auto leading-[1.6]">
               {hd.result.disclaimer}
             </p>
 

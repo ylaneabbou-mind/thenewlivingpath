@@ -70,6 +70,9 @@ export default {
         "terre-douce": "hsl(var(--terre-douce))",
         "terre-accent": "hsl(var(--terre-accent))",
         "ocre-profond": "hsl(var(--ocre-profond))",
+        // Contrast-safe accent variants (dark bg vs light/beige bg)
+        "accent-on-dark": "hsl(var(--accent-on-dark))",
+        "accent-on-light": "hsl(var(--accent-on-light))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

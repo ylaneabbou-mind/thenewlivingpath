@@ -87,7 +87,7 @@ const Mission = () => {
             const [lead, rest] = splitLead(para);
             return (
               <Reveal key={i} delay={i * 80}>
-                <p className="font-serif text-xl md:text-2xl leading-[1.4] text-ocre-solaire">
+                <p className="font-serif text-xl md:text-2xl leading-[1.4] text-accent-on-light">
                   {lead}
                 </p>
                 {rest && (

@@ -80,7 +80,7 @@ const Offerings = () => {
                   to="/services/vision-alignment"
                   className={`inline-flex items-center justify-center group/btn px-0 font-medium ${accent === "cosmic"
                     ? "text-bleu-cosmique hover:text-bleu-atmosphere"
-                    : "text-ocre-solaire hover:text-ocre-clair"
+                    : "text-accent-on-light hover:text-brun-racine"
                     } hover:bg-transparent transition-colors`}
                 >
                   {offering.cta}

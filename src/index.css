@@ -30,6 +30,13 @@
     --terre-accent: 24 40% 38%;              /* Refined dark brown-terracotta */
     --ocre-profond: 22 48% 32%;              /* Deep brown ochre for accents */
 
+    /* Accent — two contrast-safe variants of the warm accent.
+       Use accent-on-dark over the dark cosmic sections, accent-on-light over
+       the beige/parchment sections. accent-on-light (deep ochre) clears WCAG
+       AA (>= 4.5:1) on argile-clair/sable-doux/parchemin, unlike ocre-solaire. */
+    --accent-on-dark: var(--ocre-solaire);   /* bright ochre — reads on dark bg */
+    --accent-on-light: var(--ocre-profond);  /* deep ochre — AA on beige bg */
+
     /* Semantic Mappings - using warm grounded earth tones */
     --background: 28 30% 92%;                /* Warm grounded base */
     --foreground: 22 45% 16%;                /* Deep warm brown text */
