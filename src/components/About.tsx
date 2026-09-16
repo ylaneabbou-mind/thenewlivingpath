@@ -47,7 +47,7 @@ const About = () => {
             </h2>
             
             <div className="space-y-5 text-ivoire-cosmique/85 leading-relaxed">
-              <p className="font-cormorant text-xl italic text-ocre-clair/90">
+              <p className="font-serif text-xl italic text-ocre-clair/90">
                 {t.about.quote}
               </p>
               
