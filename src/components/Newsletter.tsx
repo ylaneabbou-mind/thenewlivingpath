@@ -6,7 +6,8 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const Newsletter = () => {
   const { t } = useLanguage();
   const [email, setEmail] = useState("");
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); console.log("Newsletter signup:", email); };
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); console.log("Newsletter signup:", email); setSubmitted(true); };
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
@@ -39,21 +40,45 @@ const Newsletter = () => {
             {t.newsletter.description}
           </p>
           
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-10 flex flex-col sm:flex-row gap-4">
-            <Input 
-              type="email" 
-              placeholder={t.newsletter.placeholder}
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 bg-ivoire-cosmique/15 backdrop-blur-sm border-ivoire-cosmique/30 text-ivoire-cosmique placeholder:text-ivoire-cosmique/50 focus:border-ocre-clair focus:ring-ocre-clair/30 rounded-lg" 
-              required 
-            />
-            <Button type="submit" size="lg" className="bg-gradient-solar text-white shadow-glow-gold hover:shadow-lg hover:scale-105 transition-all duration-500 rounded-lg px-8">
-              {t.newsletter.cta}
-            </Button>
-          </form>
-          
-          <p className="text-sm text-ivoire-cosmique/60 font-light">{t.newsletter.privacy}</p>
+          {submitted ? (
+            <div className="max-w-md mx-auto mt-10 flex flex-col items-center gap-5" role="status" aria-live="polite">
+              {/* Check that draws itself */}
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ocre-solaire/15 border border-ocre-clair/40 shadow-glow-gold motion-safe:animate-fade-in">
+                <svg viewBox="0 0 52 52" className="h-9 w-9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M14 27 L23 36 L39 18"
+                    stroke="hsl(var(--ocre-clair))"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ strokeDasharray: 48, strokeDashoffset: 48 }}
+                    className="motion-safe:animate-draw-check motion-reduce:[stroke-dashoffset:0]"
+                  />
+                </svg>
+              </span>
+              <p className="text-xl md:text-2xl font-serif text-ocre-clair motion-safe:animate-fade-in [text-shadow:0_0_24px_hsl(var(--ocre-solaire)/0.5)]" style={{ animationDelay: "0.25s" }}>
+                {t.newsletter.success}
+              </p>
+            </div>
+          ) : (
+            <>
+              <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-10 flex flex-col sm:flex-row gap-4">
+                <Input
+                  type="email"
+                  placeholder={t.newsletter.placeholder}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-ivoire-cosmique/15 backdrop-blur-sm border-ivoire-cosmique/30 text-ivoire-cosmique placeholder:text-ivoire-cosmique/50 focus:border-ocre-clair focus:ring-ocre-clair/30 rounded-lg"
+                  required
+                />
+                <Button type="submit" size="lg" className="cta-motion bg-gradient-solar text-white shadow-glow-gold rounded-lg px-8">
+                  {t.newsletter.cta}
+                </Button>
+              </form>
+
+              <p className="text-sm text-ivoire-cosmique/60 font-light">{t.newsletter.privacy}</p>
+            </>
+          )}
         </div>
       </div>
       

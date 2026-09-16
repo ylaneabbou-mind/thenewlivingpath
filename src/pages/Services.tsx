@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Sparkles, Eye, Users, Leaf } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import TiltCard from "@/components/TiltCard";
 
 const Services = () => {
   const { t } = useLanguage();
@@ -67,15 +69,16 @@ const Services = () => {
             {services.map((service, index) => {
               const IconComponent = icons[index % icons.length];
               return (
+                <Reveal key={index} delay={index * 120}>
                 <Link
-                  key={index}
                   to={`/services/${service.slug}`}
                   className="group block"
                 >
+                  <TiltCard className="h-full">
                   <Card className="h-full bg-ivoire-cosmique/60 backdrop-blur-sm border-gris-lune/30 shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-1 hover:bg-ivoire-cosmique/80">
                     <CardContent className="p-6 md:p-8 lg:p-10">
                       {/* Icon */}
-                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-stellar flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-stellar flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
                         <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-ivoire-cosmique" />
                       </div>
 
@@ -103,7 +106,9 @@ const Services = () => {
                       </span>
                     </CardContent>
                   </Card>
+                  </TiltCard>
                 </Link>
+                </Reveal>
               );
             })}
           </div>

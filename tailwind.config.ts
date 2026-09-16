@@ -121,6 +121,22 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "breathe": {
+          "0%, 100%": { transform: "scale(1)", filter: "drop-shadow(0 0 12px hsl(var(--ocre-solaire) / 0.25))" },
+          "50%": { transform: "scale(1.04)", filter: "drop-shadow(0 0 28px hsl(var(--ocre-solaire) / 0.5))" },
+        },
+        "draw-check": {
+          from: { strokeDashoffset: "48" },
+          to: { strokeDashoffset: "0" },
+        },
+        "card-in": {
+          from: { opacity: "0", transform: "scale(0.96)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        "card-out": {
+          from: { opacity: "1", transform: "scale(1)" },
+          to: { opacity: "0", transform: "scale(1.03)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +146,10 @@ export default {
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "shimmer": "shimmer 3s ease-in-out infinite",
+        "breathe": "breathe 5s ease-in-out infinite",
+        "draw-check": "draw-check 0.5s ease-out 0.15s forwards",
+        "card-in": "card-in 0.6s ease-out forwards",
+        "card-out": "card-out 0.6s ease-in forwards",
       },
     },
   },

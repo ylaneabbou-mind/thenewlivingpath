@@ -1,7 +1,28 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import Reveal from "@/components/Reveal";
+import { useReveal } from "@/hooks/useReveal";
+
+// Split a paragraph into a strong lead phrase (pull quote) + the remainder.
+// Splits on an em dash if present, otherwise after the first sentence.
+const splitLead = (text: string): [string, string] => {
+  const dash = text.indexOf(" — ");
+  if (dash !== -1) return [text.slice(0, dash).trim(), text.slice(dash + 3).trim()];
+  const m = text.match(/^([\s\S]*?[.!?])\s+([\s\S]+)$/);
+  if (m) return [m[1].trim(), m[2].trim()];
+  return [text.trim(), ""];
+};
 
 const Mission = () => {
   const { t } = useLanguage();
+  const { ref: quoteRef, inView: quoteInView } = useReveal<HTMLParagraphElement>({ threshold: 0.3 });
+  const words = t.mission.quote.split(" ");
+
+  const paragraphs = [
+    t.mission.description1,
+    t.mission.description2,
+    t.mission.description3,
+    t.mission.description4,
+  ].filter(Boolean);
 
   return (
     <section className="relative py-36 md:py-40 px-6 overflow-hidden">
@@ -36,32 +57,47 @@ const Mission = () => {
           </h2>
           
           <div className="space-y-6 text-lg md:text-xl leading-relaxed font-light max-w-3xl mx-auto">
-            {/* Quote text */}
-            <p 
+            {/* Quote text — revealed word by word for a slowed, immersive read */}
+            <p
+              ref={quoteRef}
               className="font-cormorant text-2xl italic"
               style={{ color: 'rgba(42, 22, 12, 0.85)' }}
             >
-              {t.mission.quote}
+              {words.map((word, i) => (
+                <span
+                  key={i}
+                  className="inline-block motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-out"
+                  style={{
+                    opacity: quoteInView ? 1 : 0,
+                    transform: quoteInView ? "translateY(0)" : "translateY(0.4em)",
+                    transitionDelay: quoteInView ? `${i * 90}ms` : "0ms",
+                  }}
+                >
+                  {word}
+                  {i < words.length - 1 ? " " : ""}
+                </span>
+              ))}
             </p>
-            {/* Body paragraph */}
-            <p style={{ color: 'rgba(42, 22, 12, 0.88)' }}>
-              {t.mission.description1}
-            </p>
-            {/* Accent sentence - deepened */}
-            <p className="font-medium" style={{ color: '#8A3F1E' }}>
-              {t.mission.description2}
-            </p>
-            {t.mission.description3 && (
-              <p style={{ color: 'rgba(42, 22, 12, 0.88)' }}>
-                {t.mission.description3}
-              </p>
-            )}
-            {t.mission.description4 && (
-              <p style={{ color: 'rgba(42, 22, 12, 0.88)' }}>
-                {t.mission.description4}
-              </p>
-            )}
           </div>
+        </div>
+
+        {/* Pull-quote paragraphs — scannable lead + quieter body, left-aligned */}
+        <div className="mt-14 md:mt-16 max-w-[42rem] mx-auto space-y-10 md:space-y-12 text-left">
+          {paragraphs.map((para, i) => {
+            const [lead, rest] = splitLead(para);
+            return (
+              <Reveal key={i} delay={i * 80}>
+                <p className="font-serif text-xl md:text-2xl leading-[1.4] text-ocre-solaire">
+                  {lead}
+                </p>
+                {rest && (
+                  <p className="mt-3 text-base md:text-lg leading-relaxed font-light" style={{ color: 'rgba(42, 22, 12, 0.78)' }}>
+                    {rest}
+                  </p>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
       

@@ -5,16 +5,26 @@ type TranslationSchema = {
   nav: { home: string; histoire: string; services: string; ressources: string; contact: string };
   hero: { tagline: string; title_line1: string; title_line2: string; description: string; cta_primary: string; cta_secondary: string; portrait_placeholder: string };
   mission: { subtitle: string; title_line1: string; title_line2: string; quote: string; description1: string; description2: string; description3: string; description4: string };
-  about: { subtitle: string; title_line1: string; title_line2: string; quote: string; paragraph1: string; paragraph2: string; paragraph3: string; signature: string; image_placeholder: string };
+  about: { subtitle: string; title_line1: string; title_line2: string; quote: string; paragraph1: string; paragraph2: string; paragraph3: string; signature: string; image_placeholder: string; pills: string[] };
   offerings: { subtitle: string; title_line1: string; title_line2: string; description: string; items: Array<{ title: string; subtitle: string; description: string; cta: string }> };
   testimonials: { subtitle: string; title_line1: string; title_line2: string; view_more: string; view_less: string; items: Array<{ quote: string; author: string; title: string }> };
   blog: { subtitle: string; title_line1: string; title_line2: string; view_all: string; image_placeholder: string; coming_soon: string; posts: Array<{ title: string; excerpt: string; date: string; category: string }> };
-  newsletter: { subtitle: string; title_line1: string; title_line2: string; description: string; placeholder: string; cta: string; privacy: string };
+  newsletter: { subtitle: string; title_line1: string; title_line2: string; description: string; placeholder: string; cta: string; privacy: string; success: string };
   footer: { tagline: string; nav: { about: string; offerings: string; writings: string; contact: string }; copyright: string; made_with: string; and_intention: string };
   storyPage: {
     hero: { subtitle: string; title: string; description: string; quote: string; description2: string };
     origins: { subtitle: string; title: string; paragraph1: string; paragraph2: string; image_placeholder: string };
-    transformation: { subtitle: string; title: string; quote: string; paragraph1: string; paragraph2: string; paragraph3: string };
+    transformation: {
+      subtitle: string;
+      title: string;
+      quote: string;
+      labels: { encounter: string; rituals: string; liberation: string };
+      encounter: string;
+      ritualsIntro: string;
+      rituals: Array<{ title: string; description: string }>;
+      ritualsOutro: string;
+      liberation: string;
+    };
     mission: { subtitle: string; title: string; paragraph1: string; paragraph2: string; signature: string; image_placeholder: string };
     cta: { title: string; description: string; button: string };
   };
@@ -23,9 +33,9 @@ type TranslationSchema = {
     methods: {
       title: string;
       description: string;
-      whatsapp: { label: string; description: string };
-      instagram: { label: string; description: string };
-      email: { label: string; description: string };
+      whatsapp: { label: string; description: string; hint: string };
+      instagram: { label: string; description: string; hint: string };
+      email: { label: string; description: string; hint: string };
     };
     closing: { quote: string; message: string; signature: string };
   };
@@ -33,6 +43,58 @@ type TranslationSchema = {
     hero: { subtitle: string; title: string; description: string };
     coming_soon: { badge: string; title: string; description: string };
     newsletter: { title: string; description: string; note: string };
+    humanDesign: {
+      badge: string;
+      title: string;
+      description: string;
+      privacy: string;
+      form: {
+        firstName: string;
+        firstNamePlaceholder: string;
+        email: string;
+        emailPlaceholder: string;
+        birthDate: string;
+        birthTime: string;
+        birthTimeNote: string;
+        city: string;
+        cityPlaceholder: string;
+        country: string;
+        countryPlaceholder: string;
+        submit: string;
+        validationError: string;
+      };
+      loadingTitle: string;
+      loadingSubtitle: string;
+      result: {
+        eyebrow: string;
+        greeting: string; // contains {name}
+        locationPrefix: string;
+        typeLabel: string;
+        strategyLabel: string;
+        authorityLabel: string;
+        profileLabel: string;
+        disclaimer: string;
+        recalc: string;
+      };
+      explanations: {
+        type: Record<string, string>;
+        typeFallback: string;
+        strategy: Record<string, string>;
+        strategyFallback: string;
+        authority: Record<string, string>;
+        authorityFallback: string;
+        profileFallback: string;
+      };
+      cta: { text: string; button: string };
+      errors: {
+        invalid_input: string;
+        location_not_found: string;
+        quota: string;
+        config: string;
+        upstream: string;
+        generic: string;
+      };
+    };
   };
   servicesPage: {
     hero: { subtitle: string; title: string; description: string };
@@ -42,7 +104,7 @@ type TranslationSchema = {
       tagline: string;
       what: { title: string; paragraph1: string; paragraph2: string };
       who: { title: string; items: string[] };
-      transformation: { title: string; quote: string; paragraph1: string; paragraph2: string };
+      transformation: { title: string; quote: string; paragraph1: string; paragraph2: string; tools: Array<{ label: string }> };
       how: { title: string; steps: Array<{ title: string; description: string }> };
       cta: { title: string; description: string; button: string };
     }>;
@@ -99,6 +161,7 @@ export const translations: Record<Language, TranslationSchema> = {
       paragraph3: "Whether you are navigating a transition, seeking deeper clarity, or feeling called to live in a more authentic way, you are welcome here.",
       signature: "I am here to walk alongside you on your journey.",
       image_placeholder: "Your Image",
+      pills: ["Human Design", "Presence", "Embodied Practices"],
     },
 
     // Offerings
@@ -136,9 +199,9 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Generator, 2/5, Sacral",
         },
         {
-          quote: "I came seeking answers and left with something far more precious — a deep trust in my own inner knowing.",
-          author: "Sophie R.",
-          title: "Entrepreneur",
+          quote: "Every time I spend time with Ylane, I feel like I grow ten years in just a few days. The way he lives as his authentic self, shares his passions with such clarity and ease, and holds such an open heart creates a space where you feel completely safe, seen, and free from judgment. I wholeheartedly recommend him as a mentor, teacher, friend, or brother. He has a unique gift for guiding people back to themselves and helping them walk the path of their own evolution. He helps you see, embody, and express the deepest beauty of who you truly are. The future is already here, and thanks to Ylane, we can step into it with greater trust, clarity, and peace.",
+          author: "Jordan",
+          title: "Projector, 6/2, Splenic",
         },
       ],
     },
@@ -163,6 +226,7 @@ export const translations: Record<Language, TranslationSchema> = {
       placeholder: "your@email.com",
       cta: "Join the Circle",
       privacy: "Your journey is sacred. We honor your inbox with care.",
+      success: "Welcome to the Circle. Check your inbox soon.",
     },
 
     // Footer
@@ -191,7 +255,7 @@ export const translations: Record<Language, TranslationSchema> = {
       origins: {
         subtitle: "The Beginning",
         title: "Where It All Started",
-        paragraph1: "My encounter with the <strong>Human Design System</strong> during an extended trip to <em>Mexico</em> became a profound turning point in my life. By honoring my <strong>Strategy</strong> and <strong>Authority</strong>, I discovered a different way of living—one that brought me closer to my true nature and to the natural flow of life.",
+        paragraph1: "My encounter with the <strong>Human Design System</strong> during an extended trip to <em>Mexico</em> became a profound turning point in my life. By honoring my <strong>Strategy</strong> and <strong>Authority</strong>, I discovered a different way of living, one that brought me closer to my true nature and to the natural flow of life.",
         paragraph2: "This journey has taken me across <em>many countries</em>, opened doors I could never have planned, and brought <strong>extraordinary encounters</strong> that no amount of control could have created. Each experience reminded me that when we learn to <em>listen within</em>, life can reveal paths the mind could never have imagined.",
         image_placeholder: "Portrait",
       },
@@ -199,15 +263,22 @@ export const translations: Record<Language, TranslationSchema> = {
         subtitle: "The Turning Point",
         title: "When Everything Shifted",
         quote: "A new way of living",
-        paragraph1: "Meeting <strong>Benjamin Thorre</strong> became one of the quiet turning points of my path. Through his guidance, alongside <strong>Human Design</strong> and years of embodied practice, I began to experience a <em>profound shift</em> in the way I relate to life.",
-        paragraph2: "Along the way, I discovered the power of <em>simple daily rituals</em>:<ul><li><strong>Tea Ceremony</strong> — a practice of presence and connection.</li><li><strong>Food as medicine</strong> — a way to honor the body and its intelligence.</li></ul>Through these rituals, I found a deeper appreciation for the simple things that bring <strong>vitality, joy, and meaning</strong> into life.",
-        paragraph3: "This way of living has brought me a profound sense of <strong>liberation</strong>. It allowed me to reconnect with parts of myself that had always been there: the <em>love of cooking</em>, the <em>joy of dancing</em>, the <em>desire to explore the world</em>, and the natural impulse to <em>support and guide others</em>.",
+        labels: { encounter: "The Encounter", rituals: "The Rituals", liberation: "The Liberation" },
+        encounter: "Meeting <strong>Benjamin Thorre</strong> became one of the quiet turning points of my path.<br /><br />I was fortunate to cross paths with someone who lives in <em>deep harmony with his essence</em>. The time I spent with him was a <em>true gift</em> on my journey.<br /><br />Through his unique way of moving through life, I discovered that there was another way of being in the world, one that is <em>more authentic, more conscious, and deeply free</em>.<br /><br />Supported by his guidance, <strong>Human Design</strong>, and years of personal exploration, I began to transform the way I relate to myself and to life. I learned to see the body not as something to control, but as a <strong>true guide</strong>.",
+        ritualsIntro: "Along the way, I discovered the power of <em>simple daily rituals</em>:",
+        rituals: [
+          { title: "Tea Ceremony", description: "A practice of presence and connection." },
+          { title: "Food as medicine", description: "A way to honor the body and its intelligence." },
+          { title: "Embodied presence", description: "Relaxing into the body, cultivating awareness, and reconnecting with the natural flow of life." },
+        ],
+        ritualsOutro: "Through these rituals, I found a deeper appreciation for the simple things that bring <strong>vitality, joy, and meaning</strong> into life.",
+        liberation: "This way of living has brought me a profound sense of <strong>liberation</strong>. It allowed me to reconnect with parts of myself that had always been there: the <em>love of cooking</em>, the <em>joy of dancing</em>, the <em>desire to explore the world</em>, and the natural impulse to <em>support and guide others</em>.",
       },
       mission: {
         subtitle: "Today",
         title: "Holding Space for Your Journey",
         paragraph1: "Today, I offer a space where people discover the <strong>freedom of living as they were designed to live</strong>. A space where they can reconnect with their own <em>inner guidance</em>, trust the <em>wisdom of their body</em>, and feel safe to honor their true nature.",
-        paragraph2: "My role isn't to tell people who they should become. It is to help them <u>remember who they have always been</u>. Because I believe that each of us carries a <strong>unique design</strong>, and that life becomes more <em>fluid, meaningful, and fulfilling</em> when we stop trying to become someone else and begin honoring who we truly are.",
+        paragraph2: "My role isn't to tell people who they should become. It is to help them <strong>remember who they have always been</strong>. Because I believe that each of us carries a <strong>unique design</strong>, and that life becomes more <em>fluid, meaningful, and fulfilling</em> when we stop trying to become someone else and begin honoring who we truly are.",
         signature: "With love and presence, Ylane",
         image_placeholder: "Vision",
       },
@@ -231,14 +302,17 @@ export const translations: Record<Language, TranslationSchema> = {
         whatsapp: {
           label: "WhatsApp",
           description: "For a direct, personal conversation. This is often the quickest way to connect.",
+          hint: "Usually a quick reply",
         },
         instagram: {
           label: "Instagram",
           description: "Follow my journey and send a message through @ylane.",
+          hint: "See the journey",
         },
         email: {
           label: "Email",
           description: "For longer inquiries or if you prefer a more formal approach.",
+          hint: "For deeper questions",
         },
       },
       closing: {
@@ -252,7 +326,7 @@ export const translations: Record<Language, TranslationSchema> = {
     resourcesPage: {
       hero: {
         subtitle: "Transmissions",
-        title: "Wisdom & Reflections",
+        title: "Visions & Reflexions",
         description: "A space where I share my reflections, my experiences, and the teachings that continue to transform the way I see life.",
       },
       coming_soon: {
@@ -264,6 +338,112 @@ export const translations: Record<Language, TranslationSchema> = {
         title: "Be the First to Know",
         description: "Join the inner circle and receive new writings directly in your inbox when they're ready.",
         note: "Subscribe through the newsletter on the home page to stay connected.",
+      },
+      humanDesign: {
+        badge: "Free Tool",
+        title: "Calculate Your Human Design",
+        description:
+          "Discover the blueprint of your energy. Enter your birth details and receive the foundations of your unique Human Design chart — Type, Strategy, Authority, and Profile.",
+        privacy:
+          "Your birth data is used only to calculate your chart and is not stored beyond this request. We keep only your email to stay in touch — this site is based in the EU (GDPR compliant).",
+        form: {
+          firstName: "First name",
+          firstNamePlaceholder: "Your first name",
+          email: "Email",
+          emailPlaceholder: "you@example.com",
+          birthDate: "Date of birth",
+          birthTime: "Exact time of birth",
+          birthTimeNote:
+            "The exact time of birth is essential for an accurate calculation. Check your birth certificate if you can.",
+          city: "City of birth",
+          cityPlaceholder: "e.g. Paris",
+          country: "Country of birth",
+          countryPlaceholder: "e.g. France",
+          submit: "Reveal My Design",
+          validationError: "Please fill in every field with a valid email before calculating.",
+        },
+        loadingTitle: "Aligning the stars…",
+        loadingSubtitle: "Calculating your unique design",
+        result: {
+          eyebrow: "Your Human Design",
+          greeting: "{name}, here is your design",
+          locationPrefix: "Calculated for",
+          typeLabel: "Type",
+          strategyLabel: "Strategy",
+          authorityLabel: "Authority",
+          profileLabel: "Profile",
+          disclaimer:
+            "This is a first glimpse of your design. A full reading brings these pieces to life together.",
+          recalc: "Calculate another chart",
+        },
+        // NOTE: These explanations are written in plain, generic language on purpose.
+        // Ilan can refine or personalise the wording later.
+        explanations: {
+          type: {
+            Generator:
+              "You carry a steady, renewable life-force. When you follow what genuinely lights you up, your energy sustains you and the right things flow.",
+            "Manifesting Generator":
+              "You blend a Generator's stamina with a fast, initiating drive. You thrive when you honour what truly excites you and let yourself move quickly.",
+            Projector:
+              "You are here to guide and see others clearly. Your energy works best in focused bursts, and you shine when your gifts are recognised and invited.",
+            Manifestor:
+              "You are an initiator, made to start things and set them in motion. You find peace when you follow your impulses and inform others before acting.",
+            Reflector:
+              "You are a rare mirror of your environment, deeply sensitive to the people and places around you. Clarity comes with time and the right surroundings.",
+          },
+          typeFallback:
+            "Your Type describes the way your energy is designed to work and engage with life.",
+          strategy: {
+            "Wait to Respond":
+              "Rather than forcing or chasing, let life bring things to you and notice your gut response before you commit.",
+            "To Inform":
+              "Let the people affected know before you act — informing clears the way and softens resistance.",
+            "Wait for the Invitation":
+              "Wait to be genuinely recognised and invited for the big things — the invitation signals the timing is right.",
+            "Wait a Lunar Cycle":
+              "Give important decisions a full lunar cycle, about a month, so real clarity can settle before you commit.",
+          },
+          strategyFallback:
+            "Following your Strategy helps you move through life with less resistance and more ease.",
+          authority: {
+            Sacral:
+              "Trust the in-the-moment response of your body — a spontaneous yes or no — over the reasoning of the mind.",
+            Emotional:
+              "Wait for your emotional wave to settle; sleeping on important decisions brings the clarity the heat of the moment hides.",
+            Splenic:
+              "Trust your quiet, instinctive knowing in the present moment — it speaks once, softly, for your wellbeing.",
+            Ego:
+              "Honour what your willpower and heart truly want; decisions hold when you have the drive to back them.",
+            "Self-Projected":
+              "Talk it through out loud with someone you trust — hearing your own voice reveals what is true for you.",
+            Mental:
+              "Take your time and think out loud with trusted people, letting the right environment bring your clarity.",
+            Lunar:
+              "Let decisions ripen over a full lunar cycle, sampling different environments before you commit.",
+          },
+          authorityFallback:
+            "Your Authority is the inner compass that shows you how to make decisions that are truly right for you.",
+          profileFallback:
+            "Your Profile describes how you naturally learn, connect, and move through life — the role you are here to play.",
+        },
+        cta: {
+          text: "Want to go deeper into understanding your design? Explore the 1:1 guidance journey.",
+          button: "Discover the 4-Week Journey",
+        },
+        errors: {
+          invalid_input:
+            "Some details look incomplete. Please check your date, time and place of birth.",
+          location_not_found:
+            "We couldn't find that city. Try a nearby larger city or check the spelling.",
+          quota:
+            "The calculator is temporarily unavailable. Please try again later, or reach out to me directly.",
+          config:
+            "The calculator is temporarily unavailable. Please try again later, or reach out to me directly.",
+          upstream:
+            "The calculator is temporarily unavailable. Please try again later, or reach out to me directly.",
+          generic:
+            "Something went wrong. Please try again later, or reach out to me directly.",
+        },
       },
     },
     // Services Page
@@ -291,7 +471,7 @@ export const translations: Record<Language, TranslationSchema> = {
         {
           tagline: "A return to your own natural rhythm.",
           what: {
-            title: "What This Journey Is",
+            title: "What This Journey Is About",
             paragraph1: "Over the course of these four sessions, you will receive my personal and dedicated guidance, supported by practical tools and insights I have gathered and embodied through my own path.",
             paragraph2: "At the heart of this work are your Strategy and Inner Authority, the two pillars of your Human Design chart. Not as concepts to understand, but as principles to live by.",
           },
@@ -308,7 +488,13 @@ export const translations: Record<Language, TranslationSchema> = {
             title: "The Transformation",
             quote: "I will guide you in understanding how to operate correctly as yourself, reducing resistance and restoring clarity.",
             paragraph1: "What I share with you is a different way of living. One that brings you back into your body’s intelligence, where life moves with you rather than against you.",
-            paragraph2: "Along this journey, I may also introduce complementary tools that gently support this process, such as the practice of presence, pathways for opening the heart, and the wisdom of Tea Medicine.",
+            paragraph2: "Along this journey, I may also introduce complementary tools that gently support this process:",
+            tools: [
+              { label: "Practice of presence" },
+              { label: "Opening the heart" },
+              { label: "Tea Medicine" },
+              { label: "Body nourishment & detox" },
+            ],
           },
           how: {
             title: "The Process",
@@ -338,7 +524,7 @@ export const translations: Record<Language, TranslationSchema> = {
         back: "Back to Services",
         sections: {
           what: "The Offering",
-          who: "Who It's For",
+          who: "Come Back Home",
           transformation: "The Journey",
           how: "The Process",
         },
@@ -395,6 +581,7 @@ export const translations: Record<Language, TranslationSchema> = {
       paragraph3: "Que vous traversiez une période de changement, que vous cherchiez plus de clarté ou que vous ressentiez l’appel de transformer votre manière de vivre, vous êtes le bienvenu ici.",
       signature: "Je suis ici pour marcher à vos côtés sur votre chemin.",
       image_placeholder: "Votre Image",
+      pills: ["Design Humain", "Présence", "Pratiques incarnées"],
     },
 
     // Offerings
@@ -432,9 +619,9 @@ export const translations: Record<Language, TranslationSchema> = {
           title: "Générateur, 2/5, Sacral",
         },
         {
-          quote: "Je suis venue chercher des réponses et suis repartie avec quelque chose de bien plus précieux — une confiance profonde en ma propre connaissance intérieure.",
-          author: "Sophie R.",
-          title: "Entrepreneure",
+          quote: "Chaque fois que je passe du temps avec Ylane, j'ai l'impression d'évoluer de dix ans en quelques jours. Sa manière d'être authentiquement lui, de transférer ses passions de manière lisible et plaisante, son cœur grand ouvert qui amène toujours un espace sécurisant et sans jugement font que je le recommande en tant que mentor, enseignant, ami, frère… il a toutes les clés en lui pour vous amener sur le chemin de votre évolution. Pour vous permettre de voir, de vivre et d'exprimer votre plus grande beauté. Le futur est déjà là et grâce à Ylane, nous pouvons y entrer plus sereinement.",
+          author: "Jordan",
+          title: "Projecteur, 6/2, Splénique",
         },
       ],
     },
@@ -459,11 +646,12 @@ export const translations: Record<Language, TranslationSchema> = {
       placeholder: "votre@email.com",
       cta: "Rejoindre le Cercle",
       privacy: "Votre voyage est sacré. Nous honorons votre boîte mail avec soin.",
+      success: "Bienvenue dans le Cercle. Surveillez votre boîte mail.",
     },
 
     // Footer
     footer: {
-      tagline: "Un espace pour celles et ceux qui souhaitent mieux se comprendre, se reconnecter plus profondément à leur guidance intérieure, et avancer vers une manière de vivre plus authentique.",
+      tagline: "Un espace pour celles et ceux qui souhaitent mieux se comprendre, se reconnecter à leur guidance intérieure, et avancer vers une manière de vivre plus authentique.",
       nav: {
         about: "Histoire",
         offerings: "Services",
@@ -495,20 +683,26 @@ export const translations: Record<Language, TranslationSchema> = {
         subtitle: "Le Tournant",
         title: "Quand Tout a Basculé",
         quote: "Une autre façon de vivre",
-        paragraph1: "Ma rencontre avec <strong>Benjamin Thorre</strong> a marqué un tournant profond dans mon parcours. J'ai eu la chance de croiser le chemin d'un être humain qui vit en harmonie avec son essence. Le temps passé à ses côtés a été un <em>véritable cadeau</em> dans mon parcours. À travers sa présence et sa façon unique d'habiter la vie, j'ai découvert qu'il existait une autre manière d'être au monde : <em>plus authentique, plus consciente et profondément libre</em>. À travers son accompagnement, le <strong>Design Humain</strong> et des années de suivi personnel, j'ai commencé à transformer ma relation à moi-même et à la vie. J'ai appris à voir le corps non plus comme quelque chose à contrôler, mais comme un <strong>véritable guide</strong>.",
-        paragraph2: "Au fil de ce chemin, j'ai également redécouvert la <em>beauté des choses simples</em> :<ul><li><strong>La cérémonie du thé</strong> — un espace de présence, de connexion et de contemplation.</li><li><strong>La nourriture</strong> — une manière d'écouter mon corps, de le nourrir avec conscience et d'honorer son intelligence.</li></ul>À travers ces rituels du quotidien, j'ai retrouvé une profonde gratitude pour les petites choses qui donnent de la couleur à la vie : un repas préparé avec amour, une danse qui reconnecte au corps, des moments de présence, et des <strong>connexions authentiques</strong>.",
-        paragraph3: "Cette façon de vivre m'a apporté un profond sentiment de <strong>liberté</strong>. Elle m'a permis de retrouver des parts de moi qui avaient toujours été là : l'<em>amour de cuisiner</em>, la <em>joie de danser</em>, la <em>curiosité d'explorer le monde</em>, et cet élan naturel de <em>guider et d'aider les autres</em>.",
+        labels: { encounter: "La Rencontre", rituals: "Les Rituels", liberation: "La Libération" },
+        encounter: "Ma rencontre avec <strong>Benjamin Thorre</strong> a marqué un tournant profond dans mon parcours. J'ai eu la chance de croiser le chemin d'un être humain qui vit en harmonie avec son essence.<br /><br />Le temps passé à ses côtés a été un <em>véritable cadeau</em> dans mon parcours. À travers sa présence et sa façon unique d'habiter la vie, j'ai découvert qu'il existait une autre manière d'être au monde : <em>plus authentique, plus consciente et profondément libre</em>.<br /><br />À travers son accompagnement, le <strong>Design Humain</strong> et des années de suivi personnel, j'ai commencé à transformer ma relation à moi-même et à la vie. J'ai appris à voir le corps non plus comme quelque chose à contrôler, mais comme un <strong>véritable guide</strong>.",
+        ritualsIntro: "Au fil de ce chemin, j'ai également redécouvert la <em>beauté des choses simples</em> :",
+        rituals: [
+          { title: "La cérémonie du thé", description: "Un espace de présence, de connexion et de contemplation." },
+          { title: "La nourriture", description: "Une manière d'écouter mon corps, de le nourrir avec conscience et d'honorer son intelligence." },
+        ],
+        ritualsOutro: "À travers ces rituels du quotidien, j'ai retrouvé une profonde gratitude pour les petites choses qui donnent de la couleur à la vie : un repas préparé avec amour, une danse qui reconnecte au corps, des moments de présence, et des <strong>connexions authentiques</strong>.",
+        liberation: "Cette façon de vivre m'a apporté un profond sentiment de <strong>liberté</strong>. Elle m'a permis de retrouver des parts de moi qui avaient toujours été là : l'<em>amour de cuisiner</em>, la <em>joie de danser</em>, la <em>curiosité d'explorer le monde</em>, et cet élan naturel de <em>guider et d'aider les autres</em>.",
       },
       mission: {
         subtitle: "Aujourd'hui",
         title: "Tenir un espace pour votre chemin",
         paragraph1: "Aujourd'hui, j'offre un espace où chacun peut découvrir la <strong>liberté de vivre en accord avec sa nature profonde</strong>. Un espace où les personnes peuvent se reconnecter à leur <em>guidance intérieure</em>, faire confiance à la <em>sagesse de leur corps</em>, et se sentir suffisamment en sécurité pour honorer pleinement qui elles sont.",
-        paragraph2: "Mon rôle n'est pas de dire aux autres qui ils devraient devenir. Mon rôle est de les accompagner à <u>se souvenir de qui ils ont toujours été</u>. Car je crois profondément que chacun porte en lui une <strong>manière unique d'être au monde</strong>. Et que lorsque nous arrêtons de lutter pour devenir quelqu'un d'autre, la vie devient <em>plus fluide, plus authentique et pleine de sens</em>.",
+        paragraph2: "Mon rôle n'est pas de dire aux autres qui ils devraient devenir. Mon rôle est de les accompagner à <strong>se souvenir de qui ils ont toujours été</strong>. Car je crois profondément que chacun porte en lui une <strong>manière unique d'être au monde</strong>. Et que lorsque nous arrêtons de lutter pour devenir quelqu'un d'autre, la vie devient <em>plus fluide, plus authentique et pleine de sens</em>.",
         signature: "Avec amour et présence, Ylane",
         image_placeholder: "Vision",
       },
       cta: {
-        title: "Prête à Commencer ?",
+        title: "Prêt à Commencer ?",
         description: "Si quelque chose dans ces mots résonne en vous, peut-être est-il temps pour nous de nous connecter.",
         button: "Me Contacter",
       },
@@ -527,14 +721,17 @@ export const translations: Record<Language, TranslationSchema> = {
         whatsapp: {
           label: "WhatsApp",
           description: "Pour une conversation directe et personnelle. C'est souvent le moyen le plus rapide de se connecter.",
+          hint: "Réponse rapide",
         },
         instagram: {
           label: "Instagram",
           description: "Suivez mon parcours et envoyez un message via @ylane.",
+          hint: "Découvrir le parcours",
         },
         email: {
           label: "Email",
           description: "Pour des demandes plus longues ou si vous préférez une approche plus formelle.",
+          hint: "Pour les questions profondes",
         },
       },
       closing: {
@@ -548,8 +745,8 @@ export const translations: Record<Language, TranslationSchema> = {
     resourcesPage: {
       hero: {
         subtitle: "Transmissions",
-        title: "Sagesse & Réflexions",
-        description: "Je prends le temps de laisser mûrir les réflexions et les expériences que je souhaite vous transmettre. Chaque partage est inspiré par mon propre chemin et par les découvertes qui continuent de transformer ma manière de voir la vie. Ils arriveront lorsque le moment sera juste.",
+        title: "Vision & Réflexions",
+        description: "Je prends le temps de laisser mûrir les réflexions et les expériences que je souhaite vous transmettre. Chaque partage est inspiré par mon propre chemin et par les découvertes qui continuent de transformer ma manière de voir la vie.",
       },
       coming_soon: {
         badge: "Bientôt Disponible",
@@ -560,6 +757,113 @@ export const translations: Record<Language, TranslationSchema> = {
         title: "Soyez les Premiers Informés",
         description: "Rejoignez le cercle intérieur et recevez les nouveaux écrits directement dans votre boîte mail quand ils seront prêts.",
         note: "Inscrivez-vous via la newsletter sur la page d'accueil pour rester connectée.",
+      },
+      humanDesign: {
+        badge: "Outil Gratuit",
+        title: "Calculez votre Design Humain",
+        description:
+          "Découvrez le plan énergétique qui vous est propre. Renseignez vos données de naissance et recevez les fondations de votre Design Humain — Type, Stratégie, Autorité et Profil.",
+        privacy:
+          "Vos données de naissance servent uniquement au calcul de votre design et ne sont pas conservées au-delà de cette requête. Nous ne gardons que votre email pour rester en lien — ce site est basé dans l'UE (conforme RGPD).",
+        form: {
+          firstName: "Prénom",
+          firstNamePlaceholder: "Votre prénom",
+          email: "Email",
+          emailPlaceholder: "vous@exemple.com",
+          birthDate: "Date de naissance",
+          birthTime: "Heure exacte de naissance",
+          birthTimeNote:
+            "L'heure exacte de naissance est essentielle pour un calcul précis. Vérifiez votre acte de naissance si possible.",
+          city: "Ville de naissance",
+          cityPlaceholder: "ex. Paris",
+          country: "Pays de naissance",
+          countryPlaceholder: "ex. France",
+          submit: "Révéler mon Design",
+          validationError: "Veuillez remplir chaque champ avec un email valide avant de lancer le calcul.",
+        },
+        loadingTitle: "Les étoiles s'alignent…",
+        loadingSubtitle: "Calcul de votre design unique",
+        result: {
+          eyebrow: "Votre Design Humain",
+          greeting: "{name}, voici votre design",
+          locationPrefix: "Calculé pour",
+          typeLabel: "Type",
+          strategyLabel: "Stratégie",
+          authorityLabel: "Autorité",
+          profileLabel: "Profil",
+          disclaimer:
+            "Ceci est un premier aperçu de votre design. Une lecture complète relie ces éléments entre eux.",
+          recalc: "Calculer un autre thème",
+        },
+        // NOTE : Ces explications sont volontairement écrites dans un langage simple et générique.
+        // Ilan pourra affiner ou personnaliser la formulation plus tard.
+        // Les clés (Generator, Sacral, etc.) correspondent aux valeurs renvoyées par l'API en anglais.
+        explanations: {
+          type: {
+            Generator:
+              "Vous portez une force de vie stable et renouvelable. Quand vous suivez ce qui vous anime vraiment, votre énergie vous soutient et les bonnes choses circulent.",
+            "Manifesting Generator":
+              "Vous mêlez l'endurance du Generator à un élan rapide d'initiateur. Vous vous épanouissez en honorant ce qui vous enthousiasme et en vous autorisant à aller vite.",
+            Projector:
+              "Vous êtes là pour guider et voir clairement les autres. Votre énergie fonctionne par élans ciblés, et vous rayonnez quand vos dons sont reconnus et invités.",
+            Manifestor:
+              "Vous êtes un initiateur, fait pour lancer les choses et les mettre en mouvement. Vous trouvez la paix en suivant vos impulsions et en informant avant d'agir.",
+            Reflector:
+              "Vous êtes un rare miroir de votre environnement, très sensible aux personnes et aux lieux qui vous entourent. La clarté vient avec le temps et le bon cadre.",
+          },
+          typeFallback:
+            "Votre Type décrit la façon dont votre énergie est conçue pour fonctionner et s'engager dans la vie.",
+          strategy: {
+            "Wait to Respond":
+              "Plutôt que de forcer ou de courir après, laissez la vie venir à vous et observez la réponse de votre corps avant de vous engager.",
+            "To Inform":
+              "Informez les personnes concernées avant d'agir — informer dégage la voie et adoucit les résistances.",
+            "Wait for the Invitation":
+              "Pour les grandes choses, attendez d'être vraiment reconnu et invité — l'invitation indique que le moment est juste.",
+            "Wait a Lunar Cycle":
+              "Accordez aux décisions importantes un cycle lunaire complet, environ un mois, pour laisser la clarté s'installer.",
+          },
+          strategyFallback:
+            "Suivre votre Stratégie vous aide à avancer dans la vie avec moins de résistance et plus de fluidité.",
+          authority: {
+            Sacral:
+              "Faites confiance à la réponse immédiate de votre corps — un oui ou un non spontané — plutôt qu'au raisonnement du mental.",
+            Emotional:
+              "Laissez votre vague émotionnelle se poser ; prendre le temps sur une décision importante apporte la clarté que l'instant masque.",
+            Splenic:
+              "Faites confiance à votre savoir instinctif et silencieux dans l'instant présent — il parle une fois, doucement, pour votre bien-être.",
+            Ego:
+              "Honorez ce que votre volonté et votre cœur désirent vraiment ; une décision tient quand vous avez l'élan pour la porter.",
+            "Self-Projected":
+              "Parlez-en à voix haute avec une personne de confiance — entendre votre propre voix révèle ce qui est vrai pour vous.",
+            Mental:
+              "Prenez votre temps et réfléchissez à voix haute avec des proches de confiance, en laissant le bon environnement faire émerger votre clarté.",
+            Lunar:
+              "Laissez mûrir vos décisions sur un cycle lunaire complet, en explorant différents environnements avant de vous engager.",
+          },
+          authorityFallback:
+            "Votre Autorité est la boussole intérieure qui vous montre comment prendre les décisions justes pour vous.",
+          profileFallback:
+            "Votre Profil décrit votre façon naturelle d'apprendre, de créer du lien et d'avancer dans la vie — le rôle que vous êtes là pour incarner.",
+        },
+        cta: {
+          text: "Envie d'aller plus loin dans la compréhension de votre design ? Découvrez l'accompagnement 1:1.",
+          button: "Découvrir le Voyage de 4 Semaines",
+        },
+        errors: {
+          invalid_input:
+            "Certaines informations semblent incomplètes. Vérifiez votre date, heure et lieu de naissance.",
+          location_not_found:
+            "Ville introuvable. Essayez une plus grande ville proche ou vérifiez l'orthographe.",
+          quota:
+            "Le calcul est temporairement indisponible. Réessayez plus tard, ou contactez-moi directement.",
+          config:
+            "Le calcul est temporairement indisponible. Réessayez plus tard, ou contactez-moi directement.",
+          upstream:
+            "Le calcul est temporairement indisponible. Réessayez plus tard, ou contactez-moi directement.",
+          generic:
+            "Une erreur est survenue. Réessayez plus tard, ou contactez-moi directement.",
+        },
       },
     },
 
@@ -586,9 +890,9 @@ export const translations: Record<Language, TranslationSchema> = {
       ],
       details: [
         {
-          tagline: "Un retour au bon sens, qui ramène à l’intelligence du corps.",
+          tagline: "Un retour à l’essentiel, pour renouer avec la sagesse du corps et son intelligence innée.",
           what: {
-            title: "Ce Qu'est Ce Chemin",
+            title: "L'essence de ce Voyage",
             paragraph1: "Au fil de ces 4 sessions, je t’emmène pas à pas vers un retour à ton essence, au travers d’une guidance personnalisée attentive, nourrie de ce que j’ai moi-même exploré, intégré et incarné au fil de mon propre chemin.",
             paragraph2: "Au cœur de ce cheminement se trouvent ta Stratégie et ton Autorité Intérieure, les deux piliers sur lesquelles s’appuie ton fonctionnement unique, que l’on retrouve dans ta charte de Design Humain.",
           },
@@ -605,7 +909,13 @@ export const translations: Record<Language, TranslationSchema> = {
             title: "Le Voyage",
             quote: "Non pas comme des concepts à saisir mentalement, mais comme des principes à incarner dans la vie de tous les jours.",
             paragraph1: "Je marcherai à tes côtés pour t’aider à te Reconnecter à ton essence, Réduire la Résistance, Retrouver ce qui fait sens pour toi et Te réaligner avec ta trajectoire.",
-            paragraph2: "Tout au long de ton cheminement, je proposerai également des outils complémentaires : la pratique de la Présence, l’ouverture du Cœur, ainsi que les bienfaits de la Médecine du Thé.",
+            paragraph2: "Tout au long de ce parcours, je pourrai également te proposer des outils complémentaires qui soutiennent en douceur ce processus :",
+            tools: [
+              { label: "Pratique de la présence" },
+              { label: "Ouverture du cœur" },
+              { label: "Médecine du Thé" },
+              { label: "Nourrir & détoxifier le corps" },
+            ],
           },
           how: {
             title: "Le Processus",
@@ -634,7 +944,7 @@ export const translations: Record<Language, TranslationSchema> = {
       detail_page: {
         back: "Retour aux Services",
         sections: {
-          what: "L'Offrande",
+          what: "L'Offre",
           who: "Pour Qui",
           transformation: "Le Voyage",
           how: "Le Processus",

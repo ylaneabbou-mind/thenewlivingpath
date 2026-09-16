@@ -148,4 +148,47 @@
   .bg-gradient-solar {
     background: var(--gradient-solar);
   }
+
+  /* Drop cap on the first letter of a paragraph. Uses ::first-letter so
+     it works with dangerouslySetInnerHTML content and any language. */
+  .drop-cap::first-letter {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.72;
+    padding-right: 0.08em;
+    padding-top: 0.04em;
+    color: hsl(var(--brun-racine));
+  }
+  .drop-cap-light::first-letter {
+    color: hsl(var(--ocre-clair));
+  }
+
+  /* Harmonized CTA micro-interactions: subtle hover lift + intensified
+     orange glow, and a tactile press on click. */
+  .cta-motion {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+  }
+  .cta-motion:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 32px hsl(var(--ocre-solaire) / 0.55);
+  }
+  .cta-motion:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Respect users who prefer reduced motion: silence looping ambient
+   animations and collapse transitions so nothing moves unexpectedly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

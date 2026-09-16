@@ -1,9 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Coffee, Leaf, Wind } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Reveal from "@/components/Reveal";
+
+const ritualIcons = [Coffee, Leaf, Wind];
 import portraitStory from "@/assets/portrait-story.jpeg";
 import missionTea from "@/assets/mission-tea.jpeg";
 
@@ -71,7 +74,7 @@ const Story = () => {
             </div>
             
             {/* Content */}
-            <div className="lg:col-span-3 space-y-5 md:space-y-6 text-center lg:text-left">
+            <div className="lg:col-span-3 space-y-5 md:space-y-6 text-left">
               <p className="text-xs md:text-sm font-cormorant text-sable-chaud tracking-[0.2em] md:tracking-[0.25em] uppercase">
                 {t.storyPage.origins.subtitle}
               </p>
@@ -79,7 +82,7 @@ const Story = () => {
                 {t.storyPage.origins.title}
               </h2>
               <div className={`space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base ${richText}`}>
-                <p dangerouslySetInnerHTML={{ __html: t.storyPage.origins.paragraph1 }} />
+                <p className="drop-cap" dangerouslySetInnerHTML={{ __html: t.storyPage.origins.paragraph1 }} />
                 <p dangerouslySetInnerHTML={{ __html: t.storyPage.origins.paragraph2 }} />
               </div>
             </div>
@@ -107,13 +110,65 @@ const Story = () => {
             </h2>
           </div>
           
-          <div className={`space-y-6 md:space-y-8 text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed max-w-3xl mx-auto text-base ${richText}`}>
-            <p className="font-cormorant text-xl md:text-2xl italic text-ocre-clair/90 text-center leading-[1.5]">
-              {t.storyPage.transformation.quote}
-            </p>
-            <p dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.paragraph1 }} />
-            <div dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.paragraph2 }} />
-            <p dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.paragraph3 }} />
+          <p className="font-cormorant text-xl md:text-2xl italic text-ocre-clair/90 text-center leading-[1.5] max-w-2xl mx-auto mb-14 md:mb-20">
+            {t.storyPage.transformation.quote}
+          </p>
+
+          {/* Three reading steps with generous spacing */}
+          <div className="max-w-[42rem] mx-auto text-left space-y-16 md:space-y-24">
+            {/* 1 — The Encounter */}
+            <Reveal>
+              <p className="text-xs md:text-sm font-cormorant text-ocre-clair tracking-[0.25em] uppercase mb-5 md:mb-6">
+                {t.storyPage.transformation.labels.encounter}
+              </p>
+              <div
+                className={`drop-cap drop-cap-light text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed text-base ${richText}`}
+                dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.encounter }}
+              />
+            </Reveal>
+
+            {/* 2 — The Rituals */}
+            <Reveal>
+              <p className="text-xs md:text-sm font-cormorant text-ocre-clair tracking-[0.25em] uppercase mb-5 md:mb-6">
+                {t.storyPage.transformation.labels.rituals}
+              </p>
+              <p
+                className={`text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed text-base mb-6 md:mb-8 ${richText}`}
+                dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.ritualsIntro }}
+              />
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {t.storyPage.transformation.rituals.map((ritual, i) => {
+                  const Icon = ritualIcons[i % ritualIcons.length];
+                  return (
+                    <div
+                      key={ritual.title}
+                      className="rounded-2xl border border-ivoire-cosmique/20 bg-ivoire-cosmique/10 backdrop-blur-md p-6 transition-all duration-500 hover:border-ocre-clair/40 hover:-translate-y-1"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-ocre-solaire/20 text-ocre-solaire flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-serif text-lg text-ivoire-cosmique mb-2">{ritual.title}</h3>
+                      <p className="text-sm text-ivoire-cosmique/75 leading-relaxed">{ritual.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+              <p
+                className={`text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed text-base mt-6 md:mt-8 ${richText}`}
+                dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.ritualsOutro }}
+              />
+            </Reveal>
+
+            {/* 3 — The Liberation */}
+            <Reveal>
+              <p className="text-xs md:text-sm font-cormorant text-ocre-clair tracking-[0.25em] uppercase mb-5 md:mb-6">
+                {t.storyPage.transformation.labels.liberation}
+              </p>
+              <p
+                className={`text-ivoire-cosmique/85 leading-[1.8] md:leading-relaxed text-base ${richText}`}
+                dangerouslySetInnerHTML={{ __html: t.storyPage.transformation.liberation }}
+              />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -131,7 +186,7 @@ const Story = () => {
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="flex flex-col lg:grid lg:grid-cols-5 gap-8 md:gap-12 items-center">
             {/* Content */}
-            <div className="lg:col-span-3 space-y-5 md:space-y-6 order-2 lg:order-1 text-center lg:text-left">
+            <div className="lg:col-span-3 space-y-5 md:space-y-6 order-2 lg:order-1 text-left">
               <p className="text-xs md:text-sm font-cormorant text-sable-chaud tracking-[0.2em] md:tracking-[0.25em] uppercase">
                 {t.storyPage.mission.subtitle}
               </p>
@@ -139,11 +194,11 @@ const Story = () => {
                 {t.storyPage.mission.title}
               </h2>
               <div className={`space-y-5 md:space-y-5 text-foreground/80 leading-[1.8] md:leading-relaxed text-base ${richText}`}>
-                <p dangerouslySetInnerHTML={{ __html: t.storyPage.mission.paragraph1 }} />
+                <p className="drop-cap" dangerouslySetInnerHTML={{ __html: t.storyPage.mission.paragraph1 }} />
                 <p dangerouslySetInnerHTML={{ __html: t.storyPage.mission.paragraph2 }} />
               </div>
-              
-              <div className="pt-4 flex items-center justify-center lg:justify-start gap-4">
+
+              <div className="pt-4 flex items-center justify-start gap-4">
                 <div className="w-10 md:w-12 h-px bg-ocre-solaire/60" />
                 <span className="text-terre-accent font-cormorant italic text-sm md:text-base">
                   {t.storyPage.mission.signature}

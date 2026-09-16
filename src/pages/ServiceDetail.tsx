@@ -3,7 +3,9 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Sparkles, Check } from "lucide-react";
+import { ArrowLeft, Sparkles, Check, Heart, Coffee, Leaf } from "lucide-react";
+
+const toolIcons = [Sparkles, Heart, Coffee, Leaf];
 
 const ServiceDetail = () => {
   const { t } = useLanguage();
@@ -86,7 +88,7 @@ const ServiceDetail = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-brun-racine leading-tight mb-5 md:mb-6">
                 {details.what.title}
               </h2>
-              <div className="space-y-4 md:space-y-5 text-base md:text-lg text-foreground/80 leading-relaxed">
+              <div className="space-y-4 md:space-y-5 text-base md:text-lg text-foreground/80 leading-relaxed text-left max-w-[42rem]">
                 <p>{details.what.paragraph1}</p>
                 <p>{details.what.paragraph2}</p>
               </div>
@@ -152,13 +154,31 @@ const ServiceDetail = () => {
             {details.transformation.quote}
           </blockquote>
           
-          <div className="space-y-4 md:space-y-5 text-base md:text-lg text-foreground/80 leading-relaxed">
+          <div className="space-y-4 md:space-y-5 text-base md:text-lg text-foreground/80 leading-relaxed text-left max-w-[42rem]">
             <p>{details.transformation.paragraph1}</p>
             <p>{details.transformation.paragraph2}</p>
           </div>
+
+          {/* Complementary tools as illustrated tags */}
+          <div className="grid gap-4 sm:grid-cols-2 mt-8 max-w-[42rem]">
+            {details.transformation.tools.map((tool, i) => {
+              const Icon = toolIcons[i % toolIcons.length];
+              return (
+                <div
+                  key={tool.label}
+                  className="flex items-center gap-3 rounded-2xl border border-bleu-cosmique/20 bg-bleu-profond/5 px-4 py-3 transition-all duration-500 hover:border-bleu-cosmique/45 hover:-translate-y-0.5"
+                >
+                  <span className="w-10 h-10 rounded-xl bg-bleu-cosmique/15 text-bleu-cosmique flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </span>
+                  <span className="text-sm md:text-base font-cormorant text-brun-racine">{tool.label}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
-      
+
       {/* How It Works */}
       <section className="relative py-16 md:py-24 px-5 md:px-6 overflow-hidden">
         {/* Cosmic background */}

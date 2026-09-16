@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { MessageCircle, Instagram, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Reveal from "@/components/Reveal";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -12,6 +12,7 @@ const Contact = () => {
       icon: MessageCircle,
       label: t.contactPage.methods.whatsapp.label,
       description: t.contactPage.methods.whatsapp.description,
+      hint: t.contactPage.methods.whatsapp.hint,
       href: "https://wa.me/33669220082",
       primary: true,
     },
@@ -19,6 +20,7 @@ const Contact = () => {
       icon: Instagram,
       label: t.contactPage.methods.instagram.label,
       description: t.contactPage.methods.instagram.description,
+      hint: t.contactPage.methods.instagram.hint,
       href: "https://www.instagram.com/ylane_abbou?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       primary: false,
     },
@@ -26,6 +28,7 @@ const Contact = () => {
       icon: Mail,
       label: t.contactPage.methods.email.label,
       description: t.contactPage.methods.email.description,
+      hint: t.contactPage.methods.email.hint,
       href: "mailto:ylaneabbou@gmail.com",
       primary: false,
     },
@@ -80,26 +83,25 @@ const Contact = () => {
           
           <div className="space-y-4 md:space-y-6">
             {contactMethods.map((method, index) => (
+              <Reveal key={method.label} delay={index * 140}>
               <a
-                key={method.label}
                 href={method.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex items-center gap-4 md:gap-6 p-5 md:p-6 rounded-2xl border transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-1 ${
+                className={`group flex items-center gap-4 md:gap-6 p-5 md:p-6 rounded-2xl border transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-1 md:hover:scale-[1.02] ${
                   method.primary
                     ? "bg-gradient-to-r from-brun-racine/10 to-ocre-solaire/15 border-ocre-solaire/30 md:hover:border-ocre-solaire/60 md:hover:shadow-glow-gold"
                     : "bg-bleu-profond/5 border-bleu-cosmique/20 md:hover:border-bleu-cosmique/50 md:hover:shadow-glow-blue"
                 }`}
-                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-110 ${
                   method.primary
                     ? "bg-ocre-solaire/20 text-ocre-solaire"
                     : "bg-bleu-cosmique/15 text-bleu-cosmique"
                 }`}>
                   <method.icon className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
-                
+
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg md:text-xl font-serif font-semibold text-brun-racine group-hover:text-bleu-cosmique transition-colors">
                     {method.label}
@@ -107,14 +109,21 @@ const Contact = () => {
                   <p className="text-sm md:text-base text-foreground/60 font-light leading-[1.6] truncate md:whitespace-normal">
                     {method.description}
                   </p>
+                  {/* Micro-copy revealed on hover */}
+                  <p className={`mt-1 text-xs md:text-sm font-cormorant italic max-h-0 opacity-0 -translate-y-1 overflow-hidden transition-all duration-300 group-hover:max-h-8 group-hover:opacity-100 group-hover:translate-y-0 ${
+                    method.primary ? "text-ocre-solaire" : "text-bleu-cosmique"
+                  }`}>
+                    {method.hint}
+                  </p>
                 </div>
-                
+
                 <span className={`text-xl md:text-2xl transition-transform group-hover:translate-x-1 flex-shrink-0 ${
                   method.primary ? "text-ocre-solaire" : "text-bleu-cosmique"
                 }`}>
                   →
                 </span>
               </a>
+              </Reveal>
             ))}
           </div>
         </div>

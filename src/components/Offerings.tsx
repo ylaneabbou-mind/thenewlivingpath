@@ -1,7 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Compass, Sparkles, Users, Heart } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Link } from "react-router-dom";
+import Reveal from "@/components/Reveal";
+import TiltCard from "@/components/TiltCard";
 
 const icons = [Compass, Sparkles, Users, Heart];
 const accents = ["cosmic", "earth", "cosmic", "earth"] as const;
@@ -26,7 +27,7 @@ const Offerings = () => {
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-ocre-clair/12 rounded-full blur-[180px]" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-terre-claire/10 rounded-full blur-[150px]" />
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-6xl relative z-10 px-0 md:px-8">
         <div className="text-center mb-20 space-y-4 animate-fade-in">
           <p className="text-sm font-cormorant text-sable-chaud tracking-[0.25em] uppercase">
             {t.offerings.subtitle}
@@ -46,16 +47,15 @@ const Offerings = () => {
             const accent = accents[index];
 
             return (
-              <div
-                key={offering.title}
-                className={`group relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 hover:shadow-soft hover:-translate-y-1 ${accent === "cosmic"
+              <Reveal key={offering.title} delay={index * 120}>
+              <TiltCard
+                className={`group relative h-full p-6 md:p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 hover:shadow-soft hover:-translate-y-1 ${accent === "cosmic"
                   ? "bg-bleu-profond/10 border-bleu-cosmique/25 hover:border-bleu-cosmique/50 hover:shadow-glow-blue"
                   : "bg-brun-racine/8 border-brun-racine/25 hover:border-ocre-solaire/50 hover:shadow-glow-gold"
                   }`}
-                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${accent === "cosmic"
+                {/* Icon — pulses & rotates slightly on card hover */}
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 motion-safe:transition-transform motion-safe:duration-500 group-hover:scale-110 group-hover:rotate-6 ${accent === "cosmic"
                   ? "bg-bleu-cosmique/15 text-bleu-cosmique"
                   : "bg-ocre-solaire/20 text-ocre-solaire"
                   }`}>
@@ -86,7 +86,8 @@ const Offerings = () => {
                   {offering.cta}
                   <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
                 </Link>
-              </div>
+              </TiltCard>
+              </Reveal>
             );
           })}
         </div>
