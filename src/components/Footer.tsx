@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="flex justify-center">
-            <nav className="flex flex-wrap gap-x-8 gap-y-3">
+            <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3">
               {navigation.map((item) => (
                 <Link
                   key={item.key}
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
 
           {/* Social */}
-          <div className="flex md:justify-end gap-4">
+          <div className="flex justify-center md:justify-end gap-4">
             {socialLinks.map((item) => (
               <a
                 key={item.name}
