@@ -43,7 +43,19 @@ const About = () => {
             
             <h2 className="text-4xl md:text-5xl font-serif font-semibold leading-tight">
               <span className="block whitespace-nowrap">{t.about.title_line1}</span>
-              <span className="block whitespace-nowrap text-ocre-clair">{t.about.title_line2}</span>
+              {/* Accent only the last word (e.g. "Mondes"/"Worlds"); any
+                  leading words (e.g. FR "les") keep the base color. */}
+              {(() => {
+                const words = t.about.title_line2.trim().split(" ");
+                const last = words.pop();
+                const head = words.join(" ");
+                return (
+                  <span className="block whitespace-nowrap">
+                    {head && <>{head} </>}
+                    <span className="text-ocre-clair">{last}</span>
+                  </span>
+                );
+              })()}
             </h2>
             
             <div className="space-y-5 text-ivoire-cosmique/85 leading-relaxed">
